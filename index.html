@@ -504,25 +504,27 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
     <div class="card">
       <div class="card-hd">
         <span class="kicker vi">Dự án cá nhân</span><span class="kicker en">Personal project</span>
-        <h3 class="vi">Đọc 3–4 cuốn sách ngoại văn mỗi tuần mà không phải dịch thủ công</h3>
-        <h3 class="en">Reading 3–4 foreign-language books a week without translating by hand</h3>
+        <h3 class="vi">Đọc trọn một cuốn sách tiếng Anh bằng tiếng Việt, không phải dán từng trang vào chat</h3>
+        <h3 class="en">Reading a whole English book in Vietnamese, without pasting it into a chat page by page</h3>
       </div>
 
       <div class="pi">
         <div class="pi-problem">
           <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
-          <p class="vi">Dịch máy từng đoạn thì mất mạch đọc. Dịch cả cuốn một lần thì trả tiền cho phần sách sẽ không bao giờ đọc tới. Và hạn mức tài khoản AI thì luôn hết đúng lúc đang đọc dở. Ba thứ này kéo nhau: muốn rẻ thì phải cắt nhỏ, mà cắt nhỏ thì lại đứt mạch đọc.</p>
-          <p class="en">Translating passage by passage breaks the reading flow. Translating a whole book at once pays for pages that will never be read. And the AI account quota always runs out exactly mid-chapter. The three pull against each other: keeping it cheap means cutting it small, and cutting it small breaks the reading.</p>
+          <p class="vi">Trước khi có LinHiêu, muốn đọc một cuốn sách tiếng Anh bằng tiếng Việt thì phải tự chép từng trang dán vào Gemini, dịch xong mới bảo nó đọc thành tiếng. Mỗi trang là một lượt thao tác tay. Đi được vài chục trang thì cuộc trò chuyện quá dài và gãy, phải mở phiên mới — mạch sách đứt theo, ngữ cảnh chương trước không còn, giọng đọc cũng không nối tiếp được.</p>
+          <p class="en">Before LinHiêu, reading an English book in Vietnamese meant copying it into Gemini one page at a time, then asking for the audio once the translation came back. Every page was a manual round trip. A few dozen pages in, the conversation grew too long and broke, forcing a new session — and the book broke with it: the earlier chapters' context was gone, and the narration would not carry on.</p>
         </div>
         <div class="pi-insight">
           <span class="lbl">Insight</span>
           <ol>
-            <li class="vi"><b>Đơn vị của việc đọc là chương, không phải cuốn sách.</b>Khi lấy chương làm đơn vị, ba thứ tự rơi vào chỗ cùng lúc: trả tiền theo chương, lưu lại theo chương, và mở lại đúng chương đang dở. Mọi màn hình trong ứng dụng đều dựng quanh đơn vị này.</li>
-            <li class="en"><b>The unit of reading is the chapter, not the book.</b>Once the chapter is the unit, three things fall into place at once: you pay per chapter, you cache per chapter, and you resume at the exact chapter. Every screen in the app is built around that unit.</li>
-            <li class="vi"><b>Phần lớn chi phí AI là tiền trả để hỏi lại thứ file đã tự khai báo.</b>Nhà xuất bản thường nhúng sẵn mục lục điện tử, cây cấu trúc, hoặc in thẳng trang mục lục trong sách. Nhìn ra điều này mới đẻ ra quy trình 5 tầng ở Mục 03 — AI chỉ được gọi ở chỗ file thật sự im lặng.</li>
-            <li class="en"><b>Most AI spend is money paid to ask a file what it already states.</b>Publishers usually embed a digital outline, a structure tree, or simply print a contents page. Seeing that is what produced the five-stage pipeline in section 03 — AI is called only where the file is genuinely silent.</li>
-            <li class="vi"><b>Hết hạn mức không phải lỗi để báo người dùng, mà là một quyết định định tuyến.</b>Ngược lại, lỗi mạng thì đúng là lỗi và phải báo ra. Tách được hai loại này mới thiết kế nổi cơ chế đổi tài khoản chạy ngầm mà người đang đọc không hề biết có chuyện gì xảy ra.</li>
-            <li class="en"><b>Running out of quota is not an error to report — it is a routing decision.</b>A network failure, by contrast, really is an error and must be surfaced. Separating the two is what makes account rotation invisible to the person reading.</li>
+            <li class="vi"><b>Cái mệt không nằm ở bản dịch, mà ở việc phải tự đẩy từng trang lên.</b>Chất lượng dịch vốn đã dùng được rồi; thứ làm người ta bỏ dở giữa chừng là mấy chục lượt chép–dán–chờ cho một cuốn sách. Nên sản phẩm phải nhận nguyên file sách, tự tách chương, và người đọc chỉ bấm một lần cho cả chương.</li>
+            <li class="en"><b>The tiring part is not the translation — it is having to feed the pages up yourself.</b>The translation quality was already good enough; what makes people abandon a book is the dozens of copy–paste–wait rounds it takes. So the product has to accept the book file itself, split it into chapters, and let the reader press once per chapter.</li>
+            <li class="vi"><b>Đơn vị của việc đọc là chương, không phải trang.</b>Trang là đơn vị của cái máy in, không phải của mạch nội dung — cắt theo trang thì câu đứt giữa chừng và ngữ cảnh đứt theo. Lấy chương làm đơn vị thì mạch sách liền, và đó cũng chính là đơn vị để lưu lại và để mở đúng chỗ đang đọc dở.</li>
+            <li class="en"><b>The unit of reading is the chapter, not the page.</b>A page is the printer's unit, not the content's — split by page and sentences break mid-way, taking the context with them. Make the chapter the unit and the book holds together; it is also the right unit to cache and to resume from.</li>
+            <li class="vi"><b>Nghe được ngay tại chương vừa dịch mới là thứ giữ người đọc ở lại.</b>Dịch xong rồi mới đi tìm chỗ khác để đọc thành tiếng là thêm một lần đứt mạch nữa. Nên nút “Nghe” nằm ngay trên chương vừa dịch — đọc bằng mắt hay bằng tai vẫn là một luồng liên tục, và người học được nhàn hơn hẳn.</li>
+            <li class="en"><b>Being able to listen right there, on the chapter just translated, is what keeps a reader going.</b>Finishing a translation and then going somewhere else for audio is one more break in the thread. So the “Nghe” button sits on the chapter itself — reading with your eyes or your ears stays one continuous flow, and far less work for the learner.</li>
+            <li class="vi"><b>Mạch đọc không được phép đứt vì một lý do kỹ thuật.</b>Hết hạn mức tài khoản AI chính là thứ sẽ làm đứt mạch lần nữa — nên nó được xử lý như một quyết định định tuyến chạy ngầm, không phải một thông báo lỗi. Chương đã dịch cũng lưu lại vĩnh viễn, mở lại là có ngay, không gọi lại API.</li>
+            <li class="en"><b>The reading must not break for a technical reason.</b>An exhausted AI quota is exactly what would break it again — so it is handled as a routing decision behind the scenes, not an error message. Translated chapters are also cached permanently: reopening one is instant, with no second API call.</li>
           </ol>
         </div>
       </div>
