@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="description" content="Hồ sơ năng lực Business Analyst của Phạm Thùy Linh — song ngữ Việt/Anh, hai sản phẩm AI tự dựng và các quy trình phân tích đằng sau chúng.">
+<meta name="author" content="Phạm Thùy Linh">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Phạm Thùy Linh — Hồ sơ năng lực BA">
+<meta property="og:description" content="Tư duy logic, xử lý dữ liệu, và hai sản phẩm tự dựng bằng AI — từ ý tưởng đến ứng dụng chạy được.">
+<meta property="og:locale" content="vi_VN">
+<title>Phạm Thùy Linh — Hồ sơ năng lực BA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Be+Vietnam+Pro:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --paper:#E7EAEF;
+  --sheet:#FBFCFD;
+  --sheet-2:#F1F4F8;
+  --ink:#11151F;
+  --ink-2:#4E5768;
+  --ink-3:#79818F;
+  --rule:#C6CDD9;
+  --rule-soft:#DEE3EB;
+  --signal:#1E45C8;
+  --signal-soft:#E4E9FB;
+  --signal-line:#B9C5F2;
+  --free:#1B6B4B;
+  --free-soft:#DCEFE5;
+  --free-line:#A9D5C0;
+  --shadow:0 1px 0 rgba(17,21,31,.04), 0 12px 28px -18px rgba(17,21,31,.35);
+
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A0D13;
+    --sheet:#12161F;
+    --sheet-2:#171C27;
+    --ink:#E8EBF1;
+    --ink-2:#A4ADBD;
+    --ink-3:#7B8497;
+    --rule:#2B3241;
+    --rule-soft:#212736;
+    --signal:#8EA3FF;
+    --signal-soft:#19203E;
+    --signal-line:#2E3A63;
+    --free:#6CC99D;
+    --free-soft:#11291F;
+    --free-line:#27503C;
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 14px 32px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A0D13;
+  --sheet:#12161F;
+  --sheet-2:#171C27;
+  --ink:#E8EBF1;
+  --ink-2:#A4ADBD;
+  --ink-3:#7B8497;
+  --rule:#2B3241;
+  --rule-soft:#212736;
+  --signal:#8EA3FF;
+  --signal-soft:#19203E;
+  --signal-line:#2E3A63;
+  --free:#6CC99D;
+  --free-soft:#11291F;
+  --free-line:#27503C;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 14px 32px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--rule) 34%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--rule) 34%, transparent) 1px, transparent 1px);
+  background-size:28px 28px;
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---- bilingual: see the rules at the end of this stylesheet ---- */
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px 96px}
+
+/* ---------- title block (drawing header) ---------- */
+.titleblock{
+  margin-top:28px;
+  background:var(--sheet);
+  border:1.5px solid var(--ink);
+  box-shadow:var(--shadow);
+}
+.tb-top{
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px;
+  padding:26px 26px 22px;
+  border-bottom:1.5px solid var(--ink);
+}
+.tb-name{
+  flex:1 1 320px;min-width:0;
+}
+.tb-name h1{
+  font-family:var(--f-display);
+  font-variation-settings:"wdth" 112;
+  font-weight:800;
+  font-size:clamp(2.1rem,5.4vw,3.35rem);
+  line-height:1.02;
+  letter-spacing:-.022em;
+  margin:.1em 0 .18em;
+  text-wrap:balance;
+}
+.tb-role{
+  font-family:var(--f-mono);
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--signal);
+  font-weight:500;
+}
+.tb-sub{color:var(--ink-2);font-size:.98rem;margin:0;max-width:46ch}
+.langswitch{display:flex;gap:0;border:1.5px solid var(--ink);align-self:flex-start;margin-top:4px}
+.langswitch button{
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;
+  padding:7px 13px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;
+}
+.langswitch button + button{border-left:1.5px solid var(--ink)}
+.langswitch button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.langswitch button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+.tb-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.tb-cell{padding:13px 18px 15px;border-right:1px solid var(--rule);min-width:0}
+.tb-cell:last-child{border-right:0}
+.tb-key{
+  font-family:var(--f-mono);font-size:.66rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:3px;
+}
+.tb-val{font-size:.92rem;font-weight:500;overflow-wrap:anywhere}
+.tb-val a{color:var(--ink);text-decoration-color:var(--signal-line);text-underline-offset:3px}
+.tb-val a:hover{color:var(--signal)}
+
+/* ---------- sections ---------- */
+section{margin-top:56px;scroll-margin-top:20px}
+.shead{display:flex;align-items:baseline;gap:14px;border-bottom:1.5px solid var(--ink);padding-bottom:9px;margin-bottom:22px}
+.snum{font-family:var(--f-mono);font-size:.8rem;color:var(--signal);font-weight:500;letter-spacing:.06em}
+.shead h2{
+  font-family:var(--f-display);font-variation-settings:"wdth" 108;font-weight:700;
+  font-size:clamp(1.3rem,2.7vw,1.72rem);letter-spacing:-.012em;margin:0;flex:1;text-wrap:balance;
+}
+.shead .tag{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+
+.lede{font-size:1.04rem;color:var(--ink-2);max-width:68ch;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* ---------- stat row ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));border:1.5px solid var(--ink);background:var(--sheet)}
+.stat{padding:17px 18px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.stat .n{
+  font-family:var(--f-display);font-variation-settings:"wdth" 100;font-weight:700;
+  font-size:1.95rem;line-height:1.05;letter-spacing:-.02em;font-variant-numeric:tabular-nums;display:block;
+}
+.stat .l{font-size:.83rem;color:var(--ink-2);margin-top:5px;display:block;line-height:1.4}
+
+/* ---------- generic sheet ---------- */
+.sheet{background:var(--sheet);border:1.5px solid var(--ink);box-shadow:var(--shadow)}
+.sheet + .sheet{margin-top:26px}
+.sheet-hd{padding:22px 24px 18px;border-bottom:1px solid var(--rule)}
+.sheet-hd h3{
+  font-family:var(--f-display);font-variation-settings:"wdth" 106;font-weight:700;
+  font-size:1.42rem;margin:0 0 3px;letter-spacing:-.014em;
+}
+.sheet-hd .kicker{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);display:block;margin-bottom:7px}
+.sheet-hd p{margin:.5em 0 0;color:var(--ink-2);max-width:72ch;font-size:.97rem}
+.sheet-bd{padding:22px 24px 24px}
+
+/* project metadata strip */
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--rule);background:var(--sheet-2)}
+.meta div{padding:11px 18px 13px;border-right:1px solid var(--rule)}
+.meta div:last-child{border-right:0}
+.meta .tb-key{margin-bottom:2px}
+.meta span.v{font-size:.87rem;font-weight:500;font-variant-numeric:tabular-nums}
+
+/* ---------- shots ---------- */
+.shots{padding:22px 24px 8px;column-count:1;column-gap:16px}
+@media (min-width:780px){.shots{column-count:2}}
+figure{margin:0 0 16px;border:1px solid var(--rule);background:var(--sheet-2);overflow:hidden;break-inside:avoid}
+figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--rule)}
+figcaption{padding:9px 13px 11px;font-size:.83rem;color:var(--ink-2);line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+
+/* ---------- pipeline ---------- */
+.axis{
+  display:flex;align-items:center;gap:12px;margin:4px 0 14px;
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);
+}
+.axis .bar{flex:1;height:1.5px;background:linear-gradient(to right,var(--free-line),var(--signal))}
+.pipe{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));align-items:end}
+.stage{border:1px solid var(--rule);background:var(--sheet-2);display:flex;flex-direction:column}
+.stage .cost{height:6px;background:var(--free);opacity:.85}
+.stage.ai .cost{background:var(--signal)}
+.stage .body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:6px;flex:1}
+.stage .id{font-family:var(--f-mono);font-size:.67rem;letter-spacing:.11em;color:var(--ink-3)}
+.stage h4{margin:0;font-size:.97rem;font-weight:600;line-height:1.3;text-wrap:balance}
+.stage p{margin:0;font-size:.85rem;color:var(--ink-2);line-height:1.5}
+.chip{
+  align-self:flex-start;margin-top:auto;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:3px 8px;border:1px solid var(--free-line);background:var(--free-soft);color:var(--free);
+}
+.stage.ai .chip{border-color:var(--signal-line);background:var(--signal-soft);color:var(--signal)}
+
+/* ---------- tables ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);background:var(--sheet-2)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.89rem}
+caption{
+  text-align:left;padding:11px 14px;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--rule);
+}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--rule-soft);vertical-align:top;line-height:1.5}
+thead th{
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+td code, .mono{font-family:var(--f-mono);font-size:.84em;font-variant-numeric:tabular-nums}
+td code{background:var(--signal-soft);color:var(--signal);padding:1px 5px;border-radius:2px}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--rule);white-space:nowrap;display:inline-block}
+.pill.free{border-color:var(--free-line);background:var(--free-soft);color:var(--free)}
+.pill.ai{border-color:var(--signal-line);background:var(--signal-soft);color:var(--signal)}
+
+/* ---------- callout ---------- */
+.rule-note{border-left:3px solid var(--signal);background:var(--signal-soft);padding:14px 18px;margin:20px 0 0}
+.rule-note p{margin:0;font-size:.95rem;color:var(--ink)}
+.rule-note .lbl{font-family:var(--f-mono);font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);display:block;margin-bottom:4px}
+
+h4.sub{
+  font-family:var(--f-display);font-variation-settings:"wdth" 104;font-weight:700;
+  font-size:1.05rem;margin:28px 0 10px;letter-spacing:-.008em;
+}
+h4.sub:first-child{margin-top:0}
+.sheet-bd > p{max-width:72ch;color:var(--ink-2);font-size:.97rem}
+.sheet-bd > p:first-child{margin-top:0}
+.sheet-bd > p strong{color:var(--ink);font-weight:600}
+ul.tight{margin:.6em 0 0;padding-left:1.15em;color:var(--ink-2);font-size:.95rem}
+ul.tight li{margin-bottom:.34em}
+ul.tight li strong{color:var(--ink);font-weight:600}
+
+/* ---------- skills ---------- */
+.phases{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.phase{border:1px solid var(--rule);background:var(--sheet-2);padding:14px 15px 16px}
+.phase .id{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--signal)}
+.phase h5{margin:4px 0 9px;font-size:.99rem;font-weight:600}
+.skills{display:flex;flex-wrap:wrap;gap:5px}
+.skills span{font-family:var(--f-mono);font-size:.72rem;padding:2px 7px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink-2)}
+.skills span.own{border-color:var(--signal-line);color:var(--signal);background:var(--signal-soft)}
+
+/* ---------- footer ---------- */
+footer{margin-top:60px;border-top:1.5px solid var(--ink);padding-top:22px;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;justify-content:space-between}
+footer .cta h3{font-family:var(--f-display);font-variation-settings:"wdth" 108;font-weight:700;font-size:1.3rem;margin:0 0 5px}
+footer .cta p{margin:0;color:var(--ink-2);font-size:.95rem;max-width:52ch}
+footer .links{display:flex;flex-direction:column;gap:4px;font-size:.92rem}
+footer .links a{color:var(--ink);text-decoration-color:var(--signal-line);text-underline-offset:3px}
+footer .links a:hover{color:var(--signal)}
+footer .stamp{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);width:100%;margin-top:6px}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+/* ---- bilingual toggle: Vietnamese at rest (no attribute needed), English on demand.
+       Declared last, at 0-2-0 specificity, so it outranks the display rules above. ---- */
+:root:not([data-lang="en"]) .en{display:none}
+:root[data-lang="en"] .vi{display:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:720px){
+  .tb-grid{grid-template-columns:repeat(2,1fr)}
+  .tb-cell{border-bottom:1px solid var(--rule)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .shots{padding:18px 16px 4px}
+  .sheet-hd,.sheet-bd{padding-left:16px;padding-right:16px}
+}
+</style>
+<style>
+:root{color-scheme:light dark}
+html{-webkit-text-size-adjust:100%}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ TITLE BLOCK ============ -->
+  <header class="titleblock">
+    <div class="tb-top">
+      <div class="tb-name">
+        <span class="tb-role">IT Business Analyst · Mini Product Owner</span>
+        <h1>Phạm Thùy Linh</h1>
+        <p class="tb-sub vi">Hồ sơ năng lực: tư duy logic, xử lý dữ liệu, và hai sản phẩm tự dựng bằng AI — từ ý tưởng đến ứng dụng chạy được.</p>
+        <p class="tb-sub en">Portfolio: analytical reasoning, data handling, and two AI-built products taken from idea to working application.</p>
+      </div>
+      <div class="langswitch" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" id="btn-vi" aria-pressed="true">VI</button>
+        <button type="button" id="btn-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <div class="tb-grid">
+      <div class="tb-cell">
+        <span class="tb-key vi">Kinh nghiệm</span><span class="tb-key en">Experience</span>
+        <span class="tb-val vi">~3,5 năm BA · 1,5 năm QC</span>
+        <span class="tb-val en">~3.5 yrs BA · 1.5 yrs QC</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-key vi">Nơi ở</span><span class="tb-key en">Based in</span>
+        <span class="tb-val vi">Hà Nội, Việt Nam</span>
+        <span class="tb-val en">Hanoi, Vietnam</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-key">Liên hệ / Contact</span>
+        <span class="tb-val"><a href="tel:+84866839295">0866 839 295</a></span>
+        <span class="tb-val"><a href="mailto:phamlinh278.work@gmail.com">phamlinh278.work@gmail.com</a></span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-key">LinkedIn</span>
+        <span class="tb-val"><a href="https://linkedin.com/in/pham-thuy-linh-55079331b" target="_blank" rel="noopener">pham-thuy-linh-55079331b</a></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 01 ============ -->
+  <section>
+    <div class="shead">
+      <span class="snum">01</span>
+      <h2 class="vi">Tôi làm gì, và hồ sơ này chứng minh điều gì</h2>
+      <h2 class="en">What I do, and what this portfolio proves</h2>
+      <span class="tag vi">Tổng quan</span><span class="tag en">Overview</span>
+    </div>
+
+    <p class="lede vi">Tôi là Business Analyst phụ trách trọn vòng đời yêu cầu nghiệp vụ — thu thập, đặc tả, phối hợp phát triển, nghiệm thu — cho các sản phẩm EdTech, y tế, chatbot AI, AI Agent và VR tại thị trường Việt Nam và châu Phi. Điểm khác biệt của tôi là <strong>không dừng ở tài liệu</strong>: hai sản phẩm dưới đây do tôi tự đặc tả rồi tự dựng bằng AI, và cả hai đều đang chạy thật với dữ liệu thật.</p>
+    <p class="lede en">I am a Business Analyst covering the full requirement lifecycle — elicitation, specification, delivery support, acceptance — across EdTech, healthcare, AI chatbot, AI Agent and VR products in the Vietnamese and African markets. What sets me apart is that I <strong>don't stop at documents</strong>: the two products below were specified and then built by me with AI, and both run today on real data.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="n">3,5</span>
+        <span class="l vi">năm kinh nghiệm BA, thêm 1,5 năm kiểm thử phần mềm</span>
+        <span class="l en">years as a BA, plus 1.5 years in software testing</span>
+      </div>
+      <div class="stat">
+        <span class="n">4 / 4</span>
+        <span class="l vi">tổ chức tại 4 quốc gia châu Phi ký hợp đồng sau demo sản phẩm LMS</span>
+        <span class="l en">organisations across 4 African countries signed after the LMS pitch</span>
+      </div>
+      <div class="stat">
+        <span class="n">3 năm</span>
+        <span class="l vi">hợp đồng sử dụng nền tảng C2P — bàn giao đúng hạn, khách phản hồi tích cực</span>
+        <span class="l en">usage contract on the C2P platform — delivered on time</span>
+      </div>
+      <div class="stat">
+        <span class="n">30+</span>
+        <span class="l vi">quy trình BA ứng dụng AI tự thiết kế tại LumusAI, rút ~70% thời gian xử lý</span>
+        <span class="l en">AI-assisted BA workflows designed at LumusAI, cutting ~70% of handling time</span>
+      </div>
+      <div class="stat">
+        <span class="n">2</span>
+        <span class="l vi">sản phẩm cá nhân đi từ ý tưởng đến ứng dụng chạy được</span>
+        <span class="l en">personal products taken from idea to a working application</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 — LinHiêu ============ -->
+  <section>
+    <div class="shead">
+      <span class="snum">02</span>
+      <h2 class="vi">LinHiêu — ứng dụng dịch sách và đọc thành tiếng</h2>
+      <h2 class="en">LinHiêu — book translator and audio reader</h2>
+      <span class="tag vi">Sản phẩm đang chạy</span><span class="tag en">Live product</span>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet-hd">
+        <span class="kicker vi">Bài toán</span><span class="kicker en">The problem</span>
+        <h3 class="vi">Đọc 3–4 cuốn sách ngoại văn mỗi tuần mà không phải dịch thủ công</h3>
+        <h3 class="en">Reading 3–4 foreign-language books a week without translating by hand</h3>
+        <p class="vi">Dịch máy từng đoạn thì mất mạch đọc; dịch cả cuốn thì tốn tiền cho phần không đọc tới; và hạn mức tài khoản AI luôn hết giữa chừng. Tôi đặc tả sản phẩm quanh ba ràng buộc đó: <strong>dịch theo chương khi cần</strong>, <strong>lưu lại vĩnh viễn để không gọi lại API</strong>, và <strong>tự đổi tài khoản khi hết hạn mức</strong>.</p>
+        <p class="en">Translating passage by passage breaks the reading flow; translating a whole book pays for pages never read; and AI account quotas always run out mid-way. I specified the product around those three constraints: <strong>translate per chapter, on demand</strong>, <strong>cache permanently so the API is never called twice</strong>, and <strong>switch accounts automatically when quota runs out</strong>.</p>
+      </div>
+
+      <div class="meta">
+        <div>
+          <span class="tb-key vi">Vai trò</span><span class="tb-key en">Role</span>
+          <span class="v vi">BA · PO · tự build</span><span class="v en">BA · PO · built it myself</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Đầu vào</span><span class="tb-key en">Input formats</span>
+          <span class="v">EPUB · PDF · DOCX</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Nhà cung cấp AI</span><span class="tb-key en">AI providers</span>
+          <span class="v">Gemini · OpenAI · DeepSeek</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Quy mô mã nguồn</span><span class="tb-key en">Codebase</span>
+          <span class="v num">~7.500 dòng · 36 file test</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Trạng thái</span><span class="tb-key en">Status</span>
+          <span class="v vi">Đang dùng hằng ngày</span><span class="v en">In daily use</span>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure>
+          <img src="img/translator-reader.jpg" alt="Màn hình đọc chương sách: đoạn gốc tiếng Anh in nghiêng màu nhạt, ngay dưới là đoạn dịch tiếng Việt, kèm nút Nghe và mốc số trang.">
+          <figcaption>
+            <b>01 · Reader</b>
+            <span class="vi">Bản gốc và bản dịch xen kẽ từng đoạn để đối chiếu, giữ nguyên mốc trang của sách gốc. Nút “Nghe” đọc thành tiếng chương đã dịch.</span>
+            <span class="en">Source and translation interleaved paragraph by paragraph, original page markers preserved. “Nghe” reads the translated chapter aloud.</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="img/translator-chapters.jpg" alt="Danh sách 17 chương của một cuốn sách PDF, mỗi chương có tên và khoảng trang, kèm nhãn Đã dịch hoặc nút Dịch.">
+          <figcaption>
+            <b>02 · Chapter list</b>
+            <span class="vi">17 chương tách tự động từ một file PDF, kèm khoảng trang chính xác và trạng thái từng chương — dịch tới đâu tính tiền tới đó.</span>
+            <span class="en">17 chapters split automatically from one PDF, each with its exact page range and status — you only pay for what you read.</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="img/translator-library.jpg" alt="Thư viện sách với hai thẻ sách PDF, thanh tiến độ dịch, ô tìm kiếm và bộ lọc định dạng.">
+          <figcaption>
+            <b>03 · Library</b>
+            <span class="vi">Tiến độ “2/17 chương đã dịch” và lối tắt “Tiếp tục đọc” đưa người dùng về đúng chương đang dở.</span>
+            <span class="en">A “2 of 17 chapters translated” progress bar and a “continue reading” shortcut back to the exact chapter in progress.</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="img/translator-accounts.jpg" alt="Trang cài đặt tài khoản AI hiển thị thẻ tài khoản GPT và DeepSeek với tổng token, token đầu vào, đầu ra và số lượt gọi.">
+          <figcaption>
+            <b>04 · Quota &amp; token tracking</b>
+            <span class="vi">Mỗi tài khoản hiển thị tổng token, token đầu vào / đầu ra và số lượt gọi — số liệu thật từ máy tôi, để biết chi phí đang rơi vào đâu.</span>
+            <span class="en">Each account shows total, input and output tokens plus call count — real figures from my own machine, so cost is always attributable.</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="sheet-bd">
+        <h4 class="sub vi">Tôi làm gì trong dự án này</h4>
+        <h4 class="sub en">What I did on this project</h4>
+        <ul class="tight">
+          <li class="vi"><strong>Brainstorm và chốt phạm vi:</strong> viết rõ điều sản phẩm <em>không</em> làm (không đa người dùng, không chọn ngôn ngữ đích, không ghép file audio) để giữ bản MVP đủ nhỏ mà vẫn dùng được.</li>
+          <li class="en"><strong>Brainstorm and scoping:</strong> wrote down explicitly what the product would <em>not</em> do (no multi-user, no target-language picker, no audio merging) to keep the MVP small but usable.</li>
+          <li class="vi"><strong>Viết tài liệu thiết kế:</strong> kiến trúc, luồng dữ liệu một phiên đọc, 4 tình huống lỗi và cách xử lý từng loại, phạm vi kiểm thử.</li>
+          <li class="en"><strong>Design document:</strong> architecture, the data flow of one reading session, four error cases with a distinct response for each, and test scope.</li>
+          <li class="vi"><strong>Lập kế hoạch triển khai</strong> chia thành các nhiệm vụ có thứ tự, mỗi nhiệm vụ nêu rõ file đụng tới và cách nghiệm thu.</li>
+          <li class="en"><strong>Implementation plan</strong> broken into ordered tasks, each naming the files it touches and how it is verified.</li>
+          <li class="vi"><strong>Tự build bằng AI và tự kiểm thử:</strong> 56 lần thay đổi có kiểm soát, phần lớn là sửa lỗi biên tôi tự tìm ra — ví dụ một file hỏng làm mất cả thư viện, hay hai tiến trình ghi đè trạng thái chương của nhau.</li>
+          <li class="en"><strong>Built it with AI and tested it:</strong> 56 controlled changes, mostly edge-case fixes I found myself — a single corrupt file taking down the whole library, or two processes overwriting each other's chapter status.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 — logic ============ -->
+  <section>
+    <div class="shead">
+      <span class="snum">03</span>
+      <h2 class="vi">Tư duy logic: quy trình đọc PDF leo thang chi phí</h2>
+      <h2 class="en">Analytical reasoning: the cost-escalating PDF pipeline</h2>
+      <span class="tag vi">Phần lõi</span><span class="tag en">Core</span>
+    </div>
+
+    <p class="lede vi">Một file PDF không nói cho ta biết nó có bao nhiêu chương. Có cuốn nhà xuất bản đã ghi sẵn mục lục điện tử, có cuốn chỉ là ảnh chụp trang giấy. Nếu lúc nào cũng nhờ AI đọc cả cuốn thì chắc chắn ra kết quả, nhưng tốn tiền cho cả phần sách đã tự nói rõ cấu trúc. Tôi thiết kế quy trình <strong>5 tầng, tầng sau chỉ chạy khi tầng trước rẻ hơn không trả lời được</strong>.</p>
+    <p class="lede en">A PDF does not tell you how many chapters it has. Some carry a publisher-authored digital outline; some are just photographs of paper. Asking AI to read every book end to end always works, but pays for structure the book already states for free. So I designed a <strong>five-stage pipeline where each stage runs only when the cheaper one before it could not answer</strong>.</p>
+
+    <div class="sheet">
+      <div class="sheet-bd">
+        <div class="axis">
+          <span class="vi">Chi phí</span><span class="en">Cost</span>
+          <span class="bar"></span>
+          <span class="vi">Tăng dần</span><span class="en">Increasing</span>
+        </div>
+
+        <div class="pipe">
+          <div class="stage">
+            <div class="cost" style="height:6px"></div>
+            <div class="body">
+              <span class="id">TẦNG 0</span>
+              <h4 class="vi">Sàng lọc từng trang</h4><h4 class="en">Per-page triage</h4>
+              <p class="vi">Quét cả cuốn tại chỗ, xếp mỗi trang vào một trong ba nhóm: đọc sạch, chữ lỗi font, hoặc trang trống (ảnh chụp).</p>
+              <p class="en">Scans the whole document locally and sorts every page into one of three groups: clean, garbled glyphs, or empty (scanned image).</p>
+              <span class="chip vi">Miễn phí · tại chỗ</span><span class="chip en">Free · local</span>
+            </div>
+          </div>
+          <div class="stage ai">
+            <div class="cost" style="height:12px"></div>
+            <div class="body">
+              <span class="id">TẦNG 1</span>
+              <h4 class="vi">Nhờ AI đọc lại ảnh</h4><h4 class="en">AI transcription</h4>
+              <p class="vi">Chỉ gửi đúng những trang tầng 0 đã đánh dấu là lỗi hoặc trống — không gửi cả cuốn.</p>
+              <p class="en">Sends only the pages stage 0 flagged as garbled or empty — never the whole book.</p>
+              <span class="chip vi">Gọi AI · phạm vi hẹp</span><span class="chip en">AI call · narrow scope</span>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="cost" style="height:20px"></div>
+            <div class="body">
+              <span class="id">TẦNG 2</span>
+              <h4 class="vi">Gom ứng viên tiêu đề</h4><h4 class="en">Heading candidates</h4>
+              <p class="vi">Lấy cây cấu trúc nếu nhà xuất bản có nhúng sẵn, kèm các dòng có cỡ chữ lớn bất thường.</p>
+              <p class="en">Reads the publisher's structure tree when one exists, plus lines with unusually large type.</p>
+              <span class="chip vi">Miễn phí · tại chỗ</span><span class="chip en">Free · local</span>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="cost" style="height:30px"></div>
+            <div class="body">
+              <span class="id">TẦNG 3</span>
+              <h4 class="vi">Chốt ranh giới chương</h4><h4 class="en">Resolve chapter bounds</h4>
+              <p class="vi">Thử lần lượt 4 nguồn tín hiệu, từ rẻ và đáng tin nhất trở xuống. Chi tiết ở bảng dưới.</p>
+              <p class="en">Tries four signals in turn, cheapest and most trustworthy first. See the table below.</p>
+              <span class="chip vi">3 tầng miễn phí trước</span><span class="chip en">3 free tiers first</span>
+            </div>
+          </div>
+          <div class="stage ai">
+            <div class="cost" style="height:40px"></div>
+            <div class="body">
+              <span class="id">TẦNG 4</span>
+              <h4 class="vi">Tách bảng biểu</h4><h4 class="en">Table extraction</h4>
+              <p class="vi">Dò bảng bằng luật tại chỗ trước, AI chỉ được gọi trên đúng những trang khả nghi.</p>
+              <p class="en">Detects tables with local rules first; AI is called only on the pages that remain suspicious.</p>
+              <span class="chip vi">Lai · thu hẹp trước</span><span class="chip en">Hybrid · narrowed first</span>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="sub vi">Tầng 3 — bốn nguồn tín hiệu, thử theo thứ tự</h4>
+        <h4 class="sub en">Stage 3 — four signals, tried in order</h4>
+        <div class="tablewrap">
+          <table>
+            <caption><span class="vi">Mỗi nguồn không chứng minh được thì trả về rỗng và chuyển nguồn sau — không bao giờ đoán một nửa</span><span class="en">A signal that cannot prove itself returns nothing and hands over to the next — never a partial guess</span></caption>
+            <thead>
+              <tr>
+                <th class="vi">Thứ tự</th><th class="en">Order</th>
+                <th class="vi">Nguồn tín hiệu</th><th class="en">Signal</th>
+                <th class="vi">Chi phí</th><th class="en">Cost</th>
+                <th class="vi">Điều kiện được chấp nhận</th><th class="en">Acceptance condition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">3a</td>
+                <td class="vi">Mục lục điện tử do nhà xuất bản nhúng sẵn</td><td class="en">Publisher-authored digital outline</td>
+                <td><span class="pill free vi">Miễn phí</span><span class="pill free en">Free</span></td>
+                <td class="vi">Mọi tiêu đề phải định vị lại được trong thân sách, theo đúng thứ tự</td>
+                <td class="en">Every title must be re-locatable in the body, in order</td>
+              </tr>
+              <tr>
+                <td class="mono">3b</td>
+                <td class="vi">Cây cấu trúc ngữ nghĩa của file</td><td class="en">Semantic structure tree</td>
+                <td><span class="pill free vi">Miễn phí</span><span class="pill free en">Free</span></td>
+                <td class="vi">Như trên — thiếu một tiêu đề là bỏ cả nguồn này</td>
+                <td class="en">Same — one missing title discards the whole signal</td>
+              </tr>
+              <tr>
+                <td class="mono">3c</td>
+                <td class="vi">Cỡ chữ bất thường, đối chiếu với trang mục lục in trong sách</td>
+                <td class="en">Outsized type, cross-checked against the printed table of contents</td>
+                <td><span class="pill free vi">Miễn phí</span><span class="pill free en">Free</span></td>
+                <td class="vi">Hai tín hiệu độc lập phải khớp nhau</td>
+                <td class="en">Two independent signals must agree</td>
+              </tr>
+              <tr>
+                <td class="mono">3d</td>
+                <td class="vi">Nhờ AI phân loại danh sách tiêu đề ứng viên</td>
+                <td class="en">AI classification of the candidate heading list</td>
+                <td><span class="pill ai vi">Có tính phí</span><span class="pill ai en">Paid</span></td>
+                <td class="vi">Chỉ chạy khi cả 3a–3c đều thất bại; một lần gọi cho cả cuốn, chỉ gửi danh sách tiêu đề</td>
+                <td class="en">Runs only if 3a–3c all failed; one call per book, sending only the heading list</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rule-note">
+          <span class="lbl vi">Quy tắc chặn đoán mò</span><span class="lbl en">The rule against guessing</span>
+          <p class="vi">Mọi tiêu đề suy ra từ mục lục đều phải <strong>tìm lại được gần như nguyên văn</strong> ở thân sách. Một câu văn bình thường kết thúc bằng con số có thể trông giống dòng mục lục, nhưng gần như không bao giờ lặp lại nguyên văn ở chỗ khác. Nếu không định vị lại được, hệ thống trả về rỗng và chuyển sang nguồn tín hiệu sau — vì <strong>tách sai chương còn tệ hơn là không tách</strong>.</p>
+          <p class="en">Every title inferred from a table of contents must be <strong>re-locatable almost verbatim</strong> in the body. An ordinary sentence ending in a number can look like a contents line, but it virtually never repeats itself verbatim elsewhere. If it cannot be re-located, the system returns nothing and falls through to the next signal — because <strong>splitting a book wrongly is worse than not splitting it</strong>.</p>
+        </div>
+
+        <h4 class="sub vi">Ngưỡng định lượng tôi chốt trong đặc tả</h4>
+        <h4 class="sub en">Quantified thresholds I fixed in the spec</h4>
+        <div class="tablewrap">
+          <table>
+            <caption><span class="vi">Mỗi con số phải trả lời được câu hỏi “vì sao là số này, không phải số khác”</span><span class="en">Each number has to answer “why this value and not another”</span></caption>
+            <thead>
+              <tr>
+                <th class="vi">Quyết định</th><th class="en">Decision</th>
+                <th class="vi">Ngưỡng</th><th class="en">Threshold</th>
+                <th class="vi">Lý do</th><th class="en">Rationale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="vi">Khoảng trống nào là ranh giới cột của bảng</td>
+                <td class="en">What gap counts as a table column break</td>
+                <td class="num">≥ 2,5× <span class="vi">cỡ chữ</span><span class="en">font size</span></td>
+                <td class="vi">Khoảng cách giữa hai từ thường chỉ khoảng 0,15× — để chung một ngưỡng thì mọi câu văn đều thành bảng</td>
+                <td class="en">An ordinary word space is about 0.15× — one shared threshold would turn every sentence into a table</td>
+              </tr>
+              <tr>
+                <td class="vi">Khi nào một vùng được coi là bảng</td>
+                <td class="en">When a region counts as a table</td>
+                <td class="num">≥ 3 <span class="vi">cột</span><span class="en">columns</span> · ≥ 3 <span class="vi">dòng liền</span><span class="en">consecutive rows</span></td>
+                <td class="vi">Hai cột hai dòng còn có thể là văn bản dàn lệch; ba–ba thì gần như chắc chắn là bảng</td>
+                <td class="en">Two by two can still be off-aligned prose; three by three is almost certainly tabular</td>
+              </tr>
+              <tr>
+                <td class="vi">Khi nào một dãy dòng được coi là mục lục</td>
+                <td class="en">When a run of lines counts as a contents page</td>
+                <td class="num">≥ 3 <span class="vi">mục</span><span class="en">entries</span> · <span class="vi">cách nhau ≤ 5 dòng</span><span class="en">≤ 5 lines apart</span></td>
+                <td class="vi">Số trang phải tăng dần; quét hết cuốn để một dãy giả sớm không che mất mục lục thật ở sau</td>
+                <td class="en">Page numbers must increase; the whole book is scanned so an early false run cannot mask the real contents later</td>
+              </tr>
+              <tr>
+                <td class="vi">Cắt đoạn khi dịch và khi đọc thành tiếng</td>
+                <td class="en">Chunking for translation and speech</td>
+                <td class="num">6.000 <span class="vi">ký tự</span><span class="en">chars</span> · 2.000 <span class="vi">ký tự</span><span class="en">chars</span></td>
+                <td class="vi">Cắt theo ranh giới đoạn, rồi câu, rồi mới tới từ — không cắt giữa câu làm giọng đọc bị ngắt quãng</td>
+                <td class="en">Split on paragraph, then sentence, then word — never mid-sentence, which makes the speech stutter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="sub vi">Bảng chuyển trạng thái: luân phiên tài khoản khi hết hạn mức</h4>
+        <h4 class="sub en">State transitions: account rotation when quota runs out</h4>
+        <p class="vi">Đây là dạng bảng tôi vẫn dùng trong đặc tả nghiệp vụ hằng ngày. Điểm mấu chốt nằm ở dòng thứ hai: <strong>không phải lỗi nào cũng là lỗi hết hạn mức</strong> — gộp chung thì một sự cố mạng sẽ khoá oan một tài khoản còn tốt suốt 24 giờ.</p>
+        <p class="en">This is the same table format I use in day-to-day business specification. The critical row is the second one: <strong>not every error is a quota error</strong> — conflating them would lock a perfectly healthy account out for 24 hours over a network blip.</p>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="vi">Trạng thái hiện tại</th><th class="en">Current state</th>
+                <th class="vi">Sự kiện</th><th class="en">Event</th>
+                <th class="vi">Trạng thái mới</th><th class="en">New state</th>
+                <th class="vi">Hành động hệ thống</th><th class="en">System action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="pill free vi">Đang hoạt động</span><span class="pill free en">Active</span></td>
+                <td class="vi">Lỗi hết hạn mức</td><td class="en">Quota error</td>
+                <td><span class="pill vi">Tạm khoá</span><span class="pill en">Exhausted</span></td>
+                <td class="vi">Đặt thời điểm mở lại sau 24 giờ, tự gọi lại chính yêu cầu đó bằng tài khoản kế tiếp</td>
+                <td class="en">Sets a 24-hour cooldown and silently retries the same request on the next account</td>
+              </tr>
+              <tr>
+                <td><span class="pill free vi">Đang hoạt động</span><span class="pill free en">Active</span></td>
+                <td class="vi">Lỗi khác (mạng, nội dung bị chặn)</td><td class="en">Other error (network, blocked content)</td>
+                <td><span class="pill free vi">Đang hoạt động</span><span class="pill free en">Active</span></td>
+                <td class="vi">Giữ nguyên tài khoản, báo đúng lỗi để người dùng thử lại đúng chương đó</td>
+                <td class="en">Leaves the account untouched and surfaces the real error so the user can retry that chapter</td>
+              </tr>
+              <tr>
+                <td><span class="pill vi">Tạm khoá</span><span class="pill en">Exhausted</span></td>
+                <td class="vi">Qua thời điểm mở lại</td><td class="en">Cooldown elapsed</td>
+                <td><span class="pill free vi">Đang hoạt động</span><span class="pill free en">Active</span></td>
+                <td class="vi">Tự dùng lại ở lần chọn kế tiếp, không cần thao tác tay</td>
+                <td class="en">Becomes eligible again on the next selection, with no manual reset</td>
+              </tr>
+              <tr>
+                <td class="vi">Mọi tài khoản đều tạm khoá</td><td class="en">All accounts exhausted</td>
+                <td class="vi">Người dùng bấm dịch</td><td class="en">User requests a translation</td>
+                <td class="vi">Không đổi</td><td class="en">Unchanged</td>
+                <td class="vi">Giữ nguyên trạng thái chương và báo <strong>giờ sớm nhất</strong> có lại hạn mức</td>
+                <td class="en">Leaves the chapter status alone and reports the <strong>earliest time</strong> capacity returns</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="vi" style="margin-top:16px">Khi cả một nhà cung cấp hết hạn mức, hệ thống chuyển sang nhà cung cấp sau theo thứ tự ưu tiên Gemini → OpenAI → DeepSeek. Tôi cũng chốt luôn giới hạn năng lực từng bên trong đặc tả: DeepSeek chỉ dịch được, không phân tích bố cục PDF và không đọc thành tiếng — nên nó luôn đứng cuối hàng.</p>
+        <p class="en" style="margin-top:16px">When an entire provider is exhausted, the system moves to the next in the priority order Gemini → OpenAI → DeepSeek. I also fixed each provider's capability limits in the spec: DeepSeek can only translate — no PDF layout analysis, no speech — which is why it sits last in the queue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 — Sali ============ -->
+  <section>
+    <div class="shead">
+      <span class="snum">04</span>
+      <h2 class="vi">Sali — công cụ soạn giáo án cho giáo viên tiểu học</h2>
+      <h2 class="en">Sali — a lesson-planning tool for primary school teachers</h2>
+      <span class="tag vi">MVP có dữ liệu thật</span><span class="tag en">MVP on real data</span>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet-hd">
+        <span class="kicker vi">Bài toán</span><span class="kicker en">The problem</span>
+        <h3 class="vi">Giáo án phải đúng khung Bộ quy định, không chỉ cần “nghe hay”</h3>
+        <h3 class="en">A lesson plan has to match the ministry template, not merely read well</h3>
+        <p class="vi">Giáo viên dạy nhiều khối phải soạn nhiều phiên bản giáo án, mỗi bản đều phải đúng khung do Bộ Giáo dục và Đào tạo quy định thì mới nộp được. Một công cụ AI viết trôi chảy nhưng sai khung thì vô dụng — nên phần khó của dự án này không nằm ở việc gọi AI, mà ở việc <strong>xác định chính xác cái khung đó là gì</strong>.</p>
+        <p class="en">Teachers covering several grades write several versions of each plan, and every one must follow the template set by the Ministry of Education and Training to be accepted. An AI tool that writes fluently but off-template is useless — so the hard part here was never calling the AI, it was <strong>pinning down what the template actually is</strong>.</p>
+      </div>
+
+      <div class="meta">
+        <div>
+          <span class="tb-key vi">Vai trò</span><span class="tb-key en">Role</span>
+          <span class="v vi">Người sáng lập · BA · tự build</span><span class="v en">Founder · BA · built it myself</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Nguồn quy phạm</span><span class="tb-key en">Regulatory sources</span>
+          <span class="v num vi">7 văn bản Bộ GD&amp;ĐT</span><span class="v num en">7 ministry documents</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Đặc tả</span><span class="tb-key en">Specification</span>
+          <span class="v num vi">18 user story · ERD 6 thực thể</span><span class="v num en">18 user stories · 6-entity ERD</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Phạm vi</span><span class="tb-key en">Coverage</span>
+          <span class="v num vi">12 môn theo GDPT 2018</span><span class="v num en">12 subjects, 2018 curriculum</span>
+        </div>
+        <div>
+          <span class="tb-key vi">Trạng thái</span><span class="tb-key en">Status</span>
+          <span class="v vi">MVP chạy được, đang phát triển</span><span class="v en">Working MVP, in progress</span>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure>
+          <img src="img/edu-giao-an-top.jpg" alt="Màn hình giáo án với các mục I. Yêu cầu cần đạt chia ba mục con, II. Đồ dùng dạy học, III. Các hoạt động dạy học bắt đầu bằng khối 1. Mở đầu.">
+          <figcaption>
+            <b>01 · Lesson plan</b>
+            <span class="vi">Giáo án sinh ra đúng bốn mục của mẫu thật, mọi ô đều sửa trực tiếp được — AI ra bản nháp, giáo viên vẫn là người chốt.</span>
+            <span class="en">The plan is generated in the four sections of the real template, every field editable in place — AI drafts, the teacher decides.</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="img/edu-nhap-chu-de.jpg" alt="Biểu mẫu soạn giáo án mới với ô chọn môn học, khối lớp, chủ đề bài học, bài số và học kỳ.">
+          <figcaption>
+            <b>02 · Input</b>
+            <span class="vi">Chọn khối sẽ tự làm mờ các môn không dạy ở khối đó theo chương trình GDPT 2018, và ngược lại — chặn sai từ đầu vào.</span>
+            <span class="en">Picking a grade greys out subjects not taught at that grade under the 2018 curriculum, and vice versa — errors blocked at entry.</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="img/edu-thu-vien-top.jpg" alt="Thư viện giáo án với các nút lọc theo 12 môn học, ô tìm kiếm theo chủ đề và bộ lọc khối, học kỳ.">
+          <figcaption>
+            <b>03 · Library</b>
+            <span class="vi">Lọc theo đủ 12 môn của chương trình tiểu học, kèm tìm theo chủ đề, khối và học kỳ.</span>
+            <span class="en">Filters across all 12 primary-curriculum subjects, with search by topic, grade and term.</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="sheet-bd">
+        <h4 class="sub vi">Đối chiếu dữ liệu thật thay vì suy đoán</h4>
+        <h4 class="sub en">Checking against real data instead of assuming</h4>
+        <p class="vi">Bản đặc tả đầu tiên của tôi dựng khung giáo án từ suy đoán. Sau đó tôi lấy <strong>một file giáo án thật đang dùng — tuần 28, lớp 2, năm học 2025–2026</strong> — ra đối chiếu từng mục, và phát hiện bản suy đoán sai ba chỗ. Tôi sửa lại đặc tả, cập nhật cả user story lẫn ERD, và ghi rõ lý do sửa ngay trong tài liệu để người sau không lặp lại.</p>
+        <p class="en">My first specification built the template from assumption. I then took <strong>one real lesson plan in active use — week 28, grade 2, school year 2025–2026</strong> — and checked it section by section, finding three points where the assumed version was wrong. I corrected the specification, updated both the user stories and the ERD, and recorded why in the document itself so nobody repeats it.</p>
+        <div class="tablewrap">
+          <table>
+            <caption><span class="vi">Ba điểm sai được phát hiện khi đối chiếu bản mẫu thật</span><span class="en">Three errors surfaced by checking against the real document</span></caption>
+            <thead>
+              <tr>
+                <th class="vi">Bản suy đoán ban đầu</th><th class="en">Assumed version</th>
+                <th class="vi">Mẫu thật</th><th class="en">Real template</th>
+                <th class="vi">Hệ quả nếu không sửa</th><th class="en">Consequence if left</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="vi">Gộp “Năng lực” thành một khối rồi mới tách Phẩm chất</td>
+                <td class="en">“Competencies” as one block, then a separate “Qualities”</td>
+                <td class="vi">Ba mục ngang hàng: Năng lực đặc thù, Năng lực chung, Phẩm chất</td>
+                <td class="en">Three peer sections: subject-specific, general, qualities</td>
+                <td class="vi">Sai cấu trúc mục I, giáo viên phải gõ lại thủ công</td>
+                <td class="en">Section I structurally wrong, retyped by hand</td>
+              </tr>
+              <tr>
+                <td class="vi">Có mục “Đánh giá” đứng riêng cuối giáo án</td>
+                <td class="en">A standalone “Assessment” section at the end</td>
+                <td class="vi">Không có mục này; chỉ có “Điều chỉnh sau bài dạy” để trống</td>
+                <td class="en">No such section; only a blank “Post-lesson adjustment” line</td>
+                <td class="vi">Thừa một mục không có trong quy định</td>
+                <td class="en">An extra section the regulation does not contain</td>
+              </tr>
+              <tr>
+                <td class="vi">Ghi thời lượng từng khối theo phút</td>
+                <td class="en">Per-block duration in minutes</td>
+                <td class="vi">Mẫu thật không ghi thời lượng</td>
+                <td class="en">The real template records no durations</td>
+                <td class="vi">Thêm ràng buộc giả, bó tay giáo viên khi dạy</td>
+                <td class="en">An invented constraint that boxes the teacher in</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="sub vi">Từ văn bản quy phạm ra luật sinh nội dung</h4>
+        <h4 class="sub en">From regulation to generation rules</h4>
+        <ul class="tight">
+          <li class="vi"><strong>Bốn khối hoạt động cố định</strong> theo đúng tên trong mẫu: Mở đầu → Hình thành kiến thức → Luyện tập, thực hành → Vận dụng, trải nghiệm.</li>
+          <li class="en"><strong>Four fixed activity blocks</strong> named exactly as in the template: opening → knowledge building → practice → application.</li>
+          <li class="vi"><strong>Mỗi môn một cách triển khai riêng</strong>, không dùng chung một khuôn: Toán mở đầu bằng trò chơi thi đua rồi giải tuần tự từng bài; Tiếng Việt đi theo trục nghe-nói → đọc → viết; Hoạt động trải nghiệm mở đầu bằng hát hoặc vận động rồi kết thúc bằng một việc làm cụ thể.</li>
+          <li class="en"><strong>A distinct pattern per subject</strong>, not one shared mould: Maths opens with a competitive game then works exercise by exercise; Vietnamese follows listen-speak → read → write; Experiential Activities opens with a song or movement and ends in a concrete action.</li>
+          <li class="vi"><strong>Ba mức độ nhận thức</strong> theo Thông tư 27/2020 — Nhận biết / Thông hiểu / Vận dụng — áp dụng thống nhất cho cả bài tập lẫn đề kiểm tra tổng hợp, giáo viên nhập số câu theo từng mức.</li>
+          <li class="en"><strong>Three cognitive levels</strong> per Circular 27/2020 — recognise / understand / apply — applied consistently to both exercises and composite tests, with the teacher setting a count per level.</li>
+          <li class="vi"><strong>Bản xem trước phải là trang giấy trắng đen</strong> đúng như file Word tải về, không dùng lại giao diện web màu hồng — vì tiêu chí nghiệm thu là “khớp 100% với file tải về”.</li>
+          <li class="en"><strong>The preview must render as the plain black-and-white page</strong> the Word export produces, not the pink web interface — because the acceptance criterion is a 100% match with the downloaded file.</li>
+        </ul>
+
+        <div class="rule-note">
+          <span class="lbl vi">Rủi ro được xử lý ngay từ đặc tả</span><span class="lbl en">A risk handled in the specification itself</span>
+          <p class="vi">Rủi ro lớn nhất của sản phẩm không phải kỹ thuật mà là <strong>giáo viên không tin nội dung AI viết</strong>. Nên toàn bộ luồng được đặc tả theo hướng AI chỉ đưa bản nháp: giáo viên luôn xem và sửa trực tiếp trước khi xuất file, và lượt sử dụng miễn phí <strong>chỉ bị trừ khi tạo thành công</strong> — sửa lại không tốn thêm lượt.</p>
+          <p class="en">The product's biggest risk is not technical but that <strong>teachers will not trust AI-written content</strong>. So the whole flow is specified around AI producing only a draft: the teacher always reviews and edits in place before exporting, and a free-tier credit is <strong>consumed only on a successful generation</strong> — editing costs nothing extra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 — skills system ============ -->
+  <section>
+    <div class="shead">
+      <span class="snum">05</span>
+      <h2 class="vi">Bộ công cụ BA vận hành bằng AI</h2>
+      <h2 class="en">An AI-operated BA toolkit</h2>
+      <span class="tag vi">Cách tôi làm việc</span><span class="tag en">How I work</span>
+    </div>
+
+    <p class="lede vi">Tôi không dùng AI theo kiểu hỏi đáp rời rạc. Tôi đóng gói từng bước trong quy trình BA thành một lệnh có đầu vào, đầu ra và điều kiện nghiệm thu rõ ràng, rồi nối chúng thành một chuỗi liền mạch từ ý tưởng đến nghiệm thu. Tại LumusAI tôi xây <strong>hơn 30 quy trình</strong> theo cách này, rút khoảng 70% thời gian xử lý. Riêng trong dự án Sali, bộ công cụ gồm <strong>15 lệnh nghiệp vụ tôi tự viết</strong>, 9 lệnh kỹ thuật cài sẵn từ bên ngoài, 12 bộ quy tắc nền và 3 tác nhân tự rà soát chất lượng.</p>
+    <p class="lede en">I do not use AI as scattered question-and-answer. I package each step of the BA process into a command with defined inputs, outputs and acceptance conditions, then chain them from idea to sign-off. At LumusAI I built <strong>over 30 such workflows</strong>, cutting roughly 70% of handling time. Within Sali alone the toolkit holds <strong>15 business commands I wrote myself</strong>, 9 off-the-shelf technical ones, 12 governing rule sets and 3 self-review agents.</p>
+
+    <div class="sheet">
+      <div class="sheet-bd">
+        <div class="phases">
+          <div class="phase">
+            <span class="id">01 · Capture</span>
+            <h5 class="vi">Thu thập &amp; làm rõ</h5><h5 class="en">Elicit &amp; clarify</h5>
+            <div class="skills"><span class="own">brainstorm</span></div>
+            <p style="margin:9px 0 0;font-size:.85rem;color:var(--ink-2)" class="vi">Phỏng vấn từng phần một, ép chốt con số cụ thể, không dồn năm câu vào một lượt hỏi.</p>
+            <p style="margin:9px 0 0;font-size:.85rem;color:var(--ink-2)" class="en">Interviews section by section, pushes for exact figures, never bundles five questions into one prompt.</p>
+          </div>
+          <div class="phase">
+            <span class="id">02 · Specify</span>
+            <h5 class="vi">Đặc tả &amp; mô hình hoá</h5><h5 class="en">Specify &amp; model</h5>
+            <div class="skills">
+              <span class="own">user-flow</span><span class="own">usecase-diagram</span><span class="own">sequence</span>
+              <span class="own">activity</span><span class="own">activity-swimlane</span><span class="own">bpmn</span>
+              <span class="own">state</span><span class="own">erd</span><span class="own">dbdiagram</span>
+              <span class="own">d2-erd</span><span class="own">d2-activity</span><span class="own">d2-architect</span>
+              <span class="own">wireframe-html</span>
+            </div>
+          </div>
+          <div class="phase">
+            <span class="id">03 · Deliver</span>
+            <h5 class="vi">Bàn giao</h5><h5 class="en">Hand over</h5>
+            <div class="skills"><span class="own">userguide</span></div>
+            <p style="margin:9px 0 0;font-size:.85rem;color:var(--ink-2)" class="vi">Sinh cẩm nang vận hành cho admin và chăm sóc khách hàng từ chính tài liệu BA đã có.</p>
+            <p style="margin:9px 0 0;font-size:.85rem;color:var(--ink-2)" class="en">Generates the admin and support handbook straight from the BA documents already written.</p>
+          </div>
+          <div class="phase">
+            <span class="id">04 · Data</span>
+            <h5 class="vi">Tầng dữ liệu</h5><h5 class="en">Data layer</h5>
+            <div class="skills">
+              <span>prisma-cli</span><span>prisma-client-api</span><span>prisma-postgres</span>
+              <span>+ 6 <span class="vi">lệnh khác</span><span class="en">more</span></span>
+            </div>
+            <p style="margin:9px 0 0;font-size:.85rem;color:var(--ink-2)" class="vi">Cài sẵn từ nhà cung cấp, không phải tôi viết — nêu ra để phân định rõ phần nào là của mình.</p>
+            <p style="margin:9px 0 0;font-size:.85rem;color:var(--ink-2)" class="en">Vendor-provided, not written by me — listed so the boundary of my own work stays clear.</p>
+          </div>
+        </div>
+
+        <h4 class="sub vi">Ba mức duyệt trước khi bất kỳ tài liệu nào được ghi</h4>
+        <h4 class="sub en">Three approval levels before any document is written</h4>
+        <p class="vi">Quy tắc quan trọng nhất trong bộ công cụ: <strong>không lệnh nào được tự ý ghi đè tài liệu</strong>. Người dùng luôn ở trong vòng quyết định.</p>
+        <p class="en">The most important rule in the toolkit: <strong>no command may overwrite a document on its own</strong>. A human stays in the decision loop.</p>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="vi">Mức</th><th class="en">Level</th>
+                <th class="vi">Áp dụng khi</th><th class="en">Applies when</th>
+                <th class="vi">Người dùng thấy gì</th><th class="en">What the user sees</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">L1</td>
+                <td class="vi">Trước mọi lần tạo hoặc sửa tài liệu, kể cả khi chỉ một file</td>
+                <td class="en">Before any create or edit, even for a single file</td>
+                <td class="vi">Bản tóm tắt bằng từ nghiệp vụ: sẽ thêm gì, số liệu nào được chốt, còn bao nhiêu câu hỏi mở</td>
+                <td class="en">A plain-language summary: what is added, which figures are fixed, how many questions remain open</td>
+              </tr>
+              <tr>
+                <td class="mono">L2</td>
+                <td class="vi">Khi sửa tài liệu đã tồn tại</td>
+                <td class="en">When editing a document that already exists</td>
+                <td class="vi">So sánh trước–sau từng dòng, duyệt hoặc từ chối riêng từng thay đổi</td>
+                <td class="en">A line-by-line before/after, approved or rejected change by change</td>
+              </tr>
+              <tr>
+                <td class="mono">L3</td>
+                <td class="vi">Với bản nháp sáng tạo: wireframe, sơ đồ, đoạn văn dài</td>
+                <td class="en">For creative drafts: wireframes, diagrams, long prose</td>
+                <td class="vi">Tối đa ba vòng chỉnh, vòng ba là vòng chốt — tránh sa đà vô hạn</td>
+                <td class="en">At most three revision rounds, the third being final — no endless polishing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="sub vi">Quy ước mã định danh để truy vết xuyên tài liệu</h4>
+        <h4 class="sub en">ID conventions for cross-document traceability</h4>
+        <p class="vi">Mỗi yêu cầu mang một mã có tiền tố theo tính năng. Nhờ vậy khi tổng hợp nhiều tính năng lại vẫn <strong>không bị trùng mã</strong>, và luôn lần ngược được từ một tiêu chí nghiệm thu về đúng mục tiêu kinh doanh đã sinh ra nó.</p>
+        <p class="en">Every requirement carries a feature-prefixed ID. That keeps IDs <strong>collision-free</strong> when several features are aggregated, and lets any acceptance criterion be traced back to the business objective that produced it.</p>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="vi">Loại</th><th class="en">Type</th>
+                <th class="vi">Định dạng mã</th><th class="en">ID format</th>
+                <th class="vi">Ví dụ</th><th class="en">Example</th>
+                <th class="vi">Nằm ở đâu</th><th class="en">Lives in</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="vi">Mục tiêu kinh doanh</td><td class="en">Business objective</td><td class="mono">BO-{feature}-{NN}</td><td><code>BO-payment-01</code></td><td class="mono">brd.md</td></tr>
+              <tr><td class="vi">Năng lực sản phẩm</td><td class="en">Product capability</td><td class="mono">CAP-{feature}-{NN}</td><td><code>CAP-payment-01</code></td><td class="mono">prd.md</td></tr>
+              <tr><td class="vi">Yêu cầu chức năng</td><td class="en">Functional requirement</td><td class="mono">FR-{feature}-{NNN}</td><td><code>FR-payment-001</code></td><td class="mono">srs/spec.md</td></tr>
+              <tr><td class="vi">Quy tắc nghiệp vụ</td><td class="en">Business rule</td><td class="mono">BR-{feature}-{NNN}</td><td><code>BR-payment-001</code></td><td class="mono">srs/spec.md</td></tr>
+              <tr><td class="vi">Tiêu chí nghiệm thu</td><td class="en">Acceptance criterion</td><td class="mono">AC-{NNN}</td><td><code>AC-001</code></td><td class="mono">userstories/us-001.md</td></tr>
+              <tr><td class="vi">Yêu cầu thay đổi</td><td class="en">Change request</td><td class="mono">CR-{YYYYMMDD}-{NNN}</td><td><code>CR-20260512-001</code></td><td class="mono">changes/</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rule-note">
+          <span class="lbl vi">Câu hỏi mở không được phép trôi qua giai đoạn sau</span><span class="lbl en">Open questions may not drift downstream</span>
+          <p class="vi">Khi một câu hỏi mở được trả lời, hệ thống <strong>quét ngược lên tài liệu cấp trên và quét xuôi xuống tài liệu cấp dưới</strong> để tìm mọi mục còn ghi giả định cũ, rồi đề xuất sửa từng mục một. Đánh dấu “đã giải quyết” mà các phần Giả định, Rủi ro, Bước tiếp theo vẫn giữ nội dung cũ thì câu hỏi đó chỉ được giải quyết trên giấy.</p>
+          <p class="en">When an open question is answered, the system <strong>scans upstream and downstream documents</strong> for every section still carrying the old assumption and proposes a fix for each. Marking a question resolved while Assumptions, Risks and Next Steps still state the old position resolves it on paper only.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 — experience ============ -->
+  <section>
+    <div class="shead">
+      <span class="snum">06</span>
+      <h2 class="vi">Kinh nghiệm nghề nghiệp</h2>
+      <h2 class="en">Professional experience</h2>
+      <span class="tag vi">2022 – nay</span><span class="tag en">2022 – present</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="vi">Thời gian</th><th class="en">Period</th>
+            <th class="vi">Nơi làm việc &amp; vai trò</th><th class="en">Employer &amp; role</th>
+            <th class="vi">Dự án</th><th class="en">Projects</th>
+            <th class="vi">Kết quả nổi bật</th><th class="en">Notable outcomes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">09/2025 —<br><span class="vi">nay</span><span class="en">present</span></td>
+            <td><strong>Savameta</strong><br><span class="vi">Business Analyst, kiêm Mini Product Owner tại LumusAI</span><span class="en">Business Analyst, also Mini Product Owner on LumusAI</span></td>
+            <td class="vi">LumusAI (AI Agent), Metaverse (VR)</td>
+            <td class="en">LumusAI (AI Agent), Metaverse (VR)</td>
+            <td class="vi">Xây hệ thống hơn 30 quy trình BA ứng dụng AI dùng xuyên suốt từ ý tưởng đến nghiệm thu, rút ~70% thời gian xử lý. Cùng PO dựng lộ trình sản phẩm theo RICE-lite. Đưa sản phẩm VR lên Meta Store, đạt 300 lượt tải tháng đầu.</td>
+            <td class="en">Built a 30+ workflow AI-assisted BA system used from idea to sign-off, cutting ~70% of handling time. Co-built the product roadmap on RICE-lite. Shipped the VR product to the Meta Store — 300 downloads in month one.</td>
+          </tr>
+          <tr>
+            <td class="num">01/2024 —<br>09/2025</td>
+            <td><strong>GaneshAID Consultancy</strong><br>Business Analyst</td>
+            <td class="vi">C2P, Ganeshaid Suite, Capev, Vacciform, LMS, Chatbot AI</td>
+            <td class="en">C2P, Ganeshaid Suite, Capev, Vacciform, LMS, AI Chatbot</td>
+            <td class="vi">Bàn giao C2P đúng hạn, dẫn tới hợp đồng sử dụng 3 năm. LMS được demo và ký kết với 4 tổ chức tại 4 quốc gia. Hợp nhất các hệ thống rời rạc với quy tắc riêng theo từng nước thành một nền tảng chung. Xử lý khoảng 80% tồn đọng lỗi và yêu cầu thay đổi của Capev.</td>
+            <td class="en">Delivered C2P on time, leading to a 3-year usage contract. LMS pitched and signed with 4 organisations in 4 countries. Consolidated separate country-specific systems onto one platform. Cleared roughly 80% of Capev's backlog of defects and change requests.</td>
+          </tr>
+          <tr>
+            <td class="num">05/2023 —<br>12/2023</td>
+            <td><strong>BestPrice Travel Technology</strong><br><span class="vi">Quality Control kiêm Business Analyst</span><span class="en">Quality Control cum Business Analyst</span></td>
+            <td class="vi">Nền tảng bán thuốc trực tuyến; nền tảng du lịch đa dịch vụ</td>
+            <td class="en">Online pharmacy platform; multi-service travel platform</td>
+            <td class="vi">Viết đặc tả và hướng dẫn sử dụng cho nhiều loại dịch vụ đặt chỗ trên cùng nền tảng, đồng thời tạo và chạy testcase, quản lý lỗi trên Jira.</td>
+            <td class="en">Wrote specifications and user guides across several booking services on one platform, while writing and running test cases and managing defects in Jira.</td>
+          </tr>
+          <tr>
+            <td class="num">06/2022 —<br>05/2023</td>
+            <td><strong>SMAC Vietnam IT</strong><br>Quality Control</td>
+            <td class="vi">Hệ thống ngân hàng; nền tảng thương mại điện tử</td>
+            <td class="en">Banking system; e-commerce platform</td>
+            <td class="vi">Phân tích tài liệu đặc tả thành checklist kiểm thử, tạo và rà soát testcase, kiểm thử toàn diện, lập báo cáo kiểm thử.</td>
+            <td class="en">Turned specifications into test checklists, wrote and reviewed test cases, ran full test passes and produced test reports.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="stats" style="margin-top:26px">
+      <div class="stat">
+        <span class="tb-key vi">Nghiệp vụ</span><span class="tb-key en">Business</span>
+        <span class="l vi" style="margin-top:6px">Phân tích yêu cầu · Mô hình hoá quy trình (BPMN, Activity, Sequence) · Lộ trình &amp; ưu tiên (RICE) · Khai thác insight khách hàng (JTBD)</span>
+        <span class="l en" style="margin-top:6px">Requirement engineering · Process modelling (BPMN, Activity, Sequence) · Roadmap &amp; prioritisation (RICE) · Customer insight discovery (JTBD)</span>
+      </div>
+      <div class="stat">
+        <span class="tb-key vi">Nền tảng AI</span><span class="tb-key en">AI foundations</span>
+        <span class="l" style="margin-top:6px">RAG · Prompt Engineering · Context Engineering · Graph Engineering</span>
+      </div>
+      <div class="stat">
+        <span class="tb-key vi">Công cụ</span><span class="tb-key en">Tools</span>
+        <span class="l" style="margin-top:6px">Jira · Confluence · Obsidian · Figma (MCP) · Draw.io · Postman</span>
+      </div>
+      <div class="stat">
+        <span class="tb-key vi">Học vấn &amp; chứng chỉ</span><span class="tb-key en">Education &amp; certificates</span>
+        <span class="l vi" style="margin-top:6px">Cử nhân Kinh tế Đầu tư, Học viện Ngân hàng (2022) · Advanced Business Analyst (2023) · Experienced Tester, VTTA (2022)</span>
+        <span class="l en" style="margin-top:6px">BA in Investment Economics, Banking Academy (2022) · Advanced Business Analyst (2023) · Experienced Tester, VTTA (2022)</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="cta">
+      <h3 class="vi">Rất mong được trao đổi thêm</h3>
+      <h3 class="en">Happy to talk further</h3>
+      <p class="vi">Nếu anh/chị muốn xem sâu hơn bất kỳ phần nào — tài liệu đặc tả gốc, bảng truy vết yêu cầu, hay bản demo chạy trực tiếp — tôi sẵn sàng trình bày chi tiết.</p>
+      <p class="en">If you would like to go deeper into any part — the original specifications, the traceability matrix, or a live demo — I am glad to walk through it.</p>
+    </div>
+    <div class="links">
+      <a href="mailto:phamlinh278.work@gmail.com">phamlinh278.work@gmail.com</a>
+      <a href="tel:+84866839295">0866 839 295</a>
+      <a href="https://linkedin.com/in/pham-thuy-linh-55079331b" target="_blank" rel="noopener">linkedin.com/in/pham-thuy-linh-55079331b</a>
+    </div>
+    <div class="stamp">
+      <span class="vi">Hồ sơ năng lực · Phạm Thùy Linh · Cập nhật 09/2026 · Mọi ảnh chụp đều lấy từ ứng dụng đang chạy thật</span>
+      <span class="en">Portfolio · Phạm Thùy Linh · Updated 09/2026 · Every screenshot is taken from a live, running application</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btnVi = document.getElementById('btn-vi');
+  var btnEn = document.getElementById('btn-en');
+  function apply(lang){
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'vi');
+    btnVi.setAttribute('aria-pressed', String(lang !== 'en'));
+    btnEn.setAttribute('aria-pressed', String(lang === 'en'));
+    try { localStorage.setItem('ptl-portfolio-lang', lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('ptl-portfolio-lang'); } catch (e) {}
+  apply(saved === 'en' ? 'en' : 'vi');
+  btnVi.addEventListener('click', function(){ apply('vi'); });
+  btnEn.addEventListener('click', function(){ apply('en'); });
+})();
+</script>
+</body>
+</html>
