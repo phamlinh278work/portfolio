@@ -232,6 +232,28 @@ section{margin-top:62px}
 .meta .k{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);display:block}
 .meta .v{font-size:.9rem;font-weight:600;display:block;margin-top:2px}
 
+/* ---------- problem / insight ---------- */
+.pi{display:grid;gap:14px;grid-template-columns:1fr;align-items:start;padding:2px 28px 8px}
+@media (min-width:840px){.pi{grid-template-columns:1fr 1.15fr}}
+.pi > div{border-radius:var(--r-md);padding:19px 21px 21px}
+.pi-problem{background:var(--coral-wash)}
+.pi-insight{background:var(--teal-wash)}
+.pi .lbl{font-family:var(--f-mono);font-size:.67rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;display:block;margin-bottom:11px}
+.pi-problem .lbl{color:var(--coral)}
+.pi-insight .lbl{color:var(--teal-deep)}
+.pi p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.62}
+.pi ol{margin:0;padding:0;list-style:none;counter-reset:ins}
+.pi ol li{position:relative;padding-left:32px;margin-bottom:14px;font-size:.94rem;color:var(--ink-2);line-height:1.56}
+.pi ol li:last-child{margin-bottom:0}
+.pi ol li::before{
+  counter-increment:ins;content:counter(ins);
+  position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:7px;
+  background:var(--teal);color:#fff;font-family:var(--f-mono);font-size:.68rem;font-weight:700;
+  display:grid;place-items:center;
+}
+.pi ol li b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}
+@media (max-width:720px){.pi{padding-left:20px;padding-right:20px}}
+
 h4.sub{font-family:var(--f-display);font-weight:700;font-size:1.12rem;margin:30px 0 12px;letter-spacing:-.012em}
 h4.sub:first-child{margin-top:0}
 ul.tight{margin:.6em 0 0;padding-left:1.15em;color:var(--ink-2);font-size:.96rem}
@@ -481,11 +503,28 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
 
     <div class="card">
       <div class="card-hd">
-        <span class="kicker vi">Bài toán</span><span class="kicker en">The problem</span>
+        <span class="kicker vi">Dự án cá nhân</span><span class="kicker en">Personal project</span>
         <h3 class="vi">Đọc 3–4 cuốn sách ngoại văn mỗi tuần mà không phải dịch thủ công</h3>
         <h3 class="en">Reading 3–4 foreign-language books a week without translating by hand</h3>
-        <p class="vi">Dịch máy từng đoạn thì mất mạch đọc; dịch cả cuốn thì tốn tiền cho phần không đọc tới; và hạn mức tài khoản AI luôn hết giữa chừng. Tôi đặc tả sản phẩm quanh đúng ba ràng buộc đó: <span class="hl">dịch theo chương khi cần</span>, <span class="hl">lưu lại vĩnh viễn để không gọi lại API</span>, và <span class="hl">tự đổi tài khoản khi hết hạn mức</span>.</p>
-        <p class="en">Translating passage by passage breaks the reading flow; translating a whole book pays for pages never read; and AI account quotas always run out mid-way. I specified the product around exactly those three constraints: <span class="hl">translate per chapter, on demand</span>, <span class="hl">cache permanently so the API is never called twice</span>, and <span class="hl">switch accounts automatically when quota runs out</span>.</p>
+      </div>
+
+      <div class="pi">
+        <div class="pi-problem">
+          <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
+          <p class="vi">Dịch máy từng đoạn thì mất mạch đọc. Dịch cả cuốn một lần thì trả tiền cho phần sách sẽ không bao giờ đọc tới. Và hạn mức tài khoản AI thì luôn hết đúng lúc đang đọc dở. Ba thứ này kéo nhau: muốn rẻ thì phải cắt nhỏ, mà cắt nhỏ thì lại đứt mạch đọc.</p>
+          <p class="en">Translating passage by passage breaks the reading flow. Translating a whole book at once pays for pages that will never be read. And the AI account quota always runs out exactly mid-chapter. The three pull against each other: keeping it cheap means cutting it small, and cutting it small breaks the reading.</p>
+        </div>
+        <div class="pi-insight">
+          <span class="lbl">Insight</span>
+          <ol>
+            <li class="vi"><b>Đơn vị của việc đọc là chương, không phải cuốn sách.</b>Khi lấy chương làm đơn vị, ba thứ tự rơi vào chỗ cùng lúc: trả tiền theo chương, lưu lại theo chương, và mở lại đúng chương đang dở. Mọi màn hình trong ứng dụng đều dựng quanh đơn vị này.</li>
+            <li class="en"><b>The unit of reading is the chapter, not the book.</b>Once the chapter is the unit, three things fall into place at once: you pay per chapter, you cache per chapter, and you resume at the exact chapter. Every screen in the app is built around that unit.</li>
+            <li class="vi"><b>Phần lớn chi phí AI là tiền trả để hỏi lại thứ file đã tự khai báo.</b>Nhà xuất bản thường nhúng sẵn mục lục điện tử, cây cấu trúc, hoặc in thẳng trang mục lục trong sách. Nhìn ra điều này mới đẻ ra quy trình 5 tầng ở Mục 03 — AI chỉ được gọi ở chỗ file thật sự im lặng.</li>
+            <li class="en"><b>Most AI spend is money paid to ask a file what it already states.</b>Publishers usually embed a digital outline, a structure tree, or simply print a contents page. Seeing that is what produced the five-stage pipeline in section 03 — AI is called only where the file is genuinely silent.</li>
+            <li class="vi"><b>Hết hạn mức không phải lỗi để báo người dùng, mà là một quyết định định tuyến.</b>Ngược lại, lỗi mạng thì đúng là lỗi và phải báo ra. Tách được hai loại này mới thiết kế nổi cơ chế đổi tài khoản chạy ngầm mà người đang đọc không hề biết có chuyện gì xảy ra.</li>
+            <li class="en"><b>Running out of quota is not an error to report — it is a routing decision.</b>A network failure, by contrast, really is an error and must be surfaced. Separating the two is what makes account rotation invisible to the person reading.</li>
+          </ol>
+        </div>
       </div>
 
       <div class="meta">
@@ -773,11 +812,30 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
 
     <div class="card">
       <div class="card-hd">
-        <span class="kicker vi">Bài toán</span><span class="kicker en">The problem</span>
+        <span class="kicker vi">Dự án cá nhân</span><span class="kicker en">Personal project</span>
         <h3 class="vi">Giáo án phải đúng khung Bộ quy định, không chỉ cần “nghe hay”</h3>
         <h3 class="en">A lesson plan has to match the ministry template, not merely read well</h3>
-        <p class="vi">Giáo viên dạy nhiều khối phải soạn nhiều phiên bản giáo án, mỗi bản đều phải đúng khung do Bộ Giáo dục và Đào tạo quy định thì mới nộp được. Một công cụ AI viết trôi chảy nhưng sai khung thì vô dụng — nên phần khó của dự án này không nằm ở việc gọi AI, mà ở việc <span class="hl">xác định chính xác cái khung đó là gì</span>.</p>
-        <p class="en">Teachers covering several grades write several versions of each plan, and every one must follow the template set by the Ministry of Education and Training to be accepted. An AI tool that writes fluently but off-template is useless — so the hard part here was never calling the AI, it was <span class="hl">pinning down what the template actually is</span>.</p>
+      </div>
+
+      <div class="pi">
+        <div class="pi-problem">
+          <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
+          <p class="vi">Giáo viên dạy nhiều khối phải soạn nhiều phiên bản giáo án, và bản nào cũng phải đúng khung Bộ Giáo dục và Đào tạo quy định thì mới nộp được. Một công cụ AI viết trôi chảy nhưng sai khung thì giáo viên vẫn phải ngồi gõ lại từ đầu — tức là không tiết kiệm được gì cả.</p>
+          <p class="en">Teachers covering several grades write several versions of each plan, and every one must follow the ministry template to be accepted. An AI tool that writes fluently but off-template still leaves the teacher retyping from scratch — which saves nothing at all.</p>
+        </div>
+        <div class="pi-insight">
+          <span class="lbl">Insight</span>
+          <ol>
+            <li class="vi"><b>Giáo viên không cần ai viết hộ — họ cần thứ viết ra là nộp được.</b>Nghĩ nội dung không phải phần tốn thời gian nhất; làm cho khớp khung quy định mới là phần tốn thời gian. Giá trị sản phẩm vì thế nằm ở độ khớp mẫu, không nằm ở văn hay.</li>
+            <li class="en"><b>Teachers don't need someone to write for them — they need something they can submit.</b>Thinking up the content is not what eats the time; making it conform to the official template is. The product's value therefore sits in template fidelity, not in fluent prose.</li>
+            <li class="vi"><b>Khung giáo án không suy ra được từ văn bản quy phạm.</b>Công văn quy định phải <em>đạt</em> những gì, không quy định trang giấy <em>trình bày</em> ra sao. Chỉ một file giáo án thật đang dùng mới cho biết hình dạng thật — và khi đối chiếu, tôi phát hiện bản suy đoán của mình sai ba chỗ.</li>
+            <li class="en"><b>The template cannot be derived from the regulation.</b>The circulars state what must be <em>achieved</em>, not how the page is <em>laid out</em>. Only a real plan in active use reveals the actual shape — and checking against one showed my assumed version was wrong in three places.</li>
+            <li class="vi"><b>Mỗi môn có một nhịp dạy riêng; dùng chung một khuôn là lộ ngay.</b>Toán mở đầu bằng trò chơi thi đua rồi giải tuần tự từng bài; Tiếng Việt đi theo trục nghe-nói → đọc → viết. Giáo viên đọc một dòng là biết giáo án có do người hiểu môn đó viết ra hay không.</li>
+            <li class="en"><b>Each subject has its own teaching rhythm; one shared mould gives itself away.</b>Maths opens with a competitive game then works exercise by exercise; Vietnamese moves listen-speak → read → write. A teacher can tell from a single line whether the plan came from someone who knows the subject.</li>
+            <li class="vi"><b>Rào cản lớn nhất là niềm tin, không phải độ chính xác.</b>Nên lượt miễn phí chỉ bị trừ khi tạo thành công, và giáo viên luôn sửa được trước khi xuất file — để không ai phải sợ mất một lượt vì một bản nháp chưa ưng.</li>
+            <li class="en"><b>The biggest barrier is trust, not accuracy.</b>So a free credit is consumed only on a successful generation, and the teacher can always edit before exporting — nobody should fear losing a credit to a draft they don't like.</li>
+          </ol>
+        </div>
       </div>
 
       <div class="meta">
