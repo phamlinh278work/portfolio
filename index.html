@@ -242,16 +242,7 @@ section{margin-top:62px}
 .pi-problem .lbl{color:var(--coral)}
 .pi-insight .lbl{color:var(--teal-deep)}
 .pi p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.62}
-.pi ol{margin:0;padding:0;list-style:none;counter-reset:ins}
-.pi ol li{position:relative;padding-left:32px;margin-bottom:14px;font-size:.94rem;color:var(--ink-2);line-height:1.56}
-.pi ol li:last-child{margin-bottom:0}
-.pi ol li::before{
-  counter-increment:ins;content:counter(ins);
-  position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:7px;
-  background:var(--teal);color:#fff;font-family:var(--f-mono);font-size:.68rem;font-weight:700;
-  display:grid;place-items:center;
-}
-.pi ol li b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}
+.pi-insight b{display:block;color:var(--ink);font-weight:600;font-size:1.06rem;line-height:1.38;margin-bottom:7px;text-wrap:balance}
 @media (max-width:720px){.pi{padding-left:20px;padding-right:20px}}
 
 h4.sub{font-family:var(--f-display);font-weight:700;font-size:1.12rem;margin:30px 0 12px;letter-spacing:-.012em}
@@ -516,16 +507,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
         </div>
         <div class="pi-insight">
           <span class="lbl">Insight</span>
-          <ol>
-            <li class="vi"><b>Cái mệt không nằm ở bản dịch, mà ở việc phải tự đẩy từng trang lên.</b>Chất lượng dịch vốn đã dùng được rồi; thứ làm người ta bỏ dở giữa chừng là mấy chục lượt chép–dán–chờ cho một cuốn sách. Nên sản phẩm phải nhận nguyên file sách, tự tách chương, và người đọc chỉ bấm một lần cho cả chương.</li>
-            <li class="en"><b>The tiring part is not the translation — it is having to feed the pages up yourself.</b>The translation quality was already good enough; what makes people abandon a book is the dozens of copy–paste–wait rounds it takes. So the product has to accept the book file itself, split it into chapters, and let the reader press once per chapter.</li>
-            <li class="vi"><b>Đơn vị của việc đọc là chương, không phải trang.</b>Trang là đơn vị của cái máy in, không phải của mạch nội dung — cắt theo trang thì câu đứt giữa chừng và ngữ cảnh đứt theo. Lấy chương làm đơn vị thì mạch sách liền, và đó cũng chính là đơn vị để lưu lại và để mở đúng chỗ đang đọc dở.</li>
-            <li class="en"><b>The unit of reading is the chapter, not the page.</b>A page is the printer's unit, not the content's — split by page and sentences break mid-way, taking the context with them. Make the chapter the unit and the book holds together; it is also the right unit to cache and to resume from.</li>
-            <li class="vi"><b>Nghe được ngay tại chương vừa dịch mới là thứ giữ người đọc ở lại.</b>Dịch xong rồi mới đi tìm chỗ khác để đọc thành tiếng là thêm một lần đứt mạch nữa. Nên nút “Nghe” nằm ngay trên chương vừa dịch — đọc bằng mắt hay bằng tai vẫn là một luồng liên tục, và người học được nhàn hơn hẳn.</li>
-            <li class="en"><b>Being able to listen right there, on the chapter just translated, is what keeps a reader going.</b>Finishing a translation and then going somewhere else for audio is one more break in the thread. So the “Nghe” button sits on the chapter itself — reading with your eyes or your ears stays one continuous flow, and far less work for the learner.</li>
-            <li class="vi"><b>Mạch đọc không được phép đứt vì một lý do kỹ thuật.</b>Hết hạn mức tài khoản AI chính là thứ sẽ làm đứt mạch lần nữa — nên nó được xử lý như một quyết định định tuyến chạy ngầm, không phải một thông báo lỗi. Chương đã dịch cũng lưu lại vĩnh viễn, mở lại là có ngay, không gọi lại API.</li>
-            <li class="en"><b>The reading must not break for a technical reason.</b>An exhausted AI quota is exactly what would break it again — so it is handled as a routing decision behind the scenes, not an error message. Translated chapters are also cached permanently: reopening one is instant, with no second API call.</li>
-          </ol>
+          <p class="vi"><b>Cái mệt không nằm ở bản dịch, mà ở việc phải tự đẩy từng trang lên — và mạch sách đứt theo.</b>Chất lượng dịch vốn đã dùng được rồi; thứ làm người ta bỏ dở giữa chừng là mấy chục lượt chép–dán–chờ, rồi cuộc trò chuyện gãy kéo theo ngữ cảnh mất sạch. Nên đơn vị phải là <strong>chương</strong> chứ không phải trang, và nút “Nghe” phải nằm ngay trên chương vừa dịch — để đọc bằng mắt hay bằng tai vẫn là một mạch liên tục, người học nhàn hơn hẳn.</p>
+          <p class="en"><b>The tiring part is not the translation — it is feeding the pages up yourself, and the book's thread breaking with it.</b>The translation quality was already good enough; what makes people abandon a book is the dozens of copy–paste–wait rounds, and then a conversation that grows too long and breaks, taking all the context with it. So the unit has to be the <strong>chapter</strong>, not the page, and the “listen” button has to sit on the chapter just translated — so reading with your eyes or your ears stays one continuous thread, and far less work for the learner.</p>
         </div>
       </div>
 
@@ -827,16 +810,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
         </div>
         <div class="pi-insight">
           <span class="lbl">Insight</span>
-          <ol>
-            <li class="vi"><b>Giáo viên không cần ai viết hộ — họ cần thứ viết ra là nộp được.</b>Nghĩ nội dung không phải phần tốn thời gian nhất; làm cho khớp khung quy định mới là phần tốn thời gian. Giá trị sản phẩm vì thế nằm ở độ khớp mẫu, không nằm ở văn hay.</li>
-            <li class="en"><b>Teachers don't need someone to write for them — they need something they can submit.</b>Thinking up the content is not what eats the time; making it conform to the official template is. The product's value therefore sits in template fidelity, not in fluent prose.</li>
-            <li class="vi"><b>Khung giáo án không suy ra được từ văn bản quy phạm.</b>Công văn quy định phải <em>đạt</em> những gì, không quy định trang giấy <em>trình bày</em> ra sao. Chỉ một file giáo án thật đang dùng mới cho biết hình dạng thật — và khi đối chiếu, tôi phát hiện bản suy đoán của mình sai ba chỗ.</li>
-            <li class="en"><b>The template cannot be derived from the regulation.</b>The circulars state what must be <em>achieved</em>, not how the page is <em>laid out</em>. Only a real plan in active use reveals the actual shape — and checking against one showed my assumed version was wrong in three places.</li>
-            <li class="vi"><b>Mỗi môn có một nhịp dạy riêng; dùng chung một khuôn là lộ ngay.</b>Toán mở đầu bằng trò chơi thi đua rồi giải tuần tự từng bài; Tiếng Việt đi theo trục nghe-nói → đọc → viết. Giáo viên đọc một dòng là biết giáo án có do người hiểu môn đó viết ra hay không.</li>
-            <li class="en"><b>Each subject has its own teaching rhythm; one shared mould gives itself away.</b>Maths opens with a competitive game then works exercise by exercise; Vietnamese moves listen-speak → read → write. A teacher can tell from a single line whether the plan came from someone who knows the subject.</li>
-            <li class="vi"><b>Rào cản lớn nhất là niềm tin, không phải độ chính xác.</b>Nên lượt miễn phí chỉ bị trừ khi tạo thành công, và giáo viên luôn sửa được trước khi xuất file — để không ai phải sợ mất một lượt vì một bản nháp chưa ưng.</li>
-            <li class="en"><b>The biggest barrier is trust, not accuracy.</b>So a free credit is consumed only on a successful generation, and the teacher can always edit before exporting — nobody should fear losing a credit to a draft they don't like.</li>
-          </ol>
+          <p class="vi"><b>Giáo viên không cần ai viết hộ — họ cần thứ viết ra là nộp được.</b>Nghĩ nội dung không phải phần tốn thời gian nhất; làm cho khớp khung quy định mới là phần tốn thời gian. Giá trị sản phẩm vì thế nằm ở <strong>độ khớp mẫu</strong>, không nằm ở văn hay. Mà cái khung đó lại không suy ra được từ văn bản quy phạm — công văn quy định phải <em>đạt</em> những gì, không quy định trang giấy <em>trình bày</em> ra sao; phải lấy một file giáo án thật đang dùng ra đối chiếu mới biết hình dạng thật.</p>
+          <p class="en"><b>Teachers don't need someone to write for them — they need something they can submit.</b>Thinking up the content is not what eats the time; making it conform to the official template is. The product's value therefore sits in <strong>template fidelity</strong>, not in fluent prose. And that template cannot be derived from the regulation — the circulars state what must be <em>achieved</em>, not how the page is <em>laid out</em>; only a real plan in active use reveals its actual shape.</p>
         </div>
       </div>
 
