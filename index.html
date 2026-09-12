@@ -242,6 +242,11 @@ section{margin-top:62px}
 .pi-problem .lbl{color:var(--coral)}
 .pi-insight .lbl{color:var(--teal-deep)}
 .pi p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.62}
+.pi-problem ul{margin:.75em 0 0;padding-left:1.05em}
+.pi-problem li{margin-bottom:.4em;font-size:.94rem;color:var(--ink-2);line-height:1.5}
+.pi-problem li:last-child{margin-bottom:0}
+.pi-problem li::marker{color:var(--coral)}
+.pi-lead{margin:0;font-size:.95rem;color:var(--ink);font-weight:600;line-height:1.5}
 .pi-insight b{display:block;color:var(--ink);font-weight:600;font-size:1.06rem;line-height:1.38;margin-bottom:7px;text-wrap:balance}
 @media (max-width:720px){.pi{padding-left:20px;padding-right:20px}}
 
@@ -502,13 +507,23 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
       <div class="pi">
         <div class="pi-problem">
           <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
-          <p class="vi">Trước khi có LinHiêu, muốn đọc một cuốn sách tiếng Anh bằng tiếng Việt thì phải tự chép từng trang dán vào Gemini, dịch xong mới bảo nó đọc thành tiếng. Mỗi trang là một lượt thao tác tay. Đi được vài chục trang thì cuộc trò chuyện quá dài và gãy, phải mở phiên mới — mạch sách đứt theo, ngữ cảnh chương trước không còn, giọng đọc cũng không nối tiếp được.</p>
-          <p class="en">Before LinHiêu, reading an English book in Vietnamese meant copying it into Gemini one page at a time, then asking for the audio once the translation came back. Every page was a manual round trip. A few dozen pages in, the conversation grew too long and broke, forcing a new session — and the book broke with it: the earlier chapters' context was gone, and the narration would not carry on.</p>
+          <p class="pi-lead vi">Dịch sách tiếng Anh bằng Gemini vẫn là việc thủ công.</p>
+          <p class="pi-lead en">Translating an English book in Gemini is still manual work.</p>
+          <ul class="vi">
+            <li>Dán từng trang, chờ dịch, xong mới xin được audio.</li>
+            <li>Vài chục trang là cuộc trò chuyện gãy, mất ngữ cảnh.</li>
+            <li>Mạch đọc đứt giữa chừng, phải dựng lại từ đầu.</li>
+          </ul>
+          <ul class="en">
+            <li>Paste each page, wait for the translation, then ask for audio.</li>
+            <li>A few dozen pages in, the conversation breaks and context is lost.</li>
+            <li>The reading thread snaps and has to be rebuilt from scratch.</li>
+          </ul>
         </div>
         <div class="pi-insight">
           <span class="lbl">Insight</span>
-          <p class="vi"><b>Cái mệt không nằm ở bản dịch, mà ở việc phải tự đẩy từng trang lên — và mạch sách đứt theo.</b>Chất lượng dịch vốn đã dùng được rồi; thứ làm người ta bỏ dở giữa chừng là mấy chục lượt chép–dán–chờ, rồi cuộc trò chuyện gãy kéo theo ngữ cảnh mất sạch. Nên đơn vị phải là <strong>chương</strong> chứ không phải trang, và nút “Nghe” phải nằm ngay trên chương vừa dịch — để đọc bằng mắt hay bằng tai vẫn là một mạch liên tục, người học nhàn hơn hẳn.</p>
-          <p class="en"><b>The tiring part is not the translation — it is feeding the pages up yourself, and the book's thread breaking with it.</b>The translation quality was already good enough; what makes people abandon a book is the dozens of copy–paste–wait rounds, and then a conversation that grows too long and breaks, taking all the context with it. So the unit has to be the <strong>chapter</strong>, not the page, and the “listen” button has to sit on the chapter just translated — so reading with your eyes or your ears stays one continuous thread, and far less work for the learner.</p>
+          <p class="vi"><b>Người đọc không cần bản dịch tốt hơn — cần bỏ hẳn thao tác tay.</b>Đổi đơn vị từ <strong>trang</strong> sang <strong>chương</strong>, đưa nút nghe về ngay chương vừa dịch. Một cuốn sách chạy liền mạch từ đầu đến cuối.</p>
+          <p class="en"><b>Readers don't need a better translation — they need the manual work gone.</b>Shift the unit from the <strong>page</strong> to the <strong>chapter</strong> and put the listen button on the chapter itself. One book, start to finish, in a single unbroken thread.</p>
         </div>
       </div>
 
@@ -805,13 +820,23 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
       <div class="pi">
         <div class="pi-problem">
           <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
-          <p class="vi">AI đang phát triển rất nhanh, nhưng giáo viên từ tầm trung tuổi trở lên tiếp cận AI khó hơn lớp trẻ nhiều. Muốn dùng được AI vào việc dạy, họ còn phải học viết prompt, học tự cấu hình một trợ lý AI riêng cho khớp chương trình giảng dạy của mình — cả một lớp việc mới nằm ngoài chuyên môn sư phạm. Kết quả là công cụ thì sẵn đó, nhưng chính những người cần nhất lại đứng ngoài.</p>
-          <p class="en">AI is advancing fast, but teachers from mid-career upward find it far harder to approach than younger colleagues. To actually use it in their work they would first have to learn prompting and learn to configure a personal AI assistant around their own curriculum — a whole new class of work outside their professional training. So the tools sit there while the people who need them most stay outside.</p>
+          <p class="pi-lead vi">Giáo viên tầm trung tuổi trở lên đang bị bỏ lại phía sau làn sóng AI.</p>
+          <p class="pi-lead en">Teachers from mid-career upward are being left behind by AI.</p>
+          <ul class="vi">
+            <li>Muốn dùng AI thì phải học viết prompt trước.</li>
+            <li>Phải tự cấu hình trợ lý cho khớp chương trình giảng dạy.</li>
+            <li>Cả hai đều là việc ngoài chuyên môn sư phạm.</li>
+          </ul>
+          <ul class="en">
+            <li>Using AI means first learning to write prompts.</li>
+            <li>Then configuring an assistant around their own curriculum.</li>
+            <li>Neither is part of what they were trained to do.</li>
+          </ul>
         </div>
         <div class="pi-insight">
           <span class="lbl">Insight</span>
-          <p class="vi"><b>Giáo viên không cần học cách dùng AI — họ cần một AI đã được dựng sẵn đúng theo nghề của họ.</b>Mọi việc mà người dùng bình thường phải tự xoay — viết prompt, nạp công văn của Bộ, chỉnh cho ra đúng khung trình bày — đều được đóng gọn vào bên trong. Giáo viên chỉ nhập môn, chủ đề, bài số; phần còn lại hệ thống tự lo. Nhờ vậy ba việc tốn thời gian nhất là <strong>soạn giáo án, giao bài và theo dõi học sinh</strong> về chung một chỗ và nhanh hơn hẳn, mà không ai phải học thêm một kỹ năng mới nào. Đổi lại, độ khớp mẫu trở thành ràng buộc sống còn — nộp được mới là đích đến, nên phần khó nhất nằm ở việc xác định cho đúng cái khung đó.</p>
-          <p class="en"><b>Teachers don't need to learn how to use AI — they need an AI already built around their profession.</b>Everything an ordinary user would have to work out alone — writing prompts, loading the ministry circulars, forcing the output into the official layout — is packed inside. The teacher enters a subject, a topic and a lesson number; the system handles the rest. That brings the three most time-consuming jobs — <strong>lesson planning, assigning work and tracking pupils</strong> — into one place and makes them markedly faster, without anyone learning a new skill. In exchange, template fidelity becomes the make-or-break constraint: being submittable is the whole point, so the hardest part is pinning that template down exactly.</p>
+          <p class="vi"><b>Giáo viên không cần học dùng AI — cần một AI dựng sẵn theo nghề của họ.</b>Prompt, công văn của Bộ, khung trình bày: đóng gói hết vào bên trong. Giáo viên chỉ nhập môn, chủ đề, bài số. <strong>Soạn giáo án, giao bài, theo dõi học sinh</strong> về chung một chỗ — không phải học thêm kỹ năng nào.</p>
+          <p class="en"><b>Teachers don't need to learn AI — they need an AI built around their profession.</b>Prompts, ministry circulars, the official layout: all packed inside. The teacher enters a subject, a topic, a lesson number. <strong>Lesson planning, assignments and pupil tracking</strong> in one place — with no new skill to learn.</p>
         </div>
       </div>
 
