@@ -172,8 +172,36 @@ h1{
   transition:transform .15s ease,border-color .15s ease,background .15s ease;
 }
 .contact a:hover{transform:translateY(-2px);border-color:var(--teal);background:var(--teal-wash);color:var(--teal-deep)}
-.contact a .k{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.contact .place{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.92rem;font-weight:500;color:var(--ink-2);
+  background:transparent;border:1px dashed var(--rule);border-radius:999px;padding:8px 16px;
+}
+.contact a .k,.contact .place .k{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .contact a:hover .k{color:var(--teal-deep)}
+
+/* ---------------- sticky nav ---------------- */
+html{scroll-behavior:smooth}
+.nav{
+  position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;
+  margin:0 -20px;padding:8px 20px;background:var(--paper);border-bottom:1px solid var(--rule);
+}
+.nav-home{
+  flex:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;
+  color:var(--teal-deep);text-decoration:none;
+}
+.nav-links{display:flex;gap:2px;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;
+  color:var(--ink-2);font-size:.85rem;padding:6px 11px;border-radius:999px;
+  transition:background .15s ease,color .15s ease;
+}
+.nav-links a i{font-family:var(--f-mono);font-style:normal;font-size:.68rem;color:var(--ink-3)}
+.nav-links a:hover{background:var(--sheet);color:var(--ink)}
+.nav-links a.on{background:var(--teal-wash);color:var(--teal-deep);font-weight:600}
+.nav-links a.on i{color:var(--teal-deep)}
+.hero,section[id]{scroll-margin-top:70px}
 
 /* ---------------- section heads ---------------- */
 section{margin-top:62px}
@@ -324,7 +352,7 @@ td code{font-family:var(--f-mono);font-size:.84em;background:var(--grape-wash);c
 .note.sun .lbl{color:var(--sun)}
 
 /* ---------------- skills ---------------- */
-.phases{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.phases{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:start}
 .phase{background:var(--sheet-2);border-radius:var(--r-md);padding:17px 18px 19px}
 .phase .id{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-deep)}
 .phase h5{margin:5px 0 11px;font-size:1.02rem;font-weight:600;font-family:var(--f-display)}
@@ -362,12 +390,17 @@ td code{font-family:var(--f-mono);font-size:.84em;background:var(--grape-wash);c
 .prio-col ol li::marker{font-family:var(--f-mono);font-weight:700;color:var(--sun)}
 
 /* ---------------- diagram figures ---------------- */
-.diagrams{display:grid;gap:16px;grid-template-columns:1fr;align-items:start;margin-top:6px}
-@media (min-width:840px){.diagrams{grid-template-columns:3fr 2fr}}
-.dia{background:#fff;border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden;display:block;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+.diagrams{display:grid;gap:18px;grid-template-columns:1fr;align-items:start;margin-top:6px}
+.dia{position:relative;background:#fff;border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden;display:block;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+.dia .zoom{
+  position:absolute;top:11px;right:11px;pointer-events:none;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--f-mono);font-size:.65rem;letter-spacing:.06em;
+  background:rgba(13,31,27,.82);color:#CFE8E1;padding:4px 11px;border-radius:999px;
+}
 .dia:hover{transform:translateY(-3px);box-shadow:var(--lift-2)}
 .dia img{display:block;width:100%;height:auto}
-.dia .cap{padding:12px 16px 15px;background:var(--sheet);border-top:1px solid var(--rule);color:var(--ink-2);font-size:.85rem;line-height:1.5}
+.dia .cap{display:block;padding:13px 18px 16px;background:var(--sheet);border-top:1px solid var(--rule);color:var(--ink-2);font-size:.88rem;line-height:1.55;max-width:86ch}
 .dia .cap b{display:block;color:var(--teal-deep);font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;margin-bottom:3px}
 .dia .cap em{font-style:normal;color:var(--ink-3);display:block;margin-top:5px;font-size:.8rem}
 .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.85rem;color:var(--ink-2)}
@@ -402,7 +435,7 @@ footer > p{margin:0;color:var(--ink-2);max-width:56ch;font-size:.99rem}
 }
 
 a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
 @media (max-width:720px){
   .hero{padding:28px 22px 24px;border-radius:20px}
@@ -422,14 +455,28 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
 
 <div class="wrap">
 
+  <!-- ================= NAV ================= -->
+  <nav class="nav" aria-label="Mục lục / Contents">
+    <a class="nav-home" href="#top">PTL</a>
+    <div class="nav-links">
+      <a href="#tong-quan"><i>01</i><span class="vi">Tổng quan</span><span class="en">Overview</span></a>
+      <a href="#linhieu"><i>02</i><span>LinHiêu</span></a>
+      <a href="#tu-duy-logic"><i>03</i><span class="vi">Tư duy logic</span><span class="en">Reasoning</span></a>
+      <a href="#sali"><i>04</i><span>Sali</span></a>
+      <a href="#bo-cong-cu"><i>05</i><span class="vi">Bộ công cụ</span><span class="en">Toolkit</span></a>
+      <a href="#chay-that"><i>06</i><span class="vi">Chạy thật</span><span class="en">Real run</span></a>
+      <a href="#kinh-nghiem"><i>07</i><span class="vi">Kinh nghiệm</span><span class="en">Experience</span></a>
+    </div>
+  </nav>
+
   <!-- ================= HERO ================= -->
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="hero-top">
       <div>
-        <span class="eyebrow">Business Analyst · Mini Product Owner</span>
+        <span class="eyebrow vi">Business Analyst · Product Owner kiêm nhiệm</span><span class="eyebrow en">Business Analyst · Acting Product Owner</span>
         <h1>Phạm Thùy Linh</h1>
-        <p class="tagline vi">Ba năm rưỡi làm nghề phân tích nghiệp vụ — và <span class="hl">hai sản phẩm tự dựng bằng AI</span>, đang chạy thật với dữ liệu thật.</p>
-        <p class="tagline en">Three and a half years in business analysis — and <span class="hl">two products I built with AI</span>, running today on real data.</p>
+        <p class="tagline vi">Ba năm rưỡi làm nghề phân tích nghiệp vụ — và <span class="hl">hai sản phẩm tự dựng bằng AI</span>, đều đã chạy được.</p>
+        <p class="tagline en">Three and a half years in business analysis — and <span class="hl">two products I built with AI</span>, both working today.</p>
       </div>
       <div class="langswitch" role="group" aria-label="Ngôn ngữ / Language">
         <button type="button" id="btn-vi" aria-pressed="true">VI</button>
@@ -448,12 +495,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
       <a href="tel:+84866839295"><span class="k">Gọi</span> 0866 839 295</a>
       <a href="mailto:phamlinh278.work@gmail.com"><span class="k">Email</span> phamlinh278.work@gmail.com</a>
       <a href="https://linkedin.com/in/pham-thuy-linh-55079331b" target="_blank" rel="noopener"><span class="k">LinkedIn</span> pham-thuy-linh</a>
-      <a href="#" onclick="return false" style="cursor:default"><span class="k">Ở</span> Hà Nội, Việt Nam</a>
+      <span class="place"><span class="k">Ở</span> Hà Nội, Việt Nam</span>
     </div>
   </header>
 
   <!-- ================= 01 ================= -->
-  <section class="s-teal">
+  <section class="s-teal" id="tong-quan">
     <div class="shead">
       <span class="chip-n">01</span>
       <h2 class="vi">Tôi làm gì, và hồ sơ này chứng minh điều gì</h2>
@@ -489,7 +536,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
   </section>
 
   <!-- ================= 02 — LinHiêu ================= -->
-  <section class="s-sun">
+  <section class="s-sun" id="linhieu">
     <div class="shead">
       <span class="chip-n">02</span>
       <h2 class="vi">LinHiêu — ứng dụng dịch sách và đọc thành tiếng</h2>
@@ -588,7 +635,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
   </section>
 
   <!-- ================= 03 — logic ================= -->
-  <section class="s-coral">
+  <section class="s-coral" id="tu-duy-logic">
     <div class="shead">
       <span class="chip-n">03</span>
       <h2 class="vi">Tư duy logic: quy trình đọc PDF leo thang chi phí</h2>
@@ -802,12 +849,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
   </section>
 
   <!-- ================= 04 — Sali ================= -->
-  <section class="s-grape">
+  <section class="s-grape" id="sali">
     <div class="shead">
       <span class="chip-n">04</span>
       <h2 class="vi">Sali — soạn giáo án, giao bài và theo dõi học sinh</h2>
       <h2 class="en">Sali — lesson plans, assignments and pupil tracking</h2>
-      <span class="tag vi">MVP có dữ liệu thật</span><span class="tag en">MVP on real data</span>
+      <span class="tag vi">Chạy được · AI chưa nối</span><span class="tag en">Working build · AI not yet wired in</span>
     </div>
 
     <div class="card">
@@ -942,7 +989,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
   </section>
 
   <!-- ================= 05 — toolkit ================= -->
-  <section class="s-teal">
+  <section class="s-teal" id="bo-cong-cu">
     <div class="shead">
       <span class="chip-n">05</span>
       <h2 class="vi">Bộ công cụ BA vận hành bằng AI</h2>
@@ -950,8 +997,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
       <span class="tag vi">Cách tôi làm việc</span><span class="tag en">How I work</span>
     </div>
 
-    <p class="lede vi">Tôi không dùng AI theo kiểu hỏi đáp rời rạc. Tôi đóng gói từng bước trong quy trình BA thành một lệnh có đầu vào, đầu ra và điều kiện nghiệm thu rõ ràng, rồi nối chúng thành một chuỗi liền mạch từ ý tưởng đến nghiệm thu. Tại LumusAI tôi xây <strong>hơn 30 quy trình</strong> theo cách này, rút khoảng 70% thời gian xử lý. Riêng trong dự án Sali, bộ công cụ gồm <strong>15 lệnh nghiệp vụ tôi tự viết</strong>, 9 lệnh kỹ thuật cài sẵn từ bên ngoài, 12 bộ quy tắc nền và 3 tác nhân tự rà soát chất lượng.</p>
-    <p class="lede en">I do not use AI as scattered question-and-answer. I package each step of the BA process into a command with defined inputs, outputs and acceptance conditions, then chain them from idea to sign-off. At LumusAI I built <strong>over 30 such workflows</strong>, cutting roughly 70% of handling time. Within Sali alone the toolkit holds <strong>15 business commands I wrote myself</strong>, 9 off-the-shelf technical ones, 12 governing rule sets and 3 self-review agents.</p>
+    <p class="lede vi">Tôi không dùng AI theo kiểu hỏi đáp rời rạc. Tôi đóng gói từng bước trong quy trình BA thành một lệnh có đầu vào, đầu ra và điều kiện nghiệm thu rõ ràng, rồi nối chúng thành một chuỗi liền mạch từ ý tưởng đến nghiệm thu. Tại LumusAI tôi xây <strong>hơn 30 quy trình</strong> theo cách này. Riêng trong dự án Sali, bộ công cụ gồm <strong>15 lệnh nghiệp vụ tôi tự viết</strong>, 9 lệnh kỹ thuật cài sẵn từ bên ngoài, 12 bộ quy tắc nền và 3 tác nhân tự rà soát chất lượng.</p>
+    <p class="lede en">I do not use AI as scattered question-and-answer. I package each step of the BA process into a command with defined inputs, outputs and acceptance conditions, then chain them from idea to sign-off. At LumusAI I built <strong>over 30 such workflows</strong> this way. Within Sali alone the toolkit holds <strong>15 business commands I wrote myself</strong>, 9 off-the-shelf technical ones, 12 governing rule sets and 3 self-review agents.</p>
 
     <div class="card">
       <div class="card-bd">
@@ -973,6 +1020,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
               <span class="own">d2-erd</span><span class="own">d2-activity</span><span class="own">d2-architect</span>
               <span class="own">wireframe-html</span>
             </div>
+            <p class="vi">Mỗi lệnh dựng một loại sơ đồ từ cùng bộ tài liệu đã chốt, và tự kiểm cú pháp trước khi báo hoàn thành.</p>
+            <p class="en">Each command renders one diagram type from the same settled documents, and syntax-checks itself before reporting success.</p>
           </div>
           <div class="phase">
             <span class="id">03 · Deliver</span>
@@ -1047,12 +1096,12 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
               </tr>
             </thead>
             <tbody>
-              <tr><td class="vi">Mục tiêu kinh doanh</td><td class="en">Business objective</td><td class="mono">BO-{feature}-{NN}</td><td><code>BO-payment-01</code></td><td class="mono">brd.md</td></tr>
-              <tr><td class="vi">Năng lực sản phẩm</td><td class="en">Product capability</td><td class="mono">CAP-{feature}-{NN}</td><td><code>CAP-payment-01</code></td><td class="mono">prd.md</td></tr>
-              <tr><td class="vi">Yêu cầu chức năng</td><td class="en">Functional requirement</td><td class="mono">FR-{feature}-{NNN}</td><td><code>FR-payment-001</code></td><td class="mono">srs/spec.md</td></tr>
-              <tr><td class="vi">Quy tắc nghiệp vụ</td><td class="en">Business rule</td><td class="mono">BR-{feature}-{NNN}</td><td><code>BR-payment-001</code></td><td class="mono">srs/spec.md</td></tr>
+              <tr><td class="vi">Mục tiêu kinh doanh</td><td class="en">Business objective</td><td class="mono">BO-{feature}-{NN}</td><td><code>BO-lesson-planning-01</code></td><td class="mono">brd.md</td></tr>
+              <tr><td class="vi">Năng lực sản phẩm</td><td class="en">Product capability</td><td class="mono">CAP-{feature}-{NN}</td><td><code>CAP-lesson-planning-01</code></td><td class="mono">prd.md</td></tr>
+              <tr><td class="vi">Yêu cầu chức năng</td><td class="en">Functional requirement</td><td class="mono">FR-{feature}-{NNN}</td><td><code>FR-lesson-planning-001</code></td><td class="mono">srs/spec.md</td></tr>
+              <tr><td class="vi">Quy tắc nghiệp vụ</td><td class="en">Business rule</td><td class="mono">BR-{feature}-{NNN}</td><td><code>BR-lesson-planning-001</code></td><td class="mono">srs/spec.md</td></tr>
               <tr><td class="vi">Tiêu chí nghiệm thu</td><td class="en">Acceptance criterion</td><td class="mono">AC-{NNN}</td><td><code>AC-001</code></td><td class="mono">userstories/us-001.md</td></tr>
-              <tr><td class="vi">Yêu cầu thay đổi</td><td class="en">Change request</td><td class="mono">CR-{YYYYMMDD}-{NNN}</td><td><code>CR-20260512-001</code></td><td class="mono">changes/</td></tr>
+              <tr><td class="vi">Yêu cầu thay đổi</td><td class="en">Change request</td><td class="mono">CR-{YYYYMMDD}-{NNN}</td><td><code>CR-20260724-001</code></td><td class="mono">changes/</td></tr>
             </tbody>
           </table>
         </div>
@@ -1067,7 +1116,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offse
   </section>
 
   <!-- ================= 06 — a real skill run ================= -->
-  <section class="s-sun">
+  <section class="s-sun" id="chay-that">
     <div class="shead">
       <span class="chip-n">06</span>
       <h2 class="vi">Xem một lần chạy thật</h2>
@@ -1181,6 +1230,7 @@ lets me edit it, and turns it into exercises for my pupils."</pre>
         <div class="diagrams">
           <a class="dia" href="img/skill-userflow-lesson.jpg" target="_blank" rel="noopener">
             <img src="img/skill-userflow-lesson.jpg" alt="Sơ đồ luồng soạn giáo án với tám điểm quyết định, các ô xanh lá cho bước thành công và ô đỏ cho các nhánh báo lỗi.">
+            <span class="zoom">⤢ <span class="vi">xem đầy đủ</span><span class="en">full size</span></span>
             <span class="cap">
               <b>Luồng soạn giáo án</b>
               <span class="vi">Tám điểm quyết định: còn hạn mức miễn phí chưa, chủ đề đủ 3 ký tự chưa, môn đã có công văn chưa, AI tạo có thành công không, giáo án có đủ nội dung để ra bài tập không, xuất file có lỗi không.</span>
@@ -1191,6 +1241,7 @@ lets me edit it, and turns it into exercises for my pupils."</pre>
           </a>
           <a class="dia" href="img/skill-userflow-admin.jpg" target="_blank" rel="noopener">
             <img src="img/skill-userflow-admin.jpg" alt="Sơ đồ luồng quản trị: admin đăng nhập, upload công văn, quản lý tài khoản giáo viên, xử lý yêu cầu nâng cấp, theo dõi sử dụng.">
+            <span class="zoom">⤢ <span class="vi">xem đầy đủ</span><span class="en">full size</span></span>
             <span class="cap">
               <b>Luồng quản trị</b>
               <span class="vi">Tách hẳn khỏi giao diện giáo viên, có nhánh chặn riêng cho tài khoản đăng nhập đúng nhưng không có quyền quản trị.</span>
@@ -1239,7 +1290,7 @@ Changelog: "first draft from brainstorm ai-lesson-plan-generator".</span>
   </section>
 
   <!-- ================= 07 — experience ================= -->
-  <section class="s-grape">
+  <section class="s-grape" id="kinh-nghiem">
     <div class="shead">
       <span class="chip-n">07</span>
       <h2 class="vi">Kinh nghiệm nghề nghiệp</h2>
@@ -1252,8 +1303,8 @@ Changelog: "first draft from brainstorm ai-lesson-plan-generator".</span>
         <div class="when">09/2025 — <span class="vi">nay</span><span class="en">present</span></div>
         <div>
           <h4>Savameta</h4>
-          <p class="role vi">Business Analyst, kiêm nhiệm Mini Product Owner tại dự án LumusAI</p>
-          <p class="role en">Business Analyst, also Mini Product Owner on the LumusAI project</p>
+          <p class="role vi">Business Analyst, kiêm nhiệm Product Owner tại dự án LumusAI</p>
+          <p class="role en">Business Analyst, also acting Product Owner on the LumusAI project</p>
           <div class="projs"><span>LumusAI · AI Agent</span><span>Metaverse · VR</span></div>
           <p class="out vi">Xây hệ thống hơn 30 quy trình BA ứng dụng AI dùng xuyên suốt từ ý tưởng đến nghiệm thu, rút khoảng 70% thời gian xử lý. Cùng PO dựng lộ trình sản phẩm theo RICE-lite, tái ưu tiên tính năng dựa trên giá trị nghiệp vụ và benchmark đối thủ. Đưa sản phẩm VR lên Meta Store, đạt 300 lượt tải trong tháng đầu.</p>
           <p class="out en">Built a 30+ workflow AI-assisted BA system used from idea to sign-off, cutting roughly 70% of handling time. Co-built the product roadmap on RICE-lite, re-prioritising features on business value and competitor benchmarks. Shipped the VR product to the Meta Store — 300 downloads in the first month.</p>
@@ -1353,6 +1404,24 @@ Changelog: "first draft from brainstorm ai-lesson-plan-generator".</span>
   apply(saved === 'en' ? 'en' : 'vi');
   btnVi.addEventListener('click', function(){ apply('vi'); });
   btnEn.addEventListener('click', function(){ apply('en'); });
+})();
+
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.nav-links a'));
+  var map = {}, targets = [];
+  links.forEach(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    if (el) { map[el.id] = a; targets.push(el); }
+  });
+  if (!('IntersectionObserver' in window) || !targets.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      links.forEach(function(a){ a.classList.remove('on'); });
+      map[e.target.id].classList.add('on');
+    });
+  }, { rootMargin: '-72px 0px -68% 0px', threshold: 0 });
+  targets.forEach(function(t){ io.observe(t); });
 })();
 </script>
 </body>

@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="description" content="Portfolio thiết kế sản phẩm của Phạm Thùy Linh — ba case study giao diện: app thành viên cho tập đoàn, trợ lý thuật ngữ cho người nghe sách, soạn giáo án cho giáo viên tiểu học.">
+<meta name="author" content="Phạm Thùy Linh">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Phạm Thùy Linh — Portfolio thiết kế">
+<meta property="og:description" content="Màn hình vẽ từ quy tắc nghiệp vụ: mỗi chi tiết truy được về một quyết định có người ký.">
+<meta property="og:locale" content="vi_VN">
+<title>Phạm Thùy Linh — Portfolio thiết kế</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+:root{
+  color-scheme:light dark;
+
+  --paper:#F1F7F5;
+  --sheet:#FFFFFF;
+  --sheet-2:#F7FBF9;
+  --ink:#10241F;
+  --ink-2:#4C635C;
+  --ink-3:#7E938C;
+  --rule:#DCEAE5;
+  --rule-2:#EAF3F0;
+
+  --teal:#00A292;
+  --teal-deep:#00786C;
+  --teal-wash:#DCF3EF;
+  --sun:#F0A311;
+  --sun-strong:#FFB627;
+  --sun-wash:#FFEFCE;
+  --coral:#EE6152;
+  --coral-wash:#FFE6E2;
+  --grape:#7355D6;
+  --grape-wash:#EBE5FD;
+
+  --lift:0 1px 2px rgba(16,36,31,.05), 0 10px 26px -16px rgba(16,36,31,.28);
+  --lift-2:0 2px 4px rgba(16,36,31,.06), 0 20px 44px -22px rgba(16,36,31,.4);
+
+  --f-display:"Outfit","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+
+  --r-lg:20px;
+  --r-md:14px;
+  --r-sm:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A1614;
+    --sheet:#10201D;
+    --sheet-2:#152824;
+    --ink:#E6F2EE;
+    --ink-2:#A2B8B1;
+    --ink-3:#7C948C;
+    --rule:#26403A;
+    --rule-2:#1C332E;
+    --teal:#3FD3BF;
+    --teal-deep:#6FE3D2;
+    --teal-wash:#0E332E;
+    --sun:#FFC258;
+    --sun-strong:#FFC864;
+    --sun-wash:#3A2A0C;
+    --coral:#FF8878;
+    --coral-wash:#3A1D18;
+    --grape:#A98FFF;
+    --grape-wash:#231C42;
+    --lift:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.85);
+    --lift-2:0 2px 6px rgba(0,0,0,.5), 0 22px 48px -24px rgba(0,0,0,1);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A1614;
+  --sheet:#10201D;
+  --sheet-2:#152824;
+  --ink:#E6F2EE;
+  --ink-2:#A2B8B1;
+  --ink-3:#7C948C;
+  --rule:#26403A;
+  --rule-2:#1C332E;
+  --teal:#3FD3BF;
+  --teal-deep:#6FE3D2;
+  --teal-wash:#0E332E;
+  --sun:#FFC258;
+  --sun-strong:#FFC864;
+  --sun-wash:#3A2A0C;
+  --coral:#FF8878;
+  --coral-wash:#3A1D18;
+  --grape:#A98FFF;
+  --grape-wash:#231C42;
+  --lift:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.85);
+  --lift-2:0 2px 6px rgba(0,0,0,.5), 0 22px 48px -24px rgba(0,0,0,1);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 90px}
+
+/* ---------------- hero ---------------- */
+.hero{
+  position:relative;
+  margin-top:26px;
+  background:var(--sheet);
+  border-radius:26px;
+  box-shadow:var(--lift-2);
+  padding:38px 38px 30px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:6px;
+  background:linear-gradient(90deg,var(--teal) 0%,var(--teal) 34%,var(--sun-strong) 34%,var(--sun-strong) 62%,var(--coral) 62%,var(--coral) 82%,var(--grape) 82%);
+}
+.hero-top{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;justify-content:space-between}
+.eyebrow{
+  font-family:var(--f-mono);font-size:.73rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal-deep);
+}
+h1{
+  font-family:var(--f-display);font-weight:800;
+  font-size:clamp(2.3rem,6vw,3.7rem);line-height:1.02;letter-spacing:-.028em;
+  margin:.12em 0 .2em;text-wrap:balance;
+}
+.tagline{font-size:1.08rem;color:var(--ink-2);max-width:50ch;margin:0}
+.hl{background-image:linear-gradient(transparent 56%, var(--sun-wash) 56%);padding:0 .12em;color:var(--ink);font-weight:600}
+
+.langswitch{
+  display:inline-flex;background:var(--sheet-2);border:1px solid var(--rule);
+  border-radius:999px;padding:3px;gap:2px;flex:none;
+}
+.langswitch button{
+  font-family:var(--f-mono);font-size:.73rem;font-weight:500;letter-spacing:.08em;
+  padding:6px 15px;border:0;border-radius:999px;background:transparent;color:var(--ink-2);cursor:pointer;
+  transition:background .18s ease,color .18s ease;
+}
+.langswitch button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.langswitch button:hover{color:var(--ink)}
+.langswitch button[aria-pressed="true"]:hover{color:#fff}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{
+  font-size:.85rem;font-weight:500;padding:5px 13px;border-radius:999px;
+  background:var(--teal-wash);color:var(--teal-deep);
+}
+.chips span:nth-child(2){background:var(--sun-wash);color:var(--sun)}
+.chips span:nth-child(3){background:var(--coral-wash);color:var(--coral)}
+.chips span:nth-child(4){background:var(--grape-wash);color:var(--grape)}
+
+.contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px;padding-top:22px;border-top:1px solid var(--rule)}
+.contact a{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.92rem;font-weight:500;text-decoration:none;color:var(--ink);
+  background:var(--sheet-2);border:1px solid var(--rule);border-radius:999px;padding:8px 16px;
+  transition:transform .15s ease,border-color .15s ease,background .15s ease;
+}
+.contact a:hover{transform:translateY(-2px);border-color:var(--teal);background:var(--teal-wash);color:var(--teal-deep)}
+.contact .place{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.92rem;font-weight:500;color:var(--ink-2);
+  background:transparent;border:1px dashed var(--rule);border-radius:999px;padding:8px 16px;
+}
+.contact a .k,.contact .place .k{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.contact a:hover .k{color:var(--teal-deep)}
+
+/* ---------------- sticky nav ---------------- */
+html{scroll-behavior:smooth}
+.nav{
+  position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;
+  margin:0 -20px;padding:8px 20px;background:var(--paper);border-bottom:1px solid var(--rule);
+}
+.nav-home{
+  flex:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;
+  color:var(--teal-deep);text-decoration:none;
+}
+.nav-links{display:flex;gap:2px;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;
+  color:var(--ink-2);font-size:.85rem;padding:6px 11px;border-radius:999px;
+  transition:background .15s ease,color .15s ease;
+}
+.nav-links a i{font-family:var(--f-mono);font-style:normal;font-size:.68rem;color:var(--ink-3)}
+.nav-links a:hover{background:var(--sheet);color:var(--ink)}
+.nav-links a.on{background:var(--teal-wash);color:var(--teal-deep);font-weight:600}
+.nav-links a.on i{color:var(--teal-deep)}
+.hero,section[id]{scroll-margin-top:70px}
+
+/* ---------------- section heads ---------------- */
+section{margin-top:62px}
+.shead{display:flex;align-items:center;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+.chip-n{
+  flex:none;width:38px;height:38px;border-radius:13px;display:grid;place-items:center;
+  font-family:var(--f-mono);font-size:.86rem;font-weight:700;color:#fff;background:var(--teal);
+}
+.s-teal .chip-n{background:var(--teal)}
+.s-sun .chip-n{background:var(--sun)}
+.s-coral .chip-n{background:var(--coral)}
+.s-grape .chip-n{background:var(--grape)}
+.shead h2{
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(1.45rem,3.2vw,2.05rem);letter-spacing:-.02em;margin:0;flex:1;min-width:260px;text-wrap:balance;
+}
+.shead .tag{
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);background:var(--sheet);border-radius:999px;padding:5px 12px;white-space:nowrap;
+}
+.lede{font-size:1.03rem;color:var(--ink-2);max-width:70ch;margin:0 0 24px}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* ---------------- stat tiles ---------------- */
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:6px}
+.tile{border-radius:var(--r-lg);padding:22px 22px 24px;background:var(--teal-wash)}
+.tile:nth-child(2){background:var(--sun-wash)}
+.tile:nth-child(3){background:var(--coral-wash)}
+.tile:nth-child(4){background:var(--grape-wash)}
+.tile .n{
+  font-family:var(--f-display);font-weight:800;font-size:2.5rem;line-height:1;
+  letter-spacing:-.03em;display:block;color:var(--teal-deep);font-variant-numeric:tabular-nums;
+}
+.tile:nth-child(2) .n{color:var(--sun)}
+.tile:nth-child(3) .n{color:var(--coral)}
+.tile:nth-child(4) .n{color:var(--grape)}
+.tile .l{display:block;margin-top:9px;font-size:.9rem;color:var(--ink-2);line-height:1.45}
+
+/* ---------------- cards ---------------- */
+.card{background:var(--sheet);border-radius:var(--r-lg);box-shadow:var(--lift);overflow:hidden}
+.card + .card{margin-top:22px}
+.card-hd{padding:26px 28px 22px}
+.kicker{
+  font-family:var(--f-mono);font-size:.69rem;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal-deep);display:block;margin-bottom:8px;
+}
+.card-hd h3{font-family:var(--f-display);font-weight:700;font-size:1.5rem;letter-spacing:-.018em;margin:0;text-wrap:balance}
+.card-hd p{margin:.7em 0 0;color:var(--ink-2);max-width:72ch;font-size:.99rem}
+.card-bd{padding:24px 28px 28px}
+.card-bd > p{max-width:72ch;color:var(--ink-2);font-size:.98rem}
+.card-bd > p:first-child{margin-top:0}
+.card-bd > p strong{color:var(--ink);font-weight:600}
+
+.meta{display:flex;flex-wrap:wrap;gap:10px;padding:0 28px 24px}
+.meta div{background:var(--sheet-2);border-radius:var(--r-md);padding:11px 16px 13px;flex:1 1 158px}
+.meta .k{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);display:block}
+.meta .v{font-size:.9rem;font-weight:600;display:block;margin-top:2px}
+
+/* ---------- problem / insight ---------- */
+.pi{display:grid;gap:14px;grid-template-columns:1fr;align-items:start;padding:2px 28px 8px}
+@media (min-width:840px){.pi{grid-template-columns:1fr 1.15fr}}
+.pi > div{border-radius:var(--r-md);padding:19px 21px 21px}
+.pi-problem{background:var(--coral-wash)}
+.pi-insight{background:var(--teal-wash)}
+.pi .lbl{font-family:var(--f-mono);font-size:.67rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;display:block;margin-bottom:11px}
+.pi-problem .lbl{color:var(--coral)}
+.pi-insight .lbl{color:var(--teal-deep)}
+.pi p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.62}
+.pi-problem ul{margin:.75em 0 0;padding-left:1.05em}
+.pi-problem li{margin-bottom:.4em;font-size:.94rem;color:var(--ink-2);line-height:1.5}
+.pi-problem li:last-child{margin-bottom:0}
+.pi-problem li::marker{color:var(--coral)}
+.pi-lead{margin:0;font-size:.95rem;color:var(--ink);font-weight:600;line-height:1.5}
+.pi-insight b{display:block;color:var(--ink);font-weight:600;font-size:1.06rem;line-height:1.38;margin-bottom:7px;text-wrap:balance}
+@media (max-width:720px){.pi{padding-left:20px;padding-right:20px}}
+
+h4.sub{font-family:var(--f-display);font-weight:700;font-size:1.12rem;margin:30px 0 12px;letter-spacing:-.012em}
+h4.sub:first-child{margin-top:0}
+.card>h4.sub{padding:0 28px}
+@media (max-width:799px){.card>h4.sub{padding:0 20px}}
+ul.tight{margin:.6em 0 0;padding-left:1.15em;color:var(--ink-2);font-size:.96rem}
+ul.tight li{margin-bottom:.42em}
+ul.tight li strong{color:var(--ink);font-weight:600}
+ul.tight li::marker{color:var(--teal)}
+
+/* ---------------- screenshots ---------------- */
+.shots{padding:4px 28px 10px;column-count:1;column-gap:18px}
+@media (min-width:800px){.shots{column-count:2}}
+figure{
+  margin:0 0 18px;border-radius:var(--r-md);background:var(--sheet-2);
+  border:1px solid var(--rule);overflow:hidden;break-inside:avoid;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+figure:hover{transform:translateY(-3px);box-shadow:var(--lift)}
+figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--rule)}
+figcaption{padding:11px 15px 14px;font-size:.85rem;color:var(--ink-2);line-height:1.5}
+figcaption b{
+  display:block;margin-bottom:3px;color:var(--teal-deep);
+  font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;
+}
+
+/* ---------------- pipeline ---------------- */
+.axis{display:flex;align-items:center;gap:12px;margin:2px 0 16px;font-family:var(--f-mono);font-size:.69rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.axis .bar{flex:1;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--sun-strong))}
+.pipe{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(186px,1fr))}
+.stage{background:var(--teal-wash);border-radius:var(--r-md);padding:16px 17px 18px;display:flex;flex-direction:column;gap:8px}
+.stage.ai{background:var(--sun-wash)}
+.stage .id{font-family:var(--f-display);font-weight:800;font-size:1.65rem;line-height:1;color:var(--teal-deep);letter-spacing:-.02em}
+.stage.ai .id{color:var(--sun)}
+.stage h5{margin:0;font-size:1rem;font-weight:600;line-height:1.3;text-wrap:balance}
+.stage p{margin:0;font-size:.86rem;color:var(--ink-2);line-height:1.5}
+.dots{display:flex;gap:4px;margin-top:auto;padding-top:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--teal);opacity:.22}
+.dots i.on{opacity:1}
+.stage.ai .dots i{background:var(--sun)}
+.chip{
+  align-self:flex-start;font-family:var(--f-mono);font-size:.63rem;font-weight:500;letter-spacing:.07em;
+  text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--teal);color:#fff;
+}
+.stage.ai .chip{background:var(--sun);color:#3A2A0C}
+
+/* ---------------- tables ---------------- */
+.tablewrap{overflow-x:auto;border-radius:var(--r-md);border:1px solid var(--rule);background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem}
+caption{
+  text-align:left;padding:13px 16px;font-size:.85rem;color:var(--ink-2);
+  background:var(--sheet-2);border-bottom:1px solid var(--rule);
+}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--rule-2);vertical-align:top;line-height:1.5}
+thead th{
+  font-family:var(--f-mono);font-size:.67rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);background:var(--sheet-2);border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--sheet-2)}
+.mono{font-family:var(--f-mono);font-size:.85em;font-variant-numeric:tabular-nums}
+td code{font-family:var(--f-mono);font-size:.84em;background:var(--grape-wash);color:var(--grape);padding:2px 6px;border-radius:5px}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{font-family:var(--f-mono);font-size:.63rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;display:inline-block;white-space:nowrap;background:var(--rule-2);color:var(--ink-2)}
+.pill.free{background:var(--teal-wash);color:var(--teal-deep)}
+.pill.ai{background:var(--sun-wash);color:var(--sun)}
+.pill.warn{background:var(--coral-wash);color:var(--coral)}
+
+/* ---------------- note ---------------- */
+.note{background:var(--teal-wash);border-radius:var(--r-md);padding:18px 22px;margin:22px 0 0}
+.note.sun{background:var(--sun-wash)}
+.note p{margin:0;font-size:.97rem;color:var(--ink)}
+.note p + p{margin-top:.7em}
+.note .lbl{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);display:block;margin-bottom:6px}
+.note.sun .lbl{color:var(--sun)}
+
+/* ---------------- skills ---------------- */
+.phases{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:start}
+.phase{background:var(--sheet-2);border-radius:var(--r-md);padding:17px 18px 19px}
+.phase .id{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-deep)}
+.phase h5{margin:5px 0 11px;font-size:1.02rem;font-weight:600;font-family:var(--f-display)}
+.phase p{margin:11px 0 0;font-size:.86rem;color:var(--ink-2);line-height:1.5}
+.skills{display:flex;flex-wrap:wrap;gap:6px}
+.skills span{font-family:var(--f-mono);font-size:.72rem;padding:3px 9px;border-radius:7px;background:var(--sheet);color:var(--ink-2);border:1px solid var(--rule)}
+.skills span.own{background:var(--teal-wash);color:var(--teal-deep);border-color:transparent;font-weight:500}
+
+/* ---------------- terminal ---------------- */
+.term{background:#0D1F1B;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--lift)}
+.term-bar{
+  display:flex;align-items:center;gap:10px;padding:11px 16px;background:#12302A;
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;color:#7FD9C9;
+}
+.term-bar b{width:9px;height:9px;border-radius:50%;background:#3FD3BF;display:inline-block;flex:none}
+.term-bd{padding:18px 20px 20px;font-family:var(--f-mono);font-size:.83rem;line-height:1.72;color:#CFE8E1;overflow-x:auto}
+.term-bd .cmd{color:#FFC864}
+.term-bd .cmd::before{content:"❯ ";color:#3FD3BF}
+.term-bd .dim{color:#6E9A90}
+.term-bd .ok{color:#3FD3BF}
+.term-bd pre{margin:0;font:inherit;white-space:pre-wrap;word-break:break-word}
+
+/* ---------------- priority list ---------------- */
+.prio{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:4px}
+.prio-col{background:var(--sheet-2);border-radius:var(--r-md);padding:16px 17px 18px}
+.prio-col header{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.prio-tag{font-family:var(--f-mono);font-size:.72rem;font-weight:700;padding:4px 11px;border-radius:999px;background:var(--coral);color:#fff}
+.p1 .prio-tag{background:var(--sun);color:#3A2A0C}
+.p2 .prio-tag{background:var(--grape);color:#fff}
+.prio-col header span.t{font-size:.88rem;color:var(--ink-2);font-weight:500}
+.prio-col ol{margin:0;padding-left:1.4em;font-size:.9rem;color:var(--ink-2)}
+.prio-col ul{margin:0;padding-left:1.15em;font-size:.9rem;color:var(--ink-2);list-style:none}
+.prio-col ul li::before{content:"•";color:var(--coral);font-weight:700;display:inline-block;width:1em;margin-left:-1em}
+.prio-col li{margin-bottom:.4em;line-height:1.5}
+.prio-col ol li::marker{font-family:var(--f-mono);font-weight:700;color:var(--sun)}
+
+/* ---------------- diagram figures ---------------- */
+.diagrams{display:grid;gap:18px;grid-template-columns:1fr;align-items:start;margin-top:6px}
+.dia{position:relative;background:#fff;border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden;display:block;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+.dia .zoom{
+  position:absolute;top:11px;right:11px;pointer-events:none;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--f-mono);font-size:.65rem;letter-spacing:.06em;
+  background:rgba(13,31,27,.82);color:#CFE8E1;padding:4px 11px;border-radius:999px;
+}
+.dia:hover{transform:translateY(-3px);box-shadow:var(--lift-2)}
+.dia img{display:block;width:100%;height:auto}
+.dia .cap{display:block;padding:13px 18px 16px;background:var(--sheet);border-top:1px solid var(--rule);color:var(--ink-2);font-size:.88rem;line-height:1.55;max-width:86ch}
+.dia .cap b{display:block;color:var(--teal-deep);font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;margin-bottom:3px}
+.dia .cap em{font-style:normal;color:var(--ink-3);display:block;margin-top:5px;font-size:.8rem}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.85rem;color:var(--ink-2)}
+.legend i{width:13px;height:13px;border-radius:4px;display:inline-block;margin-right:6px;vertical-align:-2px;border:1px solid rgba(0,0,0,.12)}
+
+/* ---------------- experience ---------------- */
+.jobs{display:grid;gap:16px}
+.job{background:var(--sheet);border-radius:var(--r-lg);box-shadow:var(--lift);padding:24px 26px 26px;display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:820px){.job{grid-template-columns:170px 1fr}}
+.job .when{font-family:var(--f-mono);font-size:.83rem;color:var(--teal-deep);font-weight:500;font-variant-numeric:tabular-nums}
+.job h4{font-family:var(--f-display);font-weight:700;font-size:1.18rem;margin:0 0 2px}
+.job .role{color:var(--ink-2);font-size:.93rem;margin:0 0 10px}
+.job .projs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.job .projs span{font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--sheet-2);color:var(--ink-2);border:1px solid var(--rule)}
+.job .out{margin:0;font-size:.95rem;color:var(--ink-2)}
+
+.kv{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:18px}
+.kv div{background:var(--sheet);border-radius:var(--r-md);padding:17px 19px 19px;box-shadow:var(--lift)}
+.kv .k{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-deep);display:block;margin-bottom:7px}
+.kv .v{font-size:.91rem;color:var(--ink-2);line-height:1.55}
+
+/* ---------------- footer ---------------- */
+footer{
+  margin-top:66px;background:var(--sheet);border-radius:26px;box-shadow:var(--lift-2);
+  padding:34px 38px 32px;
+}
+footer h3{font-family:var(--f-display);font-weight:700;font-size:1.55rem;margin:0 0 7px;letter-spacing:-.018em}
+footer > p{margin:0;color:var(--ink-2);max-width:56ch;font-size:.99rem}
+.stamp{
+  margin-top:24px;padding-top:18px;border-top:1px solid var(--rule);
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink-3);line-height:1.7;
+}
+
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+@media (max-width:720px){
+  .hero{padding:28px 22px 24px;border-radius:20px}
+  .card-hd,.card-bd,.meta{padding-left:20px;padding-right:20px}
+  .shots{padding-left:20px;padding-right:20px}
+  footer{padding:26px 22px 24px;border-radius:20px}
+  .stats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+}
+
+/* ---- bilingual: Vietnamese at rest (no attribute needed), English on demand.
+       Declared last, at 0-2-0 specificity, so it outranks the display rules above. ---- */
+:root:not([data-lang="en"]) .en{display:none}
+:root[data-lang="en"] .vi{display:none}
+
+/* ===== designer portfolio extras ===== */
+.phones{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:4px 28px 10px}
+@media (min-width:800px){.phones{grid-template-columns:repeat(4,1fr)}.phones.three{grid-template-columns:repeat(3,1fr)}.phones.wide{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:799px){.phones{padding-left:20px;padding-right:20px}.phones.wide{grid-template-columns:1fr}}
+.phones figure{margin:0}
+.phones figure img{background:#E9E7EE}
+.phones.duo{grid-template-columns:repeat(2,minmax(0,280px))}
+.flow{padding:4px 28px 18px}
+@media (max-width:799px){.flow{padding-left:20px;padding-right:20px}}
+.work-grid{display:grid;grid-template-columns:1fr;gap:18px;padding:0 0 6px}
+@media (min-width:800px){.work-grid{grid-template-columns:repeat(3,1fr)}}
+.work{display:flex;flex-direction:column;background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r-lg,18px);overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--lift);transition:transform .18s ease,box-shadow .18s ease}
+.work:hover{transform:translateY(-3px)}
+.work img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-bottom:1px solid var(--rule);background:#E9E7EE}
+.work-bd{padding:16px 18px 20px}
+.work-bd .kicker{display:block;margin-bottom:8px}
+.work-bd h3{margin:0 0 8px;font-family:var(--f-display);font-weight:700;font-size:1.12rem;letter-spacing:-.012em;color:var(--ink)}
+.work-bd p{margin:0;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+.card-bd ul{padding-left:1.2em;margin:.4em 0 1em}
+.card-bd li{margin:.35em 0;line-height:1.55}
+.card-bd li b{color:var(--ink)}
+a.more{font-weight:600;color:var(--teal-deep);text-decoration:none;border-bottom:1px solid var(--teal)}
+a.more:hover{background:var(--teal-wash)}
+.tablewrap th{text-align:left;white-space:nowrap;vertical-align:top;color:var(--ink);font-weight:600}
+.hero .chips{margin-bottom:18px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="nav" aria-label="Mục lục / Contents">
+    <a class="nav-home" href="#top">PTL</a>
+    <div class="nav-links">
+      <a href="#viec"><i>01</i><span class="vi">Việc đã làm</span><span class="en">Work</span></a>
+      <a href="#tv360"><i>02</i><span>Membership</span></a>
+      <a href="#linhieu"><i>03</i><span>LinHiêu</span></a>
+      <a href="#sali"><i>04</i><span>Sali</span></a>
+      <a href="#cach-lam"><i>05</i><span class="vi">Cách làm</span><span class="en">Process</span></a>
+      <a href="#ve-toi"><i>06</i><span class="vi">Về tôi</span><span class="en">About</span></a>
+      <a href="../index.html"><i>→</i><span class="vi">Hồ sơ BA</span><span class="en">BA portfolio</span></a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-top">
+      <div>
+        <span class="eyebrow vi">Product design · từ nền BA/PO</span><span class="eyebrow en">Product design · from a BA/PO background</span>
+        <h1>Phạm Thùy Linh</h1>
+        <p class="tagline vi">Tôi vẽ màn hình từ quy tắc nghiệp vụ. <span class="hl">Mỗi chi tiết trên giao diện truy được về một quyết định có người ký</span>, và mỗi nhánh lỗi có một màn riêng.</p>
+        <p class="tagline en">I draw screens from business rules. <span class="hl">Every detail on the interface traces back to a signed decision</span>, and every error branch gets its own screen.</p>
+      </div>
+      <div class="langswitch" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" id="btn-vi" aria-pressed="true">VI</button>
+        <button type="button" id="btn-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <div class="chips">
+      <span class="vi">Luồng người dùng &amp; trạng thái biên</span><span class="en">User flows &amp; edge states</span>
+      <span class="vi">Bản chạy thử HTML</span><span class="en">Working HTML prototypes</span>
+      <span class="vi">Figma vẽ từ tài liệu qua MCP</span><span class="en">Figma drawn from documents via MCP</span>
+      <span class="vi">3,5 năm phân tích nghiệp vụ</span><span class="en">3.5 years in business analysis</span>
+    </div>
+
+    <div class="contact">
+      <a href="mailto:phamlinh278.work@gmail.com"><span class="k">Email</span> phamlinh278.work@gmail.com</a>
+      <a href="https://linkedin.com/in/pham-thuy-linh-55079331b" target="_blank" rel="noopener"><span class="k">LinkedIn</span> pham-thuy-linh</a>
+      <a href="tel:+84866839295"><span class="k vi">Gọi</span><span class="k en">Call</span> 0866 839 295</a>
+      <span class="place"><span class="k vi">Ở</span><span class="k en">In</span> Hà Nội, Việt Nam</span>
+    </div>
+  </header>
+
+  <!-- 01 WORK -->
+  <section class="s-teal" id="viec">
+    <div class="shead">
+      <span class="chip-n">01</span>
+      <h2 class="vi">Ba việc đã làm</h2><h2 class="en">Three pieces of work</h2>
+    </div>
+    <div class="work-grid">
+      <a class="work" href="#tv360">
+        <img src="img/360/M1.jpg" alt="Trang chủ app Membership với thẻ hạng Gold và số điểm.">
+        <div class="work-bd">
+          <span class="kicker vi">App thành viên · iPhone 390 + máy quầy · 2026</span><span class="kicker en">Loyalty app · iPhone 390 + counter devices · 2026</span>
+          <h3 class="vi">Membership — một app tích điểm cho ba mảng kinh doanh</h3>
+          <h3 class="en">Membership — one loyalty app for three business lines</h3>
+          <p class="vi">84 màn chạy thử, 3 hành trình, 43 câu hỏi nghiệp vụ chốt trước khi vẽ. Sáu lần đổi hướng theo phản hồi thật.</p>
+          <p class="en">84 working screens, 3 journeys, 43 business questions closed before drawing. Six changes of direction from real feedback.</p>
+        </div>
+      </a>
+      <a class="work" href="#linhieu">
+        <img src="img/linhieu/term-01.jpg" alt="Màn nghe sách của LinHiêu với thẻ ba thuật ngữ đang nghe phía trên thanh phát.">
+        <div class="work-bd">
+          <span class="kicker vi">Tính năng mobile · 15 trạng thái · 2026</span><span class="kicker en">Mobile feature · 15 states · 2026</span>
+          <h3 class="vi">LinHiêu — trợ lý thuật ngữ cho người nghe sách</h3>
+          <h3 class="en">LinHiêu — a terminology assistant for audiobook listeners</h3>
+          <p class="vi">Thẻ thuật ngữ đổi theo đoạn audio đang phát. Không tốn thêm lượt gọi AI nào. Sản phẩm gốc do tôi tự dựng, đang dùng hằng ngày.</p>
+          <p class="en">A term card that follows the audio segment being played. Zero extra AI calls. The host product is mine, in daily use.</p>
+        </div>
+      </a>
+      <a class="work" href="#sali">
+        <img src="img/sali/thu-vien.jpg" alt="Trang chủ Sali: số giáo án, bài tập đang giao 25/28 đã nộp, khối Soạn giáo án mới, thư viện lọc theo môn.">
+        <div class="work-bd">
+          <span class="kicker vi">Web app · 31 màn · 2026</span><span class="kicker en">Web app · 31 screens · 2026</span>
+          <h3 class="vi">Sali — soạn giáo án, giao bài và theo dõi học sinh</h3>
+          <h3 class="en">Sali — lesson plans, assignments and pupil tracking</h3>
+          <p class="vi">Giao diện ép theo mẫu giáo án thật của Bộ, chặn sai ngay từ ô nhập, bản xem trước khớp 100% file Word.</p>
+          <p class="en">An interface shaped by the ministry's real template, errors blocked at input, a preview that matches the Word export 100%.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 02 TV360 -->
+  <section class="s-grape" id="tv360">
+    <div class="shead">
+      <span class="chip-n">02</span>
+      <h2 class="vi">Membership — app tích điểm chung của một tập đoàn</h2><h2 class="en">Membership — a group-wide loyalty app</h2>
+      <span class="tag vi">Thiết kế đã duyệt nội bộ</span><span class="tag en">Design approved internally</span>
+    </div>
+    <div class="card">
+      <div class="pi">
+        <div class="pi-problem">
+          <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
+          <p class="pi-lead vi">Ba mảng kinh doanh, ba hệ thống ghi nhận khách riêng. Yêu cầu ban đầu chỉ có một câu: "làm giống VinClub".</p>
+          <p class="pi-lead en">Three business lines, three separate customer systems. The brief was one line: "make it like VinClub".</p>
+          <ul class="vi">
+            <li>Khách quen của cả tập đoàn vẫn bị đối xử như khách lẻ ở từng quầy.</li>
+            <li>Tỉ lệ điểm, quỹ điểm, căn cứ pháp lý dùng chung dữ liệu: chưa ai quyết.</li>
+          </ul>
+          <ul class="en">
+            <li>A group-wide regular is still a walk-in at every counter.</li>
+            <li>Point rates, the points fund, the legal basis for sharing data: nobody had decided.</li>
+          </ul>
+        </div>
+        <div class="pi-insight">
+          <span class="lbl">Insight</span>
+          <p class="vi"><b>Chương trình thành viên là một chuỗi quyết định về tiền, dữ liệu và pháp lý. Màn hình chỉ là nơi chúng lộ ra.</b>Nên tôi chỉ vẽ màn đã đủ câu trả lời, mỗi trạng thái một khung, mỗi khung một thẻ ghi chú dẫn nguồn và tên người còn nợ quyết định.</p>
+          <p class="en"><b>A loyalty programme is a chain of decisions about money, data and law. Screens are only where they surface.</b>So I drew only screens with enough answers, one frame per state, each with a note card citing its source and naming who still owed a decision.</p>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div><span class="k vi">Vai trò</span><span class="k en">Role</span><span class="v vi">BA · tự vẽ giao diện · dựng bản chạy thử</span><span class="v en">BA · designed the UI · built the prototype</span></div>
+        <div><span class="k vi">Làm cùng</span><span class="k en">With</span><span class="v vi">PM, PO, 3 đơn vị, Pháp chế, Kế toán, MKT, IT</span><span class="v en">PM, PO, 3 units, Legal, Finance, Marketing, IT</span></div>
+        <div><span class="k vi">Thời gian</span><span class="k en">Timeline</span><span class="v num">3 <span class="vi">tuần</span><span class="en">weeks</span> · 10/2026</span></div>
+        <div><span class="k vi">Sản phẩm</span><span class="k en">Output</span><span class="v num vi">84 màn · 2 thiết bị · 26 trạng thái biên</span><span class="v num en">84 screens · 2 devices · 26 edge states</span></div>
+      </div>
+
+      <div class="phones">
+        <figure>
+          <img src="img/360/BANG.jpg" alt="Minh hoạ bảng để bàn ở quầy cà phê với mã QR Quét để nhận quà.">
+          <figcaption><b>01 · <span class="vi">Điểm chạm ngoài đời</span><span class="en">The physical touchpoint</span></b>
+            <span class="vi">Hành trình bắt đầu từ bảng cạnh máy bán hàng, không phải từ app.</span>
+            <span class="en">The journey starts at a sign beside the till, not inside the app.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/W4.jpg" alt="Màn chào mừng: voucher giảm 10% đã vào ví, nút Dùng ngay tại quầy.">
+          <figcaption><b>02 · <span class="vi">Thưởng ngay tại quầy</span><span class="en">Reward at the counter</span></b>
+            <span class="vi">Đăng ký xong là có voucher cho hoá đơn đang trả. Liên kết các mảng khác để sau.</span>
+            <span class="en">Sign-up ends with a voucher for the bill in hand. Linking other lines comes later.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M1.jpg" alt="Trang chủ hạng Gold: thẻ vàng, điểm khả dụng, điểm chờ, dải cam điểm sắp hết hạn.">
+          <figcaption><b>03 · <span class="vi">Trang chủ</span><span class="en">Home</span></b>
+            <span class="vi">Trả lời ba câu khách hay hỏi. Thẻ hạng là điểm nhấn duy nhất, cam chỉ cho việc gấp.</span>
+            <span class="en">Answers the three questions customers ask most. The tier card is the one highlight; orange only for urgency.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M11.jpg" alt="Mã QR voucher với đồng hồ chạy giây và vòng đếm mã mới.">
+          <figcaption><b>04 · <span class="vi">Mã voucher "sống"</span><span class="en">A "live" voucher code</span></b>
+            <span class="vi">Đổi mỗi phút, có giây và vòng đếm để nhân viên nhận ra ảnh chụp.</span>
+            <span class="en">Rotates every minute, with seconds and a countdown ring so staff can spot a screenshot.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="card-bd">
+        <h4 class="sub vi">Ba quyết định giao diện tôi phải đổi</h4><h4 class="sub en">Three interface decisions I had to reverse</h4>
+        <ul class="vi">
+          <li><b>Hành trình cả năm → ba chuỗi ngắn.</b> PM: hành trình dài khó đo cảm xúc, khách bỏ cuộc giữa chừng. Mỗi chuỗi gói trong một lần ghé quầy.</li>
+          <li><b>PIN khi đổi ưu đãi → vuốt để đổi.</b> Đổi một ly cà phê không đáng một bước bảo mật. PIN chỉ còn khi trừ tiền từ 200.000 điểm.</li>
+          <li><b>Ba cách nhận ưu đãi vẽ song song → chọn B.</b> "Bấm nhận vào ví" đo được tỉ lệ nhận; hộp quà ngẫu nhiên là khuyến mại may rủi, phải đăng ký từng chương trình.</li>
+        </ul>
+        <ul class="en">
+          <li><b>Year-long journey → three short chains.</b> PM: long journeys are hard to measure and customers drop out. Each chain fits inside one counter visit.</li>
+          <li><b>PIN on every redemption → swipe to redeem.</b> Redeeming a coffee is not worth a security step. The PIN stays only for deductions from 200,000 points.</li>
+          <li><b>Three ways to receive an offer, drawn side by side → B.</b> "Tap to save" yields a claim rate; a random gift box is a lottery that needs registration per campaign.</li>
+        </ul>
+        <p><a class="more" href="case-360-membership.html"><span class="vi">Đọc case study đầy đủ: research, 6 vòng sửa, 19 màn có chú thích →</span><span class="en">Read the full case study: research, 6 iterations, 19 annotated screens →</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 LINHIEU -->
+  <section class="s-sun" id="linhieu">
+    <div class="shead">
+      <span class="chip-n">03</span>
+      <h2 class="vi">LinHiêu — ứng dụng dịch sách và đọc thành tiếng</h2><h2 class="en">LinHiêu — book translator and audio reader</h2>
+      <span class="tag vi">Bản chạy thử 15 trạng thái</span><span class="tag en">15-state prototype</span>
+    </div>
+    <div class="card">
+      <div class="pi">
+        <div class="pi-problem">
+          <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
+          <p class="pi-lead vi">Dịch sách tiếng Anh bằng Gemini vẫn là việc thủ công.</p>
+          <p class="pi-lead en">Translating an English book in Gemini is still manual work.</p>
+          <ul class="vi">
+            <li>Dán từng trang, chờ dịch, xong mới xin được audio.</li>
+            <li>Vài chục trang là cuộc trò chuyện gãy, mất ngữ cảnh.</li>
+            <li>Mạch đọc đứt giữa chừng, phải dựng lại từ đầu.</li>
+          </ul>
+          <ul class="en">
+            <li>Paste each page, wait for the translation, then ask for audio.</li>
+            <li>A few dozen pages in, the conversation breaks and context is lost.</li>
+            <li>The reading thread snaps and has to be rebuilt from scratch.</li>
+          </ul>
+        </div>
+        <div class="pi-insight">
+          <span class="lbl">Insight</span>
+          <p class="vi"><b>Người đọc không cần bản dịch tốt hơn — cần bỏ hẳn thao tác tay.</b>Đổi đơn vị từ <strong>trang</strong> sang <strong>chương</strong>, đưa nút nghe về ngay chương vừa dịch. Một cuốn sách chạy liền mạch từ đầu đến cuối.</p>
+          <p class="en"><b>Readers don't need a better translation — they need the manual work gone.</b>Shift the unit from the <strong>page</strong> to the <strong>chapter</strong> and put the listen button on the chapter itself. One book, start to finish, in a single unbroken thread.</p>
+        </div>
+      </div>
+
+      <div class="card-bd">
+        <h4 class="sub vi">Tính năng đang thiết kế: trợ lý thuật ngữ</h4><h4 class="sub en">Feature in design: a terminology assistant</h4>
+        <p class="vi">Cùng insight đó, áp vào lúc nghe. Bản dịch giữ thuật ngữ tiếng Anh và chỉ chú thích lần đầu, nên gặp lại một thuật ngữ khi đang nghe thì không còn chú thích. Thẻ thuật ngữ đổi theo đoạn audio đang phát, liếc là thấy, sách vẫn chạy. Thuật ngữ sinh kèm lúc dịch chương nên không tốn thêm lượt gọi AI; chỉ câu hỏi tự do mới tính lượt, và hạn mức hiện rõ trên màn.</p>
+        <p class="en">The same insight, applied to listening. The translation keeps English terms and glosses each one only the first time, so meeting a term again while listening means no gloss. A term card follows the audio segment being played, readable at a glance, while the book keeps going. Terms are generated with the chapter translation, so they cost no extra AI call; only free questions count against the quota, which stays visible on screen.</p>
+      </div>
+
+      <div class="meta">
+        <div><span class="k vi">Vai trò</span><span class="k en">Role</span><span class="v vi">Sáng lập · BA · thiết kế · tự build app gốc</span><span class="v en">Founder · BA · design · built the host app</span></div>
+        <div><span class="k vi">Người dùng</span><span class="k en">Users</span><span class="v num vi">4 nhóm: người nghe, chủ nhà, người có key riêng, người chưa có gói</span><span class="v num en">4 groups: listener, host, own-key member, no-plan member</span></div>
+        <div><span class="k vi">Phạm vi</span><span class="k en">Scope</span><span class="v num vi">5 luồng · 15 trạng thái · 12 màn</span><span class="v num en">5 flows · 15 states · 12 screens</span></div>
+        <div><span class="k vi">Trạng thái</span><span class="k en">Status</span><span class="v vi">Bản chạy thử 10/2026 · app lõi dùng hằng ngày</span><span class="v en">Prototype 10/2026 · host app in daily use</span></div>
+      </div>
+
+      <div class="phones">
+        <figure>
+          <img src="img/linhieu/term-01.jpg" alt="Màn nghe chương 3: thẻ 3 thuật ngữ đang nghe nằm trên thanh phát, mỗi từ một câu giải thích.">
+          <figcaption><b>01 · <span class="vi">Thẻ thuật ngữ đang nghe</span><span class="en">Terms in this segment</span></b>
+            <span class="vi">Nằm ngay trên thanh phát, đổi theo đoạn 3/12. Mỗi từ một câu, từ được gạch chân trong bài.</span>
+            <span class="en">Sits right above the player, follows segment 3 of 12. One line per term, underlined in the text.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/linhieu/term-03.jpg" alt="Đoạn không có thuật ngữ: thẻ thu gọn một dòng.">
+          <figcaption><b>02 · <span class="vi">Đoạn không có thuật ngữ</span><span class="en">Segment with no terms</span></b>
+            <span class="vi">Thẻ thu còn một dòng. Không chiếm chỗ của bài đọc khi không có gì để nói.</span>
+            <span class="en">The card collapses to one line. It takes no space from the text when there is nothing to say.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/linhieu/term-06.jpg" alt="Bảng thuật ngữ của cuốn, gõ diem không dấu ra cả điểm thúc ép và điểm kiểm soát.">
+          <figcaption><b>03 · <span class="vi">Tìm không dấu</span><span class="en">Accent-free search</span></b>
+            <span class="vi">Gõ "diem" ra cả "điểm thúc ép" lẫn "điểm kiểm soát". Tìm được bằng cả tiếng Anh lẫn cách gọi tiếng Việt.</span>
+            <span class="en">Typing "diem" finds both "điểm thúc ép" and "điểm kiểm soát". Works in English and in the Vietnamese rendering.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/linhieu/term-09.jpg" alt="Hỏi về sách: câu trả lời của AI đang được đọc, sách tạm dừng ở đoạn 3 lúc 1:31 và sẽ phát tiếp.">
+          <figcaption><b>04 · <span class="vi">Nghe câu trả lời</span><span class="en">Listen to the answer</span></b>
+            <span class="vi">Sách tạm dừng ở 1:31, đọc câu trả lời, xong phát tiếp từ chỗ cũ. Người nghe không phải chạm thêm.</span>
+            <span class="en">The book pauses at 1:31, the answer is read aloud, then playback resumes. No extra tap needed.</span></figcaption>
+        </figure>
+      </div>
+      <div class="phones">
+        <figure>
+          <img src="img/linhieu/term-07.jpg" alt="Hỏi về sách: câu hỏi trùng thuật ngữ trong bảng được trả ngay, ghi Có sẵn trong sách, không tính lượt.">
+          <figcaption><b>05 · <span class="vi">Trả từ bảng, không tính lượt</span><span class="en">Answered from the table, no quota used</span></b>
+            <span class="vi">Hỏi đúng một thuật ngữ có trong bảng thì trả ngay, nhãn "không tính lượt". Số lượt còn lại hiện trên đầu.</span>
+            <span class="en">A question matching a table term is answered instantly, labelled "no quota used". Remaining questions show at the top.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/linhieu/term-10.jpg" alt="Hết lượt hôm nay: đã dùng 20/20 câu, mở lại 0h, nút Nhập key AI của bạn, vẫn tra được thuật ngữ.">
+          <figcaption><b>06 · <span class="vi">Hết lượt</span><span class="en">Quota exhausted</span></b>
+            <span class="vi">Nói rõ khi nào mở lại và lối ra: nhập key riêng. Thuật ngữ vẫn tra được vì không tốn tiền.</span>
+            <span class="en">Says when it resets and offers a way out: add your own key. Terms stay searchable because they cost nothing.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/linhieu/term-11.jpg" alt="Câu hỏi lạc đề về thời tiết: từ chối lịch sự, nhắc phạm vi cuốn sách, gợi ý thuật ngữ.">
+          <figcaption><b>07 · <span class="vi">Câu lạc đề</span><span class="en">Off-topic question</span></b>
+            <span class="vi">Từ chối lịch sự, nhắc phạm vi, vẫn tính một lượt vì đã gọi AI. Gợi ngay một thuật ngữ để kéo về sách.</span>
+            <span class="en">A polite refusal that restates the scope; still counts one question since AI was called. Suggests a term to steer back.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/linhieu/term-12.jpg" alt="Người chưa có key và chưa có gói: không có ô hỏi tự do, vẫn mở được bảng thuật ngữ.">
+          <figcaption><b>08 · <span class="vi">Chưa có key, chưa có gói</span><span class="en">No key, no plan</span></b>
+            <span class="vi">Không có ô hỏi, nhưng bảng thuật ngữ vẫn mở. Người dùng mất tính năng tốn tiền, không mất tính năng miễn phí.</span>
+            <span class="en">No question box, but the term table still opens. The user loses the paid feature, not the free one.</span></figcaption>
+        </figure>
+      </div>
+
+      <h4 class="sub vi">App gốc đang chạy, nơi tính năng này sẽ cắm vào</h4><h4 class="sub en">The host app, running today, where this feature plugs in</h4>
+      <div class="phones wide">
+        <figure>
+          <img src="../img/translator-reader.jpg" alt="Màn đọc LinHiêu: bản gốc tiếng Anh và bản dịch xen kẽ từng đoạn, nút Nghe, mốc trang 20.">
+          <figcaption><b>09 · <span class="vi">Màn đọc</span><span class="en">Reader</span></b>
+            <span class="vi">Gốc và dịch xen kẽ từng đoạn, giữ mốc trang của sách giấy. Đoạn đang phát được tô sáng, là nền để thẻ thuật ngữ bám vào.</span>
+            <span class="en">Source and translation interleaved per paragraph, print page markers kept. The playing paragraph is highlighted, which the term card hooks into.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/linhieu/autopilot-hero.jpg" alt="Bản nháp trang giới thiệu LinHiêu: tiêu đề Sách tiếng nước ngoài, nghe bằng tiếng Việt, khối minh hoạ các bước tách chương, dịch, tạo audio.">
+          <figcaption><b>10 · <span class="vi">Trang giới thiệu (nháp)</span><span class="en">Landing page (draft)</span></b>
+            <span class="vi">Một câu nói sản phẩm làm gì, một khối cho thấy nó chạy thật: tách 30 chương, dịch, có audio. Không có đoạn giới thiệu dài.</span>
+            <span class="en">One sentence saying what it does, one block showing it actually running: 30 chapters split, translated, audio ready. No long intro copy.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SALI -->
+  <section class="s-coral" id="sali">
+    <div class="shead">
+      <span class="chip-n">04</span>
+      <h2 class="vi">Sali — soạn giáo án, giao bài và theo dõi học sinh</h2><h2 class="en">Sali — lesson plans, assignments and pupil tracking</h2>
+      <span class="tag vi">Chạy được · AI chưa nối</span><span class="tag en">Working build · AI not yet wired in</span>
+    </div>
+    <div class="card">
+      <div class="pi">
+        <div class="pi-problem">
+          <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
+          <p class="pi-lead vi">Giáo viên tầm trung tuổi trở lên đang bị bỏ lại phía sau làn sóng AI.</p>
+          <p class="pi-lead en">Teachers from mid-career upward are being left behind by AI.</p>
+          <ul class="vi">
+            <li>Muốn dùng AI thì phải học viết prompt trước.</li>
+            <li>Phải tự cấu hình trợ lý cho khớp chương trình giảng dạy.</li>
+            <li>Cả hai đều là việc ngoài chuyên môn sư phạm.</li>
+          </ul>
+          <ul class="en">
+            <li>Using AI means first learning to write prompts.</li>
+            <li>Then configuring an assistant around their own curriculum.</li>
+            <li>Neither is part of what they were trained to do.</li>
+          </ul>
+        </div>
+        <div class="pi-insight">
+          <span class="lbl">Insight</span>
+          <p class="vi"><b>Giáo viên không cần học dùng AI — cần một AI dựng sẵn theo nghề của họ.</b>Prompt, công văn của Bộ, khung trình bày: đóng gói hết vào bên trong. Giáo viên chỉ nhập môn, chủ đề, bài số. <strong>Soạn giáo án, giao bài, theo dõi học sinh</strong> về chung một chỗ — không phải học thêm kỹ năng nào.</p>
+          <p class="en"><b>Teachers don't need to learn AI — they need an AI built around their profession.</b>Prompts, ministry circulars, the official layout: all packed inside. The teacher enters a subject, a topic, a lesson number. <strong>Lesson planning, assignments and pupil tracking</strong> in one place — with no new skill to learn.</p>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div><span class="k vi">Vai trò</span><span class="k en">Role</span><span class="v vi">Sáng lập · BA · thiết kế · tự build</span><span class="v en">Founder · BA · design · self-built</span></div>
+        <div><span class="k vi">Phạm vi</span><span class="k en">Scope</span><span class="v num vi">31 màn · 9 luồng · 13 môn theo GDPT 2018</span><span class="v num en">31 screens · 9 flows · 13 subjects, 2018 curriculum</span></div>
+        <div><span class="k vi">Nguồn quy phạm</span><span class="k en">Regulatory sources</span><span class="v num vi">7 văn bản Bộ GD&amp;ĐT · 1 giáo án thật tuần 28, lớp 2</span><span class="v num en">7 ministry documents · 1 real plan, week 28, grade 2</span></div>
+        <div><span class="k vi">Trạng thái</span><span class="k en">Status</span><span class="v vi">Đã chạy: soạn, sửa, xuất Word, giao bài, học sinh làm bài. AI đang trả nội dung mẫu đúng khuôn, chưa chọn nhà cung cấp.</span><span class="v en">Running: authoring, editing, Word export, assigning, pupil answers. AI returns template content in the final shape; no provider chosen yet.</span></div>
+        <div><span class="k vi">Dữ liệu trong ảnh</span><span class="k en">Screenshot data</span><span class="v vi">Tôi tự tạo: lớp, học sinh, bài làm là giả; nội dung giáo án là mẫu.</span><span class="v en">My own: class, pupils and submissions are made up; plan text is template content.</span></div>
+        <div><span class="k vi">Bước tiếp</span><span class="k en">Next</span><span class="v vi">Nối AI, rồi thử với giáo viên lớp 2: đo thời gian soạn và tỉ lệ ô bị sửa trước khi tải.</span><span class="v en">Wire in AI, then trial with grade 2 teachers: measure authoring time and the share of fields edited before download.</span></div>
+      </div>
+
+      <div class="flow">
+        <a class="dia" href="img/sali/luong-soan-giao-an.jpg" target="_blank" rel="noopener">
+          <span class="zoom vi">Phóng to ↗</span><span class="zoom en">Enlarge ↗</span>
+          <img src="img/sali/luong-soan-giao-an.jpg" alt="Sơ đồ luồng soạn giáo án: từ Nhập chủ đề qua các nhánh hết lượt, chủ đề quá ngắn, môn chưa có công văn, đến Xem giáo án, xem trước Word, tạo bài tập và tab tài liệu, kèm các nhánh lỗi và nhánh rời trang khi chưa lưu.">
+          <span class="cap"><b>01 · <span class="vi">Luồng soạn giáo án, đủ nhánh lỗi</span><span class="en">Lesson-authoring flow with every error branch</span></b>
+            <span class="vi">Hết lượt miễn phí, chủ đề dưới 3 ký tự, môn chưa có công văn, xuất Word lỗi, tài khoản bị khoá giữa chừng, rời trang khi chưa lưu: mỗi nhánh có màn hoặc thông báo riêng. AI lỗi thì không trừ lượt; xuất file lỗi thì không mất nội dung đã sửa.</span>
+            <span class="en">Free quota exhausted, topic under 3 characters, subject without a circular, Word export failure, account locked mid-session, leaving with unsaved edits: each branch has its own screen or message. An AI failure costs no credit; an export failure loses no edits.</span></span>
+        </a>
+      </div>
+
+      <h4 class="sub vi">Soạn giáo án và các trạng thái biên</h4><h4 class="sub en">Authoring and edge states</h4>
+      <div class="phones wide">
+        <figure>
+          <img src="img/sali/soan-moi.jpg" alt="Soạn giáo án mới: đã chọn Lớp 2 và Toán, năm môn không dạy ở lớp 2 bị làm mờ, khung bên phải tóm tắt giáo án sắp soạn.">
+          <figcaption><b>02 · <span class="vi">Chặn sai từ ô nhập</span><span class="en">Errors blocked at input</span></b>
+            <span class="vi">Chọn Lớp 2 thì năm môn không học bắt buộc ở lớp 2 bị làm mờ (Tiếng Anh ở lớp 1–2 chỉ là môn tự chọn). Khung bên phải tóm tắt giáo án sắp soạn trước khi bấm.</span>
+            <span class="en">Picking Grade 2 greys out the five subjects not compulsory there (English is only an elective in grades 1–2). The side panel summarises the plan before it is generated.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sali/dang-soan.jpg" alt="Màn chờ khi AI đang soạn: biểu tượng xoay, dòng Sali đang soạn giáo án môn Toán, ba nhãn Yêu cầu cần đạt, Đồ dùng dạy học, Hoạt động dạy học.">
+          <figcaption><b>03 · <span class="vi">Lúc AI đang soạn</span><span class="en">While AI is writing</span></b>
+            <span class="vi">Màn chờ phủ lên form, nêu ba phần đang được soạn và nói rõ giáo án soạn trên máy chủ nên mạng chập chờn cũng không mất.</span>
+            <span class="en">The waiting state covers the form, names the three parts being written and says the plan is generated on the server, so a shaky connection loses nothing.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sali/het-luot.jpg" alt="Soạn giáo án mới khi đã hết lượt: thanh cảnh báo vàng Đã dùng hết lượt tạo miễn phí tháng này, nút Nâng cấp gói, form bị khoá, thanh bên ghi Lượt miễn phí còn lại 0/2.">
+          <figcaption><b>04 · <span class="vi">Hết lượt miễn phí</span><span class="en">Free credits used up</span></b>
+            <span class="vi">Cảnh báo nằm trên đầu form, kèm nút Nâng cấp gói; form bị khoá. Nâng cấp hiện do admin duyệt tay, chưa có cổng thanh toán.</span>
+            <span class="en">The warning sits above the form with an Upgrade button; the form is locked. Upgrades are approved by hand for now, with no payment gateway yet.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sali/xoa.jpg" alt="Hộp thoại Xóa giáo án này: nêu tên giáo án và liệt kê bài tập, link đã giao, lịch sử, tài liệu đính kèm sẽ bị xóa vĩnh viễn, nút Hủy và Xóa giáo án.">
+          <figcaption><b>05 · <span class="vi">Xoá là hộp thoại phá huỷ</span><span class="en">Delete is a destructive dialog</span></b>
+            <span class="vi">Hộp thoại nêu tên giáo án và kể đủ những gì mất theo: bài tập, link đã giao, lịch sử, tài liệu đính kèm. Không hoàn tác được, nên phải xác nhận.</span>
+            <span class="en">The dialog names the plan and lists everything that goes with it: assignments, shared links, history, attachments. It cannot be undone, so it needs confirmation.</span></figcaption>
+        </figure>
+      </div>
+
+      <h4 class="sub vi">Một vòng sửa màn giáo án</h4><h4 class="sub en">One iteration of the plan screen</h4>
+      <div class="phones wide">
+        <figure>
+          <img src="img/sali/giao-an-truoc.jpg" alt="Màn giáo án bản 12/9: một cột, ô Nội dung và Cách thức tổ chức xếp chồng lên nhau trong khối hồng.">
+          <figcaption><b>06 · <span class="vi">Trước (12/9)</span><span class="en">Before (12 Sep)</span></b>
+            <span class="vi">Một cột. Nội dung và Cách thức tổ chức xếp chồng nhau, giáo viên phải tự hình dung ra bảng trong file Word.</span>
+            <span class="en">One column. Content and Organisation are stacked, so teachers had to picture the Word table themselves.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sali/giao-an.jpg" alt="Màn giáo án bản 31/10: mỗi hoạt động hai cột Nội dung và Cách thức tổ chức, mục lục bên phải, khung Thông tin ghi căn cứ Công văn môn Toán, thanh Lưu thay đổi ở đáy.">
+          <figcaption><b>07 · <span class="vi">Sau (31/10)</span><span class="en">After (31 Oct)</span></b>
+            <span class="vi">Hai cột cạnh nhau như bảng Word, mục lục bên phải, khung Thông tin ghi giáo án căn cứ công văn nào. Bốn tên hoạt động lấy từ giáo án thật: bản đặc tả đầu tiên đặt sai tên, tự thêm số phút cho từng hoạt động và một mục Đánh giá mà mẫu thật không có.</span>
+            <span class="en">Two columns side by side like the Word table, a contents list on the right, and an info panel naming the circular the plan is based on. The four activity names come from a real plan: the first specification named them wrongly, added minutes per activity, and added an Assessment section the real template does not have.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sali/xem-truoc.jpg" alt="Xem trước bản in: trang giấy trắng đen font Times New Roman đặt trên nền xám, nút In và Tải file Word.">
+          <figcaption><b>08 · <span class="vi">Xem trước là trang giấy</span><span class="en">The preview is a sheet of paper</span></b>
+            <span class="vi">Trắng đen, Times New Roman, đặt trên mặt bàn trung tính. Màu của app dừng ở mép giấy.</span>
+            <span class="en">Black and white, Times New Roman, on a neutral desk. The app's colours stop at the edge of the page.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sali/ket-qua.jpg" alt="Kết quả bài làm: link làm bài gửi qua Zalo nhóm lớp, 25/28 đã nộp, 0 nộp trễ, ô tự luận ghi Bộ này chỉ có trắc nghiệm, khối gia hạn, dòng nhắc đây là bài luyện tập nội bộ.">
+          <figcaption><b>09 · <span class="vi">Giao bài và xem kết quả</span><span class="en">Assigning and results</span></b>
+            <span class="vi">Link để dán vào Zalo nhóm lớp, 25/28 đã nộp, gia hạn ngay tại chỗ. Bộ không có tự luận thì ô chấm ghi rõ lý do, không hiện số 0. Màn ghi rõ đây là bài luyện tập, không phải đánh giá chính thức theo Thông tư 27.</span>
+            <span class="en">A link to paste into the class Zalo group, 25/28 submitted, extend the deadline in place. With no written questions, the grading tile says why instead of showing 0. The screen states this is practice, not an official assessment under Circular 27.</span></figcaption>
+        </figure>
+      </div>
+
+      <h4 class="sub vi">Học sinh làm bài trên điện thoại</h4><h4 class="sub en">Pupils answer on a phone</h4>
+      <div class="phones duo">
+        <figure>
+          <img src="img/sali/hs-chon-ten.jpg" alt="Học sinh chọn tên trong danh sách lớp xếp theo tên, bạn đã nộp bị mờ kèm nhãn Đã nộp, nút Bắt đầu làm bài.">
+          <figcaption><b>10 · <span class="vi">Học sinh chọn tên</span><span class="en">Pupil picks a name</span></b>
+            <span class="vi">Không cần tài khoản. Danh sách xếp theo tên như sổ lớp; bạn đã nộp thì tên mờ đi, không chọn lại được.</span>
+            <span class="en">No account needed. The list is sorted by given name, as in the class register; names that have submitted are greyed out and cannot be picked again.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sali/hs-cau.jpg" alt="Câu 1 của 8: 38 + 25 = ?, bốn đáp án A vuông xanh, B tròn tím, C tam giác cam, D thoi xanh ngọc, đã chọn 63.">
+          <figcaption><b>11 · <span class="vi">Một câu một màn</span><span class="en">One question per screen</span></b>
+            <span class="vi">Mỗi đáp án có chữ cái, hình và màu riêng, để trẻ chưa đọc thạo vẫn nhận ra. Font Andika, mỗi đáp án cao ít nhất 80px.</span>
+            <span class="en">Each answer has its own letter, shape and colour, so early readers can still tell them apart. Andika font, each answer at least 80px tall.</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="card-bd">
+        <h4 class="sub vi">Quyết định giao diện đáng kể</h4><h4 class="sub en">Interface decisions worth noting</h4>
+        <ul class="vi">
+          <li><b>Dựng khuôn trước, nối AI sau.</b> AI chỉ được trả về đúng khuôn giáo án đã định, từng mục, từng hoạt động. Hiện khuôn được lấp bằng nội dung mẫu; khi chọn xong nhà cung cấp, chỉ thay phần sinh nội dung, còn màn hình, dữ liệu và luồng giữ nguyên.</li>
+          <li><b>Xem trước là trang giấy, không phải web.</b> Tiêu chí nghiệm thu: bản xem trước khớp 100% file Word tải về, cùng mục, cùng bảng hai cột, cùng font, không màu. Vì vậy giao diện hồng của app không được lọt vào.</li>
+          <li><b>Giáo viên không trả giá cho lỗi của AI.</b> Lượt miễn phí chỉ bị trừ khi tạo thành công. AI lỗi hay chủ đề mơ hồ thì không mất lượt; sửa lại cũng không tốn lượt.</li>
+          <li><b>Mỗi giáo án ghi rõ nguồn.</b> Khung Thông tin nêu căn cứ công văn nào và ngày cập nhật, có lời nhắc nội dung do AI gợi ý, và mỗi lần lưu thành một phiên bản trong lịch sử.</li>
+          <li><b>Học sinh làm bài không cần tài khoản.</b> Chọn tên rồi làm từng câu. Đổi lại, ai có link cũng nộp thay được; màn kết quả ghi rõ đây là bài luyện tập, không phải đánh giá chính thức.</li>
+        </ul>
+        <ul class="en">
+          <li><b>Build the frame first, wire in AI later.</b> AI may only return the agreed plan structure, section by section, activity by activity. For now that structure is filled with template content; once a provider is chosen, only the generator changes, while screens, data and flows stay as they are.</li>
+          <li><b>The preview is a sheet of paper, not a web page.</b> Acceptance test: the preview matches the Word download 100%, same sections, same two-column table, same font, no colour. So the app's pink UI must not leak in.</li>
+          <li><b>Teachers do not pay for AI's mistakes.</b> A free credit is spent only on a successful generation. An AI failure or a vague topic costs nothing, and neither does editing.</li>
+          <li><b>Every plan shows its source.</b> The info panel names the circular and its update date, a note says AI suggested the content, and every save becomes a version in the history.</li>
+          <li><b>Pupils answer without an account.</b> Pick a name, then one question at a time. The trade-off: anyone with the link can submit for someone else; the results screen states this is practice, not an official assessment.</li>
+        </ul>
+        <h4 class="sub vi">Cố ý để ngoài bản này</h4><h4 class="sub en">Deliberately left out of this build</h4>
+        <ul class="vi">
+          <li>Nhà cung cấp AI: chưa chọn, nội dung đang là mẫu.</li>
+          <li>Cổng thanh toán: nâng cấp gói do admin duyệt tay.</li>
+          <li>App điện thoại riêng: giáo viên và học sinh dùng trình duyệt.</li>
+        </ul>
+        <ul class="en">
+          <li>An AI provider: not chosen yet; content is template text.</li>
+          <li>A payment gateway: upgrades are approved by an admin.</li>
+          <li>A native mobile app: teachers and pupils use the browser.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PROCESS -->
+  <section class="s-teal" id="cach-lam">
+    <div class="shead">
+      <span class="chip-n">05</span>
+      <h2 class="vi">Cách tôi làm</h2><h2 class="en">How I work</h2>
+    </div>
+    <div class="card">
+      <div class="pipe">
+        <div class="stage">
+          <span class="id">1</span>
+          <h5 class="vi">Hỏi trước khi vẽ</h5><h5 class="en">Ask before drawing</h5>
+          <p class="vi">Liệt kê những gì chưa ai quyết, ai quyết, hạn nào. Mỗi câu kèm một đề xuất sẵn để buổi chốt chỉ còn "đồng ý hay sửa".</p>
+          <p class="en">List what nobody has decided, who decides, by when. Each question ships with a proposal so the meeting is only "agree or amend".</p>
+        </div>
+        <div class="stage">
+          <span class="id">2</span>
+          <h5 class="vi">Luồng và trạng thái</h5><h5 class="en">Flows and states</h5>
+          <p class="vi">Vẽ luồng phủ đủ nhánh thành công, lỗi, biên. Mỗi trạng thái là một màn riêng, mỗi thông báo lấy từ bảng câu chữ đã chốt.</p>
+          <p class="en">Flows cover happy, error and edge paths. Every state is its own screen; every message comes from an agreed string table.</p>
+        </div>
+        <div class="stage ai">
+          <span class="id">3</span>
+          <h5 class="vi">Vẽ Figma từ tài liệu</h5><h5 class="en">Figma from documents</h5>
+          <p class="vi">Màn vẽ qua MCP từ URD, brainstorm, biên bản. Mỗi màn một thẻ ghi chú: quy tắc và nguồn, chuyển động, chờ quyết định.</p>
+          <p class="en">Screens drawn via MCP from the URD, brainstorm and minutes. Each gets a note card: rule and source, motion, pending decision.</p>
+        </div>
+        <div class="stage ai">
+          <span class="id">4</span>
+          <h5 class="vi">Bản chạy thử HTML</h5><h5 class="en">Working HTML prototype</h5>
+          <p class="vi">Người duyệt tự bấm: mất mạng, hết suất, số dư âm. Chỗ lệch với Figma ghi thành mục riêng, không giấu.</p>
+          <p class="en">Reviewers tap through offline mode, sold-out races, negative balances. Deviations from Figma are logged, not hidden.</p>
+        </div>
+        <div class="stage">
+          <span class="id">5</span>
+          <h5 class="vi">Đối chiếu dữ liệu thật</h5><h5 class="en">Check against real data</h5>
+          <p class="vi">Một giáo án thật, một hoá đơn thật, một cuốn sách thật. Bản đặc tả đầu tiên luôn sai ở đâu đó; việc của tôi là tìm ra trước khi dev.</p>
+          <p class="en">One real lesson plan, one real invoice, one real book. The first spec is always wrong somewhere; my job is to find where before engineering does.</p>
+        </div>
+      </div>
+      <div class="card-bd">
+        <p class="vi">AI làm phần tay: dựng khung Figma, sinh bản chạy thử, viết nháp câu chữ. Tôi làm phần quyết: cái gì được vẽ, lấy từ nguồn nào, ai ký, và kiểm từng màn so với câu đã chốt. Mọi con số trong ba case study trên đều có người đứng sau.</p>
+        <p class="en">AI does the hands: scaffolding Figma, generating prototypes, drafting copy. I do the decisions: what gets drawn, from which source, who signs, and checking every screen against the agreed answers. Every number in the three case studies above has a person behind it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ABOUT -->
+  <section class="s-grape" id="ve-toi">
+    <div class="shead">
+      <span class="chip-n">06</span>
+      <h2 class="vi">Về tôi</h2><h2 class="en">About me</h2>
+    </div>
+    <div class="card">
+      <div class="card-bd">
+        <p class="lede vi">Tôi là Business Analyst ba năm rưỡi, kiêm Product Owner ở dự án gần nhất, làm sản phẩm EdTech, y tế, chatbot AI, AI agent và VR cho thị trường Việt Nam và châu Phi. Từ 2026 tôi tự vẽ giao diện cho những gì mình đặc tả, vì nhận ra tài liệu hay nhất vẫn thua một màn hình mà người duyệt bấm được.</p>
+        <p class="lede en">I have been a Business Analyst for three and a half years, acting Product Owner on my latest project, on EdTech, healthcare, AI chatbot, AI agent and VR products for Vietnam and Africa. Since 2026 I design the interfaces for what I specify, having learned that the best document still loses to a screen a reviewer can tap.</p>
+        <p class="vi">Điểm mạnh của tôi không phải vẽ đẹp. Là biết màn hình này đang trả lời yêu cầu nào, nhánh lỗi nào chưa ai nghĩ tới, và con số nào chưa có người ký. Tôi làm việc trực tiếp với PM, dev, pháp chế và kế toán, và quen với việc bản vẽ đầu bị bỏ.</p>
+        <p class="en">My strength is not pretty pixels. It is knowing which requirement a screen answers, which error branch nobody has considered, and which number nobody has signed. I work directly with PMs, engineers, legal and finance, and I am used to the first draft being thrown out.</p>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <tbody>
+            <tr>
+              <th class="vi">Thiết kế</th><th class="en">Design</th>
+              <td class="vi">Luồng người dùng · wireframe · trạng thái biên · bản chạy thử HTML · hệ thống biến màu và chữ · ghi chú chuyển động và Reduce Motion · Figma vẽ qua MCP</td>
+              <td class="en">User flows · wireframes · edge states · working HTML prototypes · colour and type token systems · motion notes with Reduce Motion · Figma via MCP</td>
+            </tr>
+            <tr>
+              <th class="vi">Nghiệp vụ</th><th class="en">Analysis</th>
+              <td class="vi">URD, BRD, SRS · user story và tiêu chí nghiệm thu · BPMN, activity, sequence, ERD · JTBD · RICE · Jira, Confluence</td>
+              <td class="en">URD, BRD, SRS · user stories and acceptance criteria · BPMN, activity, sequence, ERD · JTBD · RICE · Jira, Confluence</td>
+            </tr>
+            <tr>
+              <th class="vi">Đã làm trong</th><th class="en">Domains</th>
+              <td class="vi">Chương trình thành viên · EdTech · y tế số · AI agent · chatbot · VR · thương mại điện tử</td>
+              <td class="en">Loyalty · EdTech · digital health · AI agents · chatbots · VR · e-commerce</td>
+            </tr>
+            <tr>
+              <th class="vi">Ngôn ngữ</th><th class="en">Languages</th>
+              <td class="vi">Tiếng Việt (bản ngữ) · Tiếng Anh (đọc tài liệu, viết đặc tả)</td>
+              <td class="en">Vietnamese (native) · English (documentation and specification)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-bd">
+        <p class="vi">CV gửi theo yêu cầu qua email. Các case study về sản phẩm của công ty đã đổi tên đơn vị và dùng dữ liệu mẫu.</p>
+        <p class="en">CV available on request by email. Case studies on company products use changed unit names and sample data.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btnVi = document.getElementById('btn-vi');
+  var btnEn = document.getElementById('btn-en');
+  function apply(lang){
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'vi');
+    btnVi.setAttribute('aria-pressed', String(lang !== 'en'));
+    btnEn.setAttribute('aria-pressed', String(lang === 'en'));
+    try { localStorage.setItem('ptl-portfolio-lang', lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('ptl-portfolio-lang'); } catch (e) {}
+  apply(saved === 'en' ? 'en' : 'vi');
+  btnVi.addEventListener('click', function(){ apply('vi'); });
+  btnEn.addEventListener('click', function(){ apply('en'); });
+})();
+
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.nav-links a'));
+  var map = {}, targets = [];
+  links.forEach(function(a){
+    var href = a.getAttribute('href'); if (!href || href.charAt(0) !== '#') return;
+    var el = document.querySelector(href);
+    if (el) { map[el.id] = a; targets.push(el); }
+  });
+  if (!('IntersectionObserver' in window) || !targets.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      links.forEach(function(a){ a.classList.remove('on'); });
+      map[e.target.id].classList.add('on');
+    });
+  }, { rootMargin: '-72px 0px -68% 0px', threshold: 0 });
+  targets.forEach(function(t){ io.observe(t); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="description" content="Case study thiết kế giao diện app thành viên cho một tập đoàn ba mảng kinh doanh — bản nháp, tên đơn vị đã đổi.">
+<meta name="author" content="Phạm Thùy Linh">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Case study · Membership">
+<meta property="og:description" content="Từ một câu yêu cầu đến 84 màn chạy thử, mọi chi tiết truy được về một quyết định có người ký.">
+<meta property="og:locale" content="vi_VN">
+<title>Case study · Membership — Phạm Thùy Linh</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+:root{
+  color-scheme:light dark;
+
+  --paper:#F1F7F5;
+  --sheet:#FFFFFF;
+  --sheet-2:#F7FBF9;
+  --ink:#10241F;
+  --ink-2:#4C635C;
+  --ink-3:#7E938C;
+  --rule:#DCEAE5;
+  --rule-2:#EAF3F0;
+
+  --teal:#00A292;
+  --teal-deep:#00786C;
+  --teal-wash:#DCF3EF;
+  --sun:#F0A311;
+  --sun-strong:#FFB627;
+  --sun-wash:#FFEFCE;
+  --coral:#EE6152;
+  --coral-wash:#FFE6E2;
+  --grape:#7355D6;
+  --grape-wash:#EBE5FD;
+
+  --lift:0 1px 2px rgba(16,36,31,.05), 0 10px 26px -16px rgba(16,36,31,.28);
+  --lift-2:0 2px 4px rgba(16,36,31,.06), 0 20px 44px -22px rgba(16,36,31,.4);
+
+  --f-display:"Outfit","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+
+  --r-lg:20px;
+  --r-md:14px;
+  --r-sm:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A1614;
+    --sheet:#10201D;
+    --sheet-2:#152824;
+    --ink:#E6F2EE;
+    --ink-2:#A2B8B1;
+    --ink-3:#7C948C;
+    --rule:#26403A;
+    --rule-2:#1C332E;
+    --teal:#3FD3BF;
+    --teal-deep:#6FE3D2;
+    --teal-wash:#0E332E;
+    --sun:#FFC258;
+    --sun-strong:#FFC864;
+    --sun-wash:#3A2A0C;
+    --coral:#FF8878;
+    --coral-wash:#3A1D18;
+    --grape:#A98FFF;
+    --grape-wash:#231C42;
+    --lift:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.85);
+    --lift-2:0 2px 6px rgba(0,0,0,.5), 0 22px 48px -24px rgba(0,0,0,1);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A1614;
+  --sheet:#10201D;
+  --sheet-2:#152824;
+  --ink:#E6F2EE;
+  --ink-2:#A2B8B1;
+  --ink-3:#7C948C;
+  --rule:#26403A;
+  --rule-2:#1C332E;
+  --teal:#3FD3BF;
+  --teal-deep:#6FE3D2;
+  --teal-wash:#0E332E;
+  --sun:#FFC258;
+  --sun-strong:#FFC864;
+  --sun-wash:#3A2A0C;
+  --coral:#FF8878;
+  --coral-wash:#3A1D18;
+  --grape:#A98FFF;
+  --grape-wash:#231C42;
+  --lift:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -16px rgba(0,0,0,.85);
+  --lift-2:0 2px 6px rgba(0,0,0,.5), 0 22px 48px -24px rgba(0,0,0,1);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 90px}
+
+/* ---------------- hero ---------------- */
+.hero{
+  position:relative;
+  margin-top:26px;
+  background:var(--sheet);
+  border-radius:26px;
+  box-shadow:var(--lift-2);
+  padding:38px 38px 30px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:6px;
+  background:linear-gradient(90deg,var(--teal) 0%,var(--teal) 34%,var(--sun-strong) 34%,var(--sun-strong) 62%,var(--coral) 62%,var(--coral) 82%,var(--grape) 82%);
+}
+.hero-top{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;justify-content:space-between}
+.eyebrow{
+  font-family:var(--f-mono);font-size:.73rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal-deep);
+}
+h1{
+  font-family:var(--f-display);font-weight:800;
+  font-size:clamp(2.3rem,6vw,3.7rem);line-height:1.02;letter-spacing:-.028em;
+  margin:.12em 0 .2em;text-wrap:balance;
+}
+.tagline{font-size:1.08rem;color:var(--ink-2);max-width:50ch;margin:0}
+.hl{background-image:linear-gradient(transparent 56%, var(--sun-wash) 56%);padding:0 .12em;color:var(--ink);font-weight:600}
+
+.langswitch{
+  display:inline-flex;background:var(--sheet-2);border:1px solid var(--rule);
+  border-radius:999px;padding:3px;gap:2px;flex:none;
+}
+.langswitch button{
+  font-family:var(--f-mono);font-size:.73rem;font-weight:500;letter-spacing:.08em;
+  padding:6px 15px;border:0;border-radius:999px;background:transparent;color:var(--ink-2);cursor:pointer;
+  transition:background .18s ease,color .18s ease;
+}
+.langswitch button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.langswitch button:hover{color:var(--ink)}
+.langswitch button[aria-pressed="true"]:hover{color:#fff}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{
+  font-size:.85rem;font-weight:500;padding:5px 13px;border-radius:999px;
+  background:var(--teal-wash);color:var(--teal-deep);
+}
+.chips span:nth-child(2){background:var(--sun-wash);color:var(--sun)}
+.chips span:nth-child(3){background:var(--coral-wash);color:var(--coral)}
+.chips span:nth-child(4){background:var(--grape-wash);color:var(--grape)}
+
+.contact{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px;padding-top:22px;border-top:1px solid var(--rule)}
+.contact a{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.92rem;font-weight:500;text-decoration:none;color:var(--ink);
+  background:var(--sheet-2);border:1px solid var(--rule);border-radius:999px;padding:8px 16px;
+  transition:transform .15s ease,border-color .15s ease,background .15s ease;
+}
+.contact a:hover{transform:translateY(-2px);border-color:var(--teal);background:var(--teal-wash);color:var(--teal-deep)}
+.contact .place{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.92rem;font-weight:500;color:var(--ink-2);
+  background:transparent;border:1px dashed var(--rule);border-radius:999px;padding:8px 16px;
+}
+.contact a .k,.contact .place .k{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.contact a:hover .k{color:var(--teal-deep)}
+
+/* ---------------- sticky nav ---------------- */
+html{scroll-behavior:smooth}
+.nav{
+  position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;
+  margin:0 -20px;padding:8px 20px;background:var(--paper);border-bottom:1px solid var(--rule);
+}
+.nav-home{
+  flex:none;font-family:var(--f-mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;
+  color:var(--teal-deep);text-decoration:none;
+}
+.nav-links{display:flex;gap:2px;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;
+  color:var(--ink-2);font-size:.85rem;padding:6px 11px;border-radius:999px;
+  transition:background .15s ease,color .15s ease;
+}
+.nav-links a i{font-family:var(--f-mono);font-style:normal;font-size:.68rem;color:var(--ink-3)}
+.nav-links a:hover{background:var(--sheet);color:var(--ink)}
+.nav-links a.on{background:var(--teal-wash);color:var(--teal-deep);font-weight:600}
+.nav-links a.on i{color:var(--teal-deep)}
+.hero,section[id]{scroll-margin-top:70px}
+
+/* ---------------- section heads ---------------- */
+section{margin-top:62px}
+.shead{display:flex;align-items:center;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+.chip-n{
+  flex:none;width:38px;height:38px;border-radius:13px;display:grid;place-items:center;
+  font-family:var(--f-mono);font-size:.86rem;font-weight:700;color:#fff;background:var(--teal);
+}
+.s-teal .chip-n{background:var(--teal)}
+.s-sun .chip-n{background:var(--sun)}
+.s-coral .chip-n{background:var(--coral)}
+.s-grape .chip-n{background:var(--grape)}
+.shead h2{
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(1.45rem,3.2vw,2.05rem);letter-spacing:-.02em;margin:0;flex:1;min-width:260px;text-wrap:balance;
+}
+.shead .tag{
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);background:var(--sheet);border-radius:999px;padding:5px 12px;white-space:nowrap;
+}
+.lede{font-size:1.03rem;color:var(--ink-2);max-width:70ch;margin:0 0 24px}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* ---------------- stat tiles ---------------- */
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:6px}
+.tile{border-radius:var(--r-lg);padding:22px 22px 24px;background:var(--teal-wash)}
+.tile:nth-child(2){background:var(--sun-wash)}
+.tile:nth-child(3){background:var(--coral-wash)}
+.tile:nth-child(4){background:var(--grape-wash)}
+.tile .n{
+  font-family:var(--f-display);font-weight:800;font-size:2.5rem;line-height:1;
+  letter-spacing:-.03em;display:block;color:var(--teal-deep);font-variant-numeric:tabular-nums;
+}
+.tile:nth-child(2) .n{color:var(--sun)}
+.tile:nth-child(3) .n{color:var(--coral)}
+.tile:nth-child(4) .n{color:var(--grape)}
+.tile .l{display:block;margin-top:9px;font-size:.9rem;color:var(--ink-2);line-height:1.45}
+
+/* ---------------- cards ---------------- */
+.card{background:var(--sheet);border-radius:var(--r-lg);box-shadow:var(--lift);overflow:hidden}
+.card + .card{margin-top:22px}
+.card-hd{padding:26px 28px 22px}
+.kicker{
+  font-family:var(--f-mono);font-size:.69rem;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal-deep);display:block;margin-bottom:8px;
+}
+.card-hd h3{font-family:var(--f-display);font-weight:700;font-size:1.5rem;letter-spacing:-.018em;margin:0;text-wrap:balance}
+.card-hd p{margin:.7em 0 0;color:var(--ink-2);max-width:72ch;font-size:.99rem}
+.card-bd{padding:24px 28px 28px}
+.card-bd > p{max-width:72ch;color:var(--ink-2);font-size:.98rem}
+.card-bd > p:first-child{margin-top:0}
+.card-bd > p strong{color:var(--ink);font-weight:600}
+
+.meta{display:flex;flex-wrap:wrap;gap:10px;padding:0 28px 24px}
+.meta div{background:var(--sheet-2);border-radius:var(--r-md);padding:11px 16px 13px;flex:1 1 158px}
+.meta .k{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);display:block}
+.meta .v{font-size:.9rem;font-weight:600;display:block;margin-top:2px}
+
+/* ---------- problem / insight ---------- */
+.pi{display:grid;gap:14px;grid-template-columns:1fr;align-items:start;padding:2px 28px 8px}
+@media (min-width:840px){.pi{grid-template-columns:1fr 1.15fr}}
+.pi > div{border-radius:var(--r-md);padding:19px 21px 21px}
+.pi-problem{background:var(--coral-wash)}
+.pi-insight{background:var(--teal-wash)}
+.pi .lbl{font-family:var(--f-mono);font-size:.67rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;display:block;margin-bottom:11px}
+.pi-problem .lbl{color:var(--coral)}
+.pi-insight .lbl{color:var(--teal-deep)}
+.pi p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.62}
+.pi-problem ul{margin:.75em 0 0;padding-left:1.05em}
+.pi-problem li{margin-bottom:.4em;font-size:.94rem;color:var(--ink-2);line-height:1.5}
+.pi-problem li:last-child{margin-bottom:0}
+.pi-problem li::marker{color:var(--coral)}
+.pi-lead{margin:0;font-size:.95rem;color:var(--ink);font-weight:600;line-height:1.5}
+.pi-insight b{display:block;color:var(--ink);font-weight:600;font-size:1.06rem;line-height:1.38;margin-bottom:7px;text-wrap:balance}
+@media (max-width:720px){.pi{padding-left:20px;padding-right:20px}}
+
+h4.sub{font-family:var(--f-display);font-weight:700;font-size:1.12rem;margin:30px 0 12px;letter-spacing:-.012em}
+h4.sub:first-child{margin-top:0}
+ul.tight{margin:.6em 0 0;padding-left:1.15em;color:var(--ink-2);font-size:.96rem}
+ul.tight li{margin-bottom:.42em}
+ul.tight li strong{color:var(--ink);font-weight:600}
+ul.tight li::marker{color:var(--teal)}
+
+/* ---------------- screenshots ---------------- */
+.shots{padding:4px 28px 10px;column-count:1;column-gap:18px}
+@media (min-width:800px){.shots{column-count:2}}
+figure{
+  margin:0 0 18px;border-radius:var(--r-md);background:var(--sheet-2);
+  border:1px solid var(--rule);overflow:hidden;break-inside:avoid;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+figure:hover{transform:translateY(-3px);box-shadow:var(--lift)}
+figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--rule)}
+figcaption{padding:11px 15px 14px;font-size:.85rem;color:var(--ink-2);line-height:1.5}
+figcaption b{
+  display:block;margin-bottom:3px;color:var(--teal-deep);
+  font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;
+}
+
+/* ---------------- pipeline ---------------- */
+.axis{display:flex;align-items:center;gap:12px;margin:2px 0 16px;font-family:var(--f-mono);font-size:.69rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.axis .bar{flex:1;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--sun-strong))}
+.pipe{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(186px,1fr))}
+.stage{background:var(--teal-wash);border-radius:var(--r-md);padding:16px 17px 18px;display:flex;flex-direction:column;gap:8px}
+.stage.ai{background:var(--sun-wash)}
+.stage .id{font-family:var(--f-display);font-weight:800;font-size:1.65rem;line-height:1;color:var(--teal-deep);letter-spacing:-.02em}
+.stage.ai .id{color:var(--sun)}
+.stage h5{margin:0;font-size:1rem;font-weight:600;line-height:1.3;text-wrap:balance}
+.stage p{margin:0;font-size:.86rem;color:var(--ink-2);line-height:1.5}
+.dots{display:flex;gap:4px;margin-top:auto;padding-top:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--teal);opacity:.22}
+.dots i.on{opacity:1}
+.stage.ai .dots i{background:var(--sun)}
+.chip{
+  align-self:flex-start;font-family:var(--f-mono);font-size:.63rem;font-weight:500;letter-spacing:.07em;
+  text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--teal);color:#fff;
+}
+.stage.ai .chip{background:var(--sun);color:#3A2A0C}
+
+/* ---------------- tables ---------------- */
+.tablewrap{overflow-x:auto;border-radius:var(--r-md);border:1px solid var(--rule);background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem}
+caption{
+  text-align:left;padding:13px 16px;font-size:.85rem;color:var(--ink-2);
+  background:var(--sheet-2);border-bottom:1px solid var(--rule);
+}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--rule-2);vertical-align:top;line-height:1.5}
+thead th{
+  font-family:var(--f-mono);font-size:.67rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);background:var(--sheet-2);border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--sheet-2)}
+.mono{font-family:var(--f-mono);font-size:.85em;font-variant-numeric:tabular-nums}
+td code{font-family:var(--f-mono);font-size:.84em;background:var(--grape-wash);color:var(--grape);padding:2px 6px;border-radius:5px}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{font-family:var(--f-mono);font-size:.63rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;display:inline-block;white-space:nowrap;background:var(--rule-2);color:var(--ink-2)}
+.pill.free{background:var(--teal-wash);color:var(--teal-deep)}
+.pill.ai{background:var(--sun-wash);color:var(--sun)}
+.pill.warn{background:var(--coral-wash);color:var(--coral)}
+
+/* ---------------- note ---------------- */
+.note{background:var(--teal-wash);border-radius:var(--r-md);padding:18px 22px;margin:22px 0 0}
+.note.sun{background:var(--sun-wash)}
+.note p{margin:0;font-size:.97rem;color:var(--ink)}
+.note p + p{margin-top:.7em}
+.note .lbl{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);display:block;margin-bottom:6px}
+.note.sun .lbl{color:var(--sun)}
+
+/* ---------------- skills ---------------- */
+.phases{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:start}
+.phase{background:var(--sheet-2);border-radius:var(--r-md);padding:17px 18px 19px}
+.phase .id{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-deep)}
+.phase h5{margin:5px 0 11px;font-size:1.02rem;font-weight:600;font-family:var(--f-display)}
+.phase p{margin:11px 0 0;font-size:.86rem;color:var(--ink-2);line-height:1.5}
+.skills{display:flex;flex-wrap:wrap;gap:6px}
+.skills span{font-family:var(--f-mono);font-size:.72rem;padding:3px 9px;border-radius:7px;background:var(--sheet);color:var(--ink-2);border:1px solid var(--rule)}
+.skills span.own{background:var(--teal-wash);color:var(--teal-deep);border-color:transparent;font-weight:500}
+
+/* ---------------- terminal ---------------- */
+.term{background:#0D1F1B;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--lift)}
+.term-bar{
+  display:flex;align-items:center;gap:10px;padding:11px 16px;background:#12302A;
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;color:#7FD9C9;
+}
+.term-bar b{width:9px;height:9px;border-radius:50%;background:#3FD3BF;display:inline-block;flex:none}
+.term-bd{padding:18px 20px 20px;font-family:var(--f-mono);font-size:.83rem;line-height:1.72;color:#CFE8E1;overflow-x:auto}
+.term-bd .cmd{color:#FFC864}
+.term-bd .cmd::before{content:"❯ ";color:#3FD3BF}
+.term-bd .dim{color:#6E9A90}
+.term-bd .ok{color:#3FD3BF}
+.term-bd pre{margin:0;font:inherit;white-space:pre-wrap;word-break:break-word}
+
+/* ---------------- priority list ---------------- */
+.prio{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:4px}
+.prio-col{background:var(--sheet-2);border-radius:var(--r-md);padding:16px 17px 18px}
+.prio-col header{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.prio-tag{font-family:var(--f-mono);font-size:.72rem;font-weight:700;padding:4px 11px;border-radius:999px;background:var(--coral);color:#fff}
+.p1 .prio-tag{background:var(--sun);color:#3A2A0C}
+.p2 .prio-tag{background:var(--grape);color:#fff}
+.prio-col header span.t{font-size:.88rem;color:var(--ink-2);font-weight:500}
+.prio-col ol{margin:0;padding-left:1.4em;font-size:.9rem;color:var(--ink-2)}
+.prio-col ul{margin:0;padding-left:1.15em;font-size:.9rem;color:var(--ink-2);list-style:none}
+.prio-col ul li::before{content:"•";color:var(--coral);font-weight:700;display:inline-block;width:1em;margin-left:-1em}
+.prio-col li{margin-bottom:.4em;line-height:1.5}
+.prio-col ol li::marker{font-family:var(--f-mono);font-weight:700;color:var(--sun)}
+
+/* ---------------- diagram figures ---------------- */
+.diagrams{display:grid;gap:18px;grid-template-columns:1fr;align-items:start;margin-top:6px}
+.dia{position:relative;background:#fff;border:1px solid var(--rule);border-radius:var(--r-md);overflow:hidden;display:block;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+.dia .zoom{
+  position:absolute;top:11px;right:11px;pointer-events:none;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--f-mono);font-size:.65rem;letter-spacing:.06em;
+  background:rgba(13,31,27,.82);color:#CFE8E1;padding:4px 11px;border-radius:999px;
+}
+.dia:hover{transform:translateY(-3px);box-shadow:var(--lift-2)}
+.dia img{display:block;width:100%;height:auto}
+.dia .cap{display:block;padding:13px 18px 16px;background:var(--sheet);border-top:1px solid var(--rule);color:var(--ink-2);font-size:.88rem;line-height:1.55;max-width:86ch}
+.dia .cap b{display:block;color:var(--teal-deep);font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;margin-bottom:3px}
+.dia .cap em{font-style:normal;color:var(--ink-3);display:block;margin-top:5px;font-size:.8rem}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.85rem;color:var(--ink-2)}
+.legend i{width:13px;height:13px;border-radius:4px;display:inline-block;margin-right:6px;vertical-align:-2px;border:1px solid rgba(0,0,0,.12)}
+
+/* ---------------- experience ---------------- */
+.jobs{display:grid;gap:16px}
+.job{background:var(--sheet);border-radius:var(--r-lg);box-shadow:var(--lift);padding:24px 26px 26px;display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:820px){.job{grid-template-columns:170px 1fr}}
+.job .when{font-family:var(--f-mono);font-size:.83rem;color:var(--teal-deep);font-weight:500;font-variant-numeric:tabular-nums}
+.job h4{font-family:var(--f-display);font-weight:700;font-size:1.18rem;margin:0 0 2px}
+.job .role{color:var(--ink-2);font-size:.93rem;margin:0 0 10px}
+.job .projs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.job .projs span{font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--sheet-2);color:var(--ink-2);border:1px solid var(--rule)}
+.job .out{margin:0;font-size:.95rem;color:var(--ink-2)}
+
+.kv{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:18px}
+.kv div{background:var(--sheet);border-radius:var(--r-md);padding:17px 19px 19px;box-shadow:var(--lift)}
+.kv .k{font-family:var(--f-mono);font-size:.66rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-deep);display:block;margin-bottom:7px}
+.kv .v{font-size:.91rem;color:var(--ink-2);line-height:1.55}
+
+/* ---------------- footer ---------------- */
+footer{
+  margin-top:66px;background:var(--sheet);border-radius:26px;box-shadow:var(--lift-2);
+  padding:34px 38px 32px;
+}
+footer h3{font-family:var(--f-display);font-weight:700;font-size:1.55rem;margin:0 0 7px;letter-spacing:-.018em}
+footer > p{margin:0;color:var(--ink-2);max-width:56ch;font-size:.99rem}
+.stamp{
+  margin-top:24px;padding-top:18px;border-top:1px solid var(--rule);
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink-3);line-height:1.7;
+}
+
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+@media (max-width:720px){
+  .hero{padding:28px 22px 24px;border-radius:20px}
+  .card-hd,.card-bd,.meta{padding-left:20px;padding-right:20px}
+  .shots{padding-left:20px;padding-right:20px}
+  footer{padding:26px 22px 24px;border-radius:20px}
+  .stats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+}
+
+/* ---- bilingual: Vietnamese at rest (no attribute needed), English on demand.
+       Declared last, at 0-2-0 specificity, so it outranks the display rules above. ---- */
+:root:not([data-lang="en"]) .en{display:none}
+:root[data-lang="en"] .vi{display:none}
+
+/* ===== case study extras ===== */
+.disclaimer{margin:14px 0 0;font-size:.82rem;color:var(--ink-3);max-width:72ch}
+.phones{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:4px 28px 10px}
+@media (min-width:800px){.phones{grid-template-columns:repeat(4,1fr)}.phones.three{grid-template-columns:repeat(3,1fr)}.phones.wide{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:799px){.phones{padding-left:20px;padding-right:20px}.phones.wide{grid-template-columns:1fr}}
+.phones figure{margin:0}
+.phones figure img{background:#E9E7EE}
+figure.chosen{border-color:var(--teal);box-shadow:0 0 0 2px var(--teal) inset}
+.hero h1{max-width:22ch}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="nav" aria-label="Mục lục / Contents">
+    <a class="nav-home" href="../index.html">PTL</a>
+    <div class="nav-links">
+      <a href="#boi-canh"><i>01</i><span class="vi">Bối cảnh</span><span class="en">Context</span></a>
+      <a href="#research"><i>02</i><span>Research</span></a>
+      <a href="#nguyen-tac"><i>03</i><span class="vi">Nguyên tắc</span><span class="en">Principles</span></a>
+      <a href="#vong-sua"><i>04</i><span class="vi">Các vòng sửa</span><span class="en">Iterations</span></a>
+      <a href="#ban-cuoi"><i>05</i><span class="vi">Bản cuối</span><span class="en">Final screens</span></a>
+      <a href="#trang-thai"><i>06</i><span class="vi">Trạng thái biên</span><span class="en">Edge states</span></a>
+      <a href="#ket-qua"><i>07</i><span class="vi">Kết quả</span><span class="en">Outcome</span></a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-top">
+      <div>
+        <span class="eyebrow vi">Case study · Thiết kế giao diện · Bản nháp</span><span class="eyebrow en">Case study · Interface design · Draft</span>
+        <h1 class="vi">Membership — một app tích điểm cho ba mảng kinh doanh</h1>
+        <h1 class="en">Membership — one loyalty app for three business lines</h1>
+        <p class="tagline vi">Từ yêu cầu <span class="hl">"làm giống VinClub"</span> đến 84 màn chạy thử mà mọi chi tiết truy được về một quyết định có người ký.</p>
+        <p class="tagline en">From a brief that said <span class="hl">"make it like VinClub"</span> to 84 working screens where every detail traces back to a signed decision.</p>
+      </div>
+      <div class="langswitch" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" id="btn-vi" aria-pressed="true">VI</button>
+        <button type="button" id="btn-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><span class="k vi">Vai trò</span><span class="k en">Role</span><span class="v vi">BA · tự vẽ giao diện và dựng bản chạy thử</span><span class="v en">BA · designed the UI and built the prototype</span></div>
+      <div><span class="k vi">Làm cùng</span><span class="k en">Worked with</span><span class="v vi">PM, PO, 3 đơn vị kinh doanh, Pháp chế, Kế toán, Marketing, IT</span><span class="v en">PM, PO, 3 business units, Legal, Finance, Marketing, IT</span></div>
+      <div><span class="k vi">Thời gian</span><span class="k en">Timeline</span><span class="v num">06/10 → 28/10/2026 · 3 <span class="vi">tuần</span><span class="en">weeks</span></span></div>
+      <div><span class="k vi">Sản phẩm</span><span class="k en">Output</span><span class="v num vi">84 màn chạy thử · 2 thiết bị · 43 câu đã chốt</span><span class="v num en">84 prototype screens · 2 devices · 43 decisions closed</span></div>
+      <div><span class="k vi">Trạng thái</span><span class="k en">Status</span><span class="v vi">Thiết kế đã duyệt nội bộ · ra mắt dự kiến Q2–Q3/2027</span><span class="v en">Design approved internally · launch planned Q2–Q3 2027</span></div>
+    </div>
+
+    <p class="disclaimer vi">Tên tập đoàn, các đơn vị, địa điểm và người đã được đổi. Số liệu trên màn là dữ liệu mẫu. Màn hình lấy từ bản chạy thử HTML do tôi dựng, không phải app đã phát hành.</p>
+    <p class="disclaimer en">Group, business unit, place and people names have been changed. Figures on screen are sample data. Screens come from the HTML prototype I built, not a released app.</p>
+  </header>
+
+  <!-- 01 -->
+  <section class="s-teal" id="boi-canh">
+    <div class="shead">
+      <span class="chip-n">01</span>
+      <h2 class="vi">Bối cảnh và vấn đề</h2><h2 class="en">Context and problem</h2>
+    </div>
+    <div class="card">
+      <div class="pi">
+        <div class="pi-problem">
+          <span class="lbl vi">Bài toán</span><span class="lbl en">Problem</span>
+          <p class="pi-lead vi">Một tập đoàn có ba mảng: co-working, chuỗi cà phê, khu nghỉ dưỡng. Mỗi mảng ghi nhận khách riêng.</p>
+          <p class="pi-lead en">A group runs three lines: co-working, a coffee chain, a resort. Each one keeps its own customer records.</p>
+          <ul class="vi">
+            <li>Khách quen của cả tập đoàn vẫn bị đối xử như khách lẻ ở từng quầy.</li>
+            <li>Không có lý do nào để chọn dịch vụ trong tập đoàn thay vì nơi khác.</li>
+            <li>Yêu cầu ban đầu chỉ có một câu: "membership và điểm thưởng tương tự Vingroup, Viettel".</li>
+          </ul>
+          <ul class="en">
+            <li>A loyal customer of the group is still treated as a walk-in at every counter.</li>
+            <li>Nothing gives them a reason to pick the group's services over anyone else's.</li>
+            <li>The initial brief was one line: "membership and points, like Vingroup or Viettel".</li>
+          </ul>
+        </div>
+        <div class="pi-insight">
+          <span class="lbl">Insight</span>
+          <p class="vi"><b>Một chương trình thành viên không phải là app. Nó là một chuỗi quyết định về tiền, dữ liệu và pháp lý, và màn hình chỉ là nơi các quyết định đó lộ ra.</b>Nên việc đầu tiên không phải vẽ, mà là liệt kê những gì chưa ai quyết, ai sẽ quyết, và chỉ vẽ màn đã đủ thông tin.</p>
+          <p class="en"><b>A loyalty programme is not an app. It is a chain of decisions about money, data and law, and the screens are only where those decisions become visible.</b>So the first job was not drawing. It was listing what nobody had decided yet, who would decide it, and drawing only the screens that had enough answers.</p>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div><span class="k vi">Người dùng</span><span class="k en">Users</span><span class="v vi">Khách hàng · nhân viên quầy · quản lý đơn vị · ban dự án và tài chính</span><span class="v en">Customers · counter staff · unit managers · project office and finance</span></div>
+        <div><span class="k vi">Hệ thống</span><span class="k en">Systems</span><span class="v vi">Membership là 1 trong 3 hệ thống, cùng CRM Hub và web Re-marketing</span><span class="v en">Membership is 1 of 3 systems, alongside a CRM hub and a re-marketing web</span></div>
+        <div><span class="k vi">Mục tiêu đo</span><span class="k en">Targets</span><span class="v num vi">≥ 500 thành viên tháng đầu · ≥ 30% hoạt động · ≥ 30% có đổi điểm · tự nuôi được sau 18 tháng</span><span class="v num en">≥ 500 members in month one · ≥ 30% active · ≥ 30% redeem · self-funding after 18 months</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="s-sun" id="research">
+    <div class="shead">
+      <span class="chip-n">02</span>
+      <h2 class="vi">Research: học gì từ các chương trình đang chạy</h2><h2 class="en">Research: what running programmes already teach</h2>
+    </div>
+    <div class="card">
+      <div class="card-hd">
+        <span class="kicker vi">Tham khảo thị trường</span><span class="kicker en">Market references</span>
+        <h3 class="vi">Mỗi quy tắc trên màn hình đều có một hệ thống thật đã làm trước, hoặc một văn bản pháp luật đứng sau</h3>
+        <h3 class="en">Every rule on screen has a real system that did it first, or a regulation behind it</h3>
+      </div>
+      <div class="card-bd">
+        <p class="vi">Tôi lập một file tham khảo sống, cập nhật mỗi khi brainstorm chạm tới một quy tắc mới. Mỗi mục ghi rõ hai mức tin cậy: <b>nguồn đã tra</b> (có link tài liệu công khai) và <b>nguồn tham khảo</b> (hiểu biết chung, phải kiểm lại trước khi trích ra ngoài). Dưới đây là phần ảnh hưởng trực tiếp tới giao diện.</p>
+        <p class="en">I kept a living reference file, updated every time a brainstorm touched a new rule. Each entry carries one of two confidence levels: <b>verified</b> (linked to a public document) or <b>general knowledge</b> (to be checked before quoting outside). Below are the entries that shaped the interface directly.</p>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="vi">Chi tiết trên màn</th><th class="en">Detail on screen</th>
+              <th class="vi">Học từ</th><th class="en">Learned from</th>
+              <th class="vi">Vì sao áp dụng</th><th class="en">Why it applies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="vi">Mã QR voucher tự đổi mỗi phút, ảnh chụp không quét được</td><td class="en">Voucher QR rotates every minute; a screenshot cannot be scanned</td>
+              <td>Google Wallet</td>
+              <td class="vi">Chặn chia sẻ mã qua ảnh, không cần thêm bước xác minh</td><td class="en">Stops code sharing by photo without adding a verification step</td>
+            </tr>
+            <tr>
+              <td class="vi">Điểm "đang chờ" phải hiện rõ giờ dùng được</td><td class="en">"Pending" points must show exactly when they become usable</td>
+              <td>VinClub</td>
+              <td class="vi">VinClub cho điểm sau 12 giờ trưa hôm sau; khách chỉ chấp nhận chờ khi biết chờ đến bao giờ</td><td class="en">VinClub releases points at noon the next day; customers accept a wait only when they know when it ends</td>
+            </tr>
+            <tr>
+              <td class="vi">Trừ điểm sắp hết hạn trước</td><td class="en">Spend the soonest-expiring points first</td>
+              <td>Tata Neu · FIFO</td>
+              <td class="vi">Khách không mất điểm oan khi vẫn còn điểm mới hơn</td><td class="en">Customers never lose points they could have used while newer points sit idle</td>
+            </tr>
+            <tr>
+              <td class="vi">Trừ điểm tại quầy phải có khách xác nhận trên app</td><td class="en">Point deduction at the counter needs the customer's confirmation in-app</td>
+              <td>VinClub</td>
+              <td class="vi">Nhân viên không tự tiêu được điểm của khách</td><td class="en">Staff cannot spend a customer's points on their own</td>
+            </tr>
+            <tr>
+              <td class="vi">Cần mã PIN cho việc tiêu điểm, OTP một mình không đủ</td><td class="en">A PIN for spending points; OTP alone is not enough</td>
+              <td class="vi">Nghiên cứu Princeton 2021</td><td class="en">Princeton study, 2021</td>
+              <td class="vi">171 trên 259 số điện thoại được nhà mạng cấp lại vẫn gắn với tài khoản chủ cũ</td><td class="en">171 of 259 recycled phone numbers were still tied to the previous owner's accounts</td>
+            </tr>
+            <tr>
+              <td class="vi">Ngưỡng "sắp rời bỏ" khác nhau theo mảng</td><td class="en">A different "at-risk" threshold per business line</td>
+              <td>Paytronix · Adobe · Nexudus</td>
+              <td class="vi">Khách cà phê vắng 30 ngày là đáng lo; khách nghỉ dưỡng 12 tháng mới là bình thường</td><td class="en">30 days of silence worries a café; a resort guest returning after 12 months is normal</td>
+            </tr>
+            <tr>
+              <td class="vi">Hai ô đồng ý tách riêng, lưu thời điểm và phiên bản</td><td class="en">Two separate consent boxes, timestamped and versioned</td>
+              <td>L.Point · Shinsegae · NĐ 13/2023</td>
+              <td class="vi">Dùng chung dữ liệu giữa các công ty cần căn cứ; điều khoản và nhận ưu đãi là hai việc khác nhau</td><td class="en">Sharing data across companies needs a legal basis; terms and marketing consent are two different things</td>
+            </tr>
+            <tr>
+              <td class="vi">Nhận ưu đãi bằng nút "Nhận vào ví"</td><td class="en">Claim an offer with a "Save to wallet" button</td>
+              <td>Shopee</td>
+              <td class="vi">Có số "tỉ lệ nhận" để đo chiến dịch; bước bấm nhận là thói quen khách đã quen</td><td class="en">Gives a claim rate to measure campaigns; the tap is a habit customers already have</td>
+            </tr>
+            <tr>
+              <td class="vi">Tối đa 2 thông báo ưu đãi mỗi tháng, gửi 8–21 giờ</td><td class="en">At most 2 offer notifications a month, sent 8:00–21:00</td>
+              <td>Braze · Adobe · NĐ 91/2020</td>
+              <td class="vi">Nghị định cho 7–22 giờ; chọn khung hẹp hơn để không bị coi là làm phiền</td><td class="en">The decree allows 7:00–22:00; a narrower window keeps the app from feeling like spam</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-bd">
+        <p class="note vi">Điều tôi chưa làm được: cảm xúc trong các hành trình đang suy từ điểm đau trong tài liệu, chưa phỏng vấn người dùng. Bộ câu hỏi phỏng vấn 10 đối tượng đã soạn ngày 13/10 và ghi rõ chỗ nào là giả định.</p>
+        <p class="note en">What I could not do yet: the emotions in the journeys are inferred from documented pain points, not from interviews. A 10-audience interview guide was written on 13/10 and marks every assumption as such.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="s-coral" id="nguyen-tac">
+    <div class="shead">
+      <span class="chip-n">03</span>
+      <h2 class="vi">Nguyên tắc vẽ: từ nghiệp vụ ra màn hình</h2><h2 class="en">Drawing principles: from rules to screens</h2>
+    </div>
+    <div class="card">
+      <div class="card-hd">
+        <span class="kicker vi">Cách làm</span><span class="kicker en">Method</span>
+        <h3 class="vi">Chi tiết nào tài liệu chưa nói thì ghi "tự chọn". Chỗ nào chưa quyết thì không vẽ, để lại câu hỏi và tên người trả lời.</h3>
+        <h3 class="en">Anything the documents do not say is marked "my choice". Anything undecided is not drawn; a question and the name of the person who answers it take its place.</h3>
+      </div>
+      <div class="pipe">
+        <div class="stage">
+          <span class="id">1</span>
+          <h5 class="vi">Mỗi trạng thái một khung</h5><h5 class="en">One frame per state</h5>
+          <p class="vi">Lỗi, trống, hết suất, mất mạng đều là khung riêng. Người duyệt thấy đủ nhánh, không phải tưởng tượng.</p>
+          <p class="en">Error, empty, sold-out and offline each get their own frame. Reviewers see every branch instead of imagining it.</p>
+        </div>
+        <div class="stage">
+          <span class="id">2</span>
+          <h5 class="vi">Thẻ ghi chú cạnh từng màn</h5><h5 class="en">A note card beside every screen</h5>
+          <p class="vi">Ba phần: quy tắc và nguồn, chuyển động gợi ý, chờ quyết định. Mã yêu cầu đi kèm tên tài liệu để không nhầm.</p>
+          <p class="en">Three parts: rule and source, suggested motion, pending decision. Requirement IDs always name their document.</p>
+        </div>
+        <div class="stage">
+          <span class="id">3</span>
+          <h5 class="vi">Hai bộ nền, không dùng chung</h5><h5 class="en">Two design bases, never shared</h5>
+          <p class="vi">Công cụ nội bộ: dày dữ liệu, bo 4px. App khách: nền sáng, thẻ hạng là điểm nhấn, màu ngọc cho hành động, cam chỉ cho việc gấp.</p>
+          <p class="en">Internal tools: data-dense, 4px radius. Customer app: light background, the tier card as the one highlight, teal for actions, orange only for urgency.</p>
+        </div>
+        <div class="stage">
+          <span class="id">4</span>
+          <h5 class="vi">Câu chữ lấy nguyên văn câu đã chốt</h5><h5 class="en">Copy taken verbatim from agreed strings</h5>
+          <p class="vi">Mỗi thông báo lỗi và thành công có trong bảng câu chữ của brainstorm. Câu chưa có thì ghi "tự viết, cần duyệt".</p>
+          <p class="en">Every error and success message exists in the brainstorm's string table. New ones are marked "drafted, needs approval".</p>
+        </div>
+        <div class="stage">
+          <span class="id">5</span>
+          <h5 class="vi">Chuyển động không là điều kiện để hiểu</h5><h5 class="en">Motion never required to understand</h5>
+          <p class="vi">Điểm đếm lên, vé bay vào ví chỉ là ghi chú. Máy bật Reduce Motion thì chỉ còn mờ dần.</p>
+          <p class="en">Counting points and tickets flying into the wallet are notes only. With Reduce Motion on, only fades remain.</p>
+        </div>
+      </div>
+
+      <h4 class="sub vi">Điểm đau trong hành trình và màn hình trả lời</h4><h4 class="sub en">Journey pain points and the screens that answer them</h4>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="vi">Điểm đau</th><th class="en">Pain point</th>
+              <th class="vi">Màn hình trả lời bằng</th><th class="en">Answered on screen by</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="vi">Mỗi mảng ghi nhận riêng, không ai biết là khách quen của cả tập đoàn</td><td class="en">Each line keeps its own records; nobody knows a group-wide regular</td><td class="vi">Ba ô "Tích điểm ở" trên Trang chủ; mảng khớp số điện thoại tự liên kết</td><td class="en">Three "Earn at" tiles on Home; lines matching the phone number link automatically</td></tr>
+            <tr><td class="vi">Nhân viên không quét mã thì không có điểm ngay</td><td class="en">No scan at the counter means no points right away</td><td class="vi">Dòng điểm đang chờ kèm giờ dùng được, trên thẻ hạng và lịch sử</td><td class="en">A pending line with the exact usable time, on the tier card and in history</td></tr>
+            <tr><td class="vi">Lo bị trừ điểm mà không có voucher khi hết suất</td><td class="en">Fear of losing points with no voucher when stock runs out</td><td class="vi">Màn "Vừa hết suất" nhắc lại số điểm còn nguyên và gợi ưu đãi tương tự</td><td class="en">A "Just sold out" screen restating the untouched balance and suggesting similar offers</td></tr>
+            <tr><td class="vi">Nhân viên quét nhầm, quầy mất mạng</td><td class="en">Staff scan the wrong voucher; the counter goes offline</td><td class="vi">Lý do từ chối ghi to; mất mạng thì chỉ lưu tạm tích điểm, khoá dùng điểm và voucher</td><td class="en">Rejection reasons in large type; offline mode queues earning only and locks spending</td></tr>
+            <tr><td class="vi">Khách nghỉ dưỡng quay lại thưa, điểm dễ hết hạn</td><td class="en">Resort guests return rarely; points expire</td><td class="vi">Dải cam trên Trang chủ khi có điểm hết hạn trong 30 ngày, kèm nút Đổi điểm</td><td class="en">An orange band on Home when points expire within 30 days, with a Redeem button</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="s-grape" id="vong-sua">
+    <div class="shead">
+      <span class="chip-n">04</span>
+      <h2 class="vi">Các vòng sửa: cái gì đã bỏ và vì sao</h2><h2 class="en">Iterations: what was dropped and why</h2>
+    </div>
+    <div class="card">
+      <div class="card-hd">
+        <span class="kicker vi">Ba tuần, sáu lần đổi hướng</span><span class="kicker en">Three weeks, six changes of direction</span>
+        <h3 class="vi">Bản đầu chép khá sát mô hình tham chiếu. Mỗi vòng phản hồi gỡ một giả định mà tôi đã coi là hiển nhiên.</h3>
+        <h3 class="en">The first version followed the reference model closely. Each round of feedback removed an assumption I had taken for granted.</h3>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="vi">Ngày</th><th class="en">Date</th>
+              <th class="vi">Bản trước</th><th class="en">Before</th>
+              <th class="vi">Bản sau</th><th class="en">After</th>
+              <th class="vi">Vì sao đổi</th><th class="en">Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">20/10</td>
+              <td class="vi">Hành trình khách trải cả năm, 6 pha, cảm xúc chấm từ tài liệu</td><td class="en">A year-long, six-phase customer journey with emotions scored from documents</td>
+              <td class="vi">Ba chuỗi ngắn, mỗi chuỗi gói trong một lần ghé quầy và kết thúc bằng phần thưởng ngay</td><td class="en">Three short chains, each inside one counter visit and ending with an immediate reward</td>
+              <td class="vi">PM: hành trình dài khó đo cảm xúc, khách dễ bỏ cuộc giữa chừng</td><td class="en">PM: long journeys are hard to measure and customers drop out midway</td>
+            </tr>
+            <tr>
+              <td class="mono">20/10</td>
+              <td class="vi">Đăng ký xong thì chờ; điểm đầu tiên chỉ có sau lần mua đầu</td><td class="en">Sign up, then wait; the first points come only after the first purchase</td>
+              <td class="vi">Voucher chào mừng vào ví ngay lúc đăng ký, dùng được cho hoá đơn đang trả</td><td class="en">A welcome voucher lands in the wallet at sign-up, usable on the bill being paid</td>
+              <td class="vi">Không có lý do nào để khách tải app ngay tại quầy nếu không được gì ngay</td><td class="en">No reason to install the app at the counter if nothing happens right away</td>
+            </tr>
+            <tr>
+              <td class="mono">21/10</td>
+              <td class="vi">Một cách nhận ưu đãi</td><td class="en">One way to receive an offer</td>
+              <td class="vi">Ba phương án A, B, C vẽ song song; chốt B "bấm nhận vào ví"</td><td class="en">Three options A, B, C drawn side by side; B "tap to save" chosen</td>
+              <td class="vi">B đo được tỉ lệ nhận. C mở quà ngẫu nhiên là khuyến mại may rủi, phải đăng ký với Sở Công Thương</td><td class="en">B gives a measurable claim rate. C, a random gift box, counts as a lottery and must be registered with the trade authority</td>
+            </tr>
+            <tr>
+              <td class="mono">16–26/10</td>
+              <td class="vi">Dùng điểm trừ tiền: khách tự mở mã cho nhân viên quét</td><td class="en">Paying with points: the customer opens a code for staff to scan</td>
+              <td class="vi">Cả hai cách vẽ song song; chốt: nhân viên gửi yêu cầu, khách xác nhận trên app khi từ 200.000 điểm</td><td class="en">Both ways drawn side by side; chosen: staff send a request, the customer confirms in-app from 200,000 points</td>
+              <td class="vi">Số tiền lớn cần khách đồng ý rõ ràng; dưới ngưỡng thì giữ quầy nhanh</td><td class="en">Large amounts need explicit consent; below the threshold the counter stays fast</td>
+            </tr>
+            <tr>
+              <td class="mono">27/10</td>
+              <td class="vi">Nhập mã PIN 6 số mỗi lần đổi ưu đãi, kèm 2 màn sai PIN và khoá</td><td class="en">A 6-digit PIN on every redemption, plus two wrong-PIN and lockout screens</td>
+              <td class="vi">Vuốt để đổi, không PIN. PIN chỉ còn khi trừ tiền tại quầy từ 200.000 điểm</td><td class="en">Swipe to redeem, no PIN. The PIN remains only for counter deductions from 200,000 points</td>
+              <td class="vi">Đổi một ly cà phê không đáng một bước bảo mật. Hai màn Figma bỏ hẳn</td><td class="en">Redeeming a coffee is not worth a security step. Two Figma screens were dropped</td>
+            </tr>
+            <tr>
+              <td class="mono">27/10</td>
+              <td class="vi">Trang chủ có thanh tiến độ "còn 320 điểm lên Platinum"</td><td class="en">Home showed a progress bar "320 points to Platinum"</td>
+              <td class="vi">Thay bằng thẻ "điểm sắp hết hạn", đổi màu cam khi còn dưới 30 ngày</td><td class="en">Replaced by an "expiring points" card that turns orange under 30 days</td>
+              <td class="vi">Cách xét hạng chưa chốt; vẽ thanh tiến độ là hứa một thứ chưa ai ký</td><td class="en">Tier rules were still open; a progress bar promised something nobody had signed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub vi">Ba phương án nhận ưu đãi, vẽ để người quyết chọn trong một buổi</h4><h4 class="sub en">Three ways to receive an offer, drawn so the decision took one meeting</h4>
+      <div class="phones three">
+        <figure>
+          <img src="img/360/PA-A1.jpg" alt="Phương án A: ưu đãi tự vào ví, Trang chủ hiện thẻ báo ưu đãi mới phía trên thẻ hạng.">
+          <figcaption><b>A · <span class="vi">Tự vào ví</span><span class="en">Straight to wallet</span></b>
+            <span class="vi">Không có bước nào, nhưng không đo được khách có nhận ra hay không.</span>
+            <span class="en">No step at all, but no way to know whether the customer noticed.</span></figcaption>
+        </figure>
+        <figure class="chosen">
+          <img src="img/360/PA-B1.jpg" alt="Phương án B: bảng quà hiện lên, khách bấm Nhận vào ví hoặc Để sau.">
+          <figcaption><b>B · <span class="vi">Bấm nhận · ĐÃ CHỌN</span><span class="en">Tap to claim · CHOSEN</span></b>
+            <span class="vi">Có tỉ lệ nhận và thời gian từ nhận đến dùng, hai số PM cần trong báo cáo.</span>
+            <span class="en">Yields a claim rate and claim-to-use time, the two numbers the PM needed in reports.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/PA-C1.jpg" alt="Phương án C: hộp quà chưa mở, khách bấm Mở quà.">
+          <figcaption><b>C · <span class="vi">Hộp quà</span><span class="en">Gift box</span></b>
+            <span class="vi">Vui hơn, nhưng mở ngẫu nhiên là khuyến mại may rủi. Pháp chế: phải đăng ký từng chương trình.</span>
+            <span class="en">More fun, but a random reveal is a lottery. Legal: every campaign would need registration.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="s-teal" id="ban-cuoi">
+    <div class="shead">
+      <span class="chip-n">05</span>
+      <h2 class="vi">Bản cuối: ba hành trình trên hai thiết bị</h2><h2 class="en">Final screens: three journeys on two devices</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <span class="kicker vi">Hành trình 1 · Khách mới tại quầy</span><span class="kicker en">Journey 1 · New customer at the counter</span>
+        <h3 class="vi">Thấy bảng, quét mã, đăng ký một chạm, dùng voucher cho chính hoá đơn đang trả</h3>
+        <h3 class="en">See the sign, scan, sign up in one tap, use the voucher on the bill being paid</h3>
+      </div>
+      <div class="phones">
+        <figure>
+          <img src="img/360/BANG.jpg" alt="Minh hoạ bảng để bàn ở quầy cà phê, cạnh máy bán hàng, ghi Giảm ngay 10% và mã QR Quét để nhận quà.">
+          <figcaption><b>01 · <span class="vi">Bảng ở quầy</span><span class="en">Counter sign</span></b>
+            <span class="vi">Đứng cạnh máy bán hàng, ngang tầm mắt lúc gọi món. Mỗi quầy một mã QR riêng để biết khách đến từ đâu.</span>
+            <span class="en">Beside the till, at eye level while ordering. One QR per counter so the source of each sign-up is known.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/W1.jpg" alt="Màn đăng ký 1 chạm: voucher 10% cho hoá đơn đang trả, nút Tiếp tục với Zalo, Google, Facebook, hoặc dùng số điện thoại.">
+          <figcaption><b>02 · <span class="vi">Đăng ký một chạm</span><span class="en">One-tap sign-up</span></b>
+            <span class="vi">Zalo đứng đầu vì trả về số điện thoại, là khoá nhận diện với CRM. Không bắt tạo mật khẩu.</span>
+            <span class="en">Zalo comes first because it returns the phone number, the CRM's identity key. No password to create.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/W3.jpg" alt="Màn Một chút về bạn: tên và ngày sinh lấy từ Zalo, hai ô đồng ý tách riêng, nút Hoàn tất và nhận voucher.">
+          <figcaption><b>03 · <span class="vi">Hai ô đồng ý</span><span class="en">Two consent boxes</span></b>
+            <span class="vi">Điều khoản là bắt buộc, nhận ưu đãi là tuỳ chọn và nói rõ tần suất. Thời điểm và phiên bản đồng ý được lưu.</span>
+            <span class="en">Terms are required; offers are optional and state the frequency. Time and version of consent are stored.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/W4.jpg" alt="Màn chào mừng nền tím: voucher giảm 10% đã có trong ví, nút Dùng ngay tại quầy và Để trong ví, dùng sau.">
+          <figcaption><b>04 · <span class="vi">Phần thưởng ngay</span><span class="en">Immediate reward</span></b>
+            <span class="vi">Dải tím chỉ dành cho khoảnh khắc đặc biệt. Việc liên kết các mảng khác để sau, không chặn bước này.</span>
+            <span class="en">The purple gradient is reserved for special moments. Linking the other lines comes later and never blocks this step.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <span class="kicker vi">Hành trình 2 · Điểm và hạng</span><span class="kicker en">Journey 2 · Points and tier</span>
+        <h3 class="vi">Trang chủ trả lời ba câu khách hay hỏi: có bao nhiêu điểm dùng được, điểm chờ khi nào dùng được, điểm nào sắp hết hạn</h3>
+        <h3 class="en">Home answers the three questions customers ask most: how many points can I use, when do pending points clear, which ones expire soon</h3>
+      </div>
+      <div class="phones">
+        <figure>
+          <img src="img/360/M1.jpg" alt="Trang chủ khách hạng Gold: thẻ vàng với 245.000 điểm khả dụng, dòng điểm chờ, dải cam điểm sắp hết hạn, ba ô Tích điểm ở.">
+          <figcaption><b>05 · <span class="vi">Trang chủ hạng Gold</span><span class="en">Home, Gold tier</span></b>
+            <span class="vi">Thẻ hạng là điểm nhấn duy nhất. Dải cam chỉ hiện khi có việc gấp.</span>
+            <span class="en">The tier card is the only highlight. Orange appears only when something is urgent.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M2.jpg" alt="Trang chủ thành viên mới: danh sách Hoàn thiện để tích đủ điểm, 3 trên 4 việc đã xong.">
+          <figcaption><b>06 · <span class="vi">Thành viên mới</span><span class="en">New member</span></b>
+            <span class="vi">Thay con số 0 to bằng một danh sách việc ngắn. Mảng khớp số điện thoại đã tự liên kết sẵn.</span>
+            <span class="en">A short to-do list instead of a big zero. Lines matching the phone number are already linked.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M3.jpg" alt="Màn mã thành viên QR lớn, khung màu theo hạng, đếm ngược mã mới sau 30 giây.">
+          <figcaption><b>07 · <span class="vi">Mã thành viên</span><span class="en">Member code</span></b>
+            <span class="vi">Khác hẳn mã voucher: khung theo hạng, mã đổi mỗi 30 giây. Màn này không bao giờ bị pop-up che vì dùng tại quầy.</span>
+            <span class="en">Distinct from voucher codes: tier-coloured frame, rotating every 30 seconds. Never covered by a pop-up since it is used at the counter.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M17.jpg" alt="Trang chủ ngay sau khi tích điểm: thẻ báo vừa cộng 1.200 điểm tại quầy cà phê.">
+          <figcaption><b>08 · <span class="vi">Vừa tích điểm</span><span class="en">Just earned</span></b>
+            <span class="vi">Câu chữ lấy nguyên văn bảng đã chốt: "+N điểm tại {mảng}". Thông báo giao dịch không tính vào trần 2 lần mỗi tháng.</span>
+            <span class="en">Copy verbatim from the agreed table: "+N points at {line}". Transaction notices do not count toward the 2-per-month cap.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <span class="kicker vi">Hành trình 3 · Đổi điểm và dùng tại quầy</span><span class="kicker en">Journey 3 · Redeem and use at the counter</span>
+        <h3 class="vi">Phía khách và phía nhân viên vẽ cạnh nhau, vì một lần quét là hai màn hình phải khớp</h3>
+        <h3 class="en">Customer side and staff side drawn together, because one scan means two screens have to agree</h3>
+      </div>
+      <div class="phones">
+        <figure>
+          <img src="img/360/M5.jpg" alt="Danh mục đổi điểm: tab theo mảng, thẻ ưu đãi ghi số điểm, nhãn Đổi được và số suất còn lại.">
+          <figcaption><b>09 · <span class="vi">Danh mục đổi điểm</span><span class="en">Rewards catalogue</span></b>
+            <span class="vi">Đủ điểm thì bật nút, chưa đủ thì ghi còn thiếu bao nhiêu. Ưu đãi riêng Platinum không hiện cho khách Gold.</span>
+            <span class="en">Enough points enables the button; otherwise the shortfall is shown. Platinum-only offers stay hidden from Gold.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M7.jpg" alt="Bảng xác nhận đổi voucher: điểm hiện có, sẽ trừ, còn lại, và thanh Vuốt để đổi.">
+          <figcaption><b>10 · <span class="vi">Vuốt để đổi</span><span class="en">Swipe to redeem</span></b>
+            <span class="vi">Khách thấy phép tính trước khi vuốt. Buông trước khi tới cuối thì nút trượt về, không đổi.</span>
+            <span class="en">The customer sees the arithmetic before swiping. Letting go early slides the handle back; nothing is redeemed.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M11.jpg" alt="Mã QR voucher với đồng hồ chạy giây và vòng đếm Mã mới sau 17 giây, kèm hướng dẫn đưa thu ngân quét.">
+          <figcaption><b>11 · <span class="vi">Mã voucher "sống"</span><span class="en">A "live" voucher code</span></b>
+            <span class="vi">Đồng hồ có giây và vòng đếm để nhân viên nhận ra ảnh chụp. Mất mạng thì không hiện mã cũ.</span>
+            <span class="en">A ticking clock and a countdown ring so staff can spot a screenshot. Offline, no stale code is shown.</span></figcaption>
+        </figure>
+      </div>
+      <div class="phones wide">
+        <figure>
+          <img src="img/360/P2.jpg" alt="Màn máy POS tại quầy cà phê: hoá đơn bên phải, khối Membership nhận diện khách hạng Gold với điểm dùng được và 2 voucher, nút Dùng điểm và Chọn voucher.">
+          <figcaption><b>12 · <span class="vi">Máy bán hàng nhận ra khách</span><span class="en">The till recognises the customer</span></b>
+            <span class="vi">Thu ngân thấy điểm dùng được và số voucher, không thấy lịch sử chi tiết. Số điện thoại che bớt.</span>
+            <span class="en">The cashier sees usable points and voucher count, never the detailed history. The phone number is masked.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/Q3.jpg" alt="Trang nhân viên quầy trên máy tính bảng cho đơn vị không có máy POS chung: nhập số hoá đơn và tổng tiền, voucher của khách, dùng điểm.">
+          <figcaption><b>13 · <span class="vi">Trang quầy cho đơn vị không có POS chung</span><span class="en">Counter page for units without the shared till</span></b>
+            <span class="vi">Thêm ngày 28/10 khi biết hai mảng dùng phần mềm bán hàng khác. Số hoá đơn phải trùng với phần mềm của đơn vị; mỗi hoá đơn tích một lần.</span>
+            <span class="en">Added on 28/10 once it emerged that two lines run different sales software. The invoice number must match that software; each invoice earns once.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="s-sun" id="trang-thai">
+    <div class="shead">
+      <span class="chip-n">06</span>
+      <h2 class="vi">Trạng thái biên: phần người duyệt hay quên hỏi</h2><h2 class="en">Edge states: the part reviewers forget to ask about</h2>
+    </div>
+    <div class="card">
+      <div class="card-bd">
+        <p class="vi">Trong 84 màn có 26 màn là trạng thái lỗi, trống, hết hạn hoặc mất mạng. Mỗi màn dùng đúng câu chữ trong bảng lỗi đã chốt và nói rõ khách làm gì tiếp.</p>
+        <p class="en">Of the 84 screens, 26 are error, empty, expired or offline states. Each uses the exact wording from the agreed error table and says what the customer does next.</p>
+      </div>
+      <div class="phones">
+        <figure>
+          <img src="img/360/W2c.jpg" alt="Màn nhập OTP báo mã đã hết hạn, nút Gửi lại.">
+          <figcaption><b>14 · <span class="vi">OTP hết hạn</span><span class="en">OTP expired</span></b>
+            <span class="vi">Gửi lại tối đa 3 lần mỗi giờ, nút hiện đếm ngược khi hết lượt.</span>
+            <span class="en">Resend up to 3 times an hour; the button shows a countdown when exhausted.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M9.jpg" alt="Màn Vừa hết suất: điểm của bạn không bị trừ, số điểm vẫn là 245.000, gợi ý ưu đãi tương tự.">
+          <figcaption><b>15 · <span class="vi">Hết suất lúc xác nhận</span><span class="en">Sold out at confirmation</span></b>
+            <span class="vi">Hai khách cùng đổi suất cuối: người xác nhận trước được, người sau không bị trừ điểm và được gợi ý ngay.</span>
+            <span class="en">Two customers grab the last unit: the first confirmation wins; the second loses nothing and gets an alternative at once.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M4b.jpg" alt="Lịch sử điểm với dải cam Số dư điểm đang âm, giải thích hoá đơn bị huỷ nên điểm bị thu lại.">
+          <figcaption><b>16 · <span class="vi">Số dư âm</span><span class="en">Negative balance</span></b>
+            <span class="vi">Hoá đơn bị huỷ sau khi điểm đã tiêu: để ví âm và bù dần, không thu tiền. Khách được giải thích ngay trên màn.</span>
+            <span class="en">An invoice cancelled after its points were spent: the wallet goes negative and recovers later; no cash is clawed back. The screen explains why.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/M25.jpg" alt="Màn Chờ xác minh liên kết: yêu cầu đang được xử lý trong 24 giờ.">
+          <figcaption><b>17 · <span class="vi">Chờ xác minh</span><span class="en">Pending verification</span></b>
+            <span class="vi">Không khớp được tự động thì chuyển người thật xử lý trong 24 giờ. Hệ thống không bao giờ tự đoán một nửa.</span>
+            <span class="en">When automatic matching fails, a person decides within 24 hours. The system never half-guesses.</span></figcaption>
+        </figure>
+      </div>
+      <div class="phones wide">
+        <figure>
+          <img src="img/360/P4b.jpg" alt="Máy POS báo Mất kết nối Membership: vẫn bán hàng, tích điểm lưu tạm, khoá dùng điểm và voucher.">
+          <figcaption><b>18 · <span class="vi">Quầy mất mạng</span><span class="en">Counter offline</span></b>
+            <span class="vi">Máy vẫn bán. Tích điểm lưu tạm rồi tự gửi khi có mạng; dùng điểm và voucher bị khoá vì chưa kiểm tra được.</span>
+            <span class="en">Sales continue. Earning is queued and synced later; spending and vouchers are locked because they cannot be verified.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/360/Q7b.jpg" alt="Trang nhân viên quầy: lịch sử quét hôm nay, quản lý hoàn tác một lượt quét nhầm.">
+          <figcaption><b>19 · <span class="vi">Hoàn tác quét nhầm</span><span class="en">Undo a wrong scan</span></b>
+            <span class="vi">Chỉ quản lý đơn vị hoàn tác được, trong ngày, có ghi tên người làm.</span>
+            <span class="en">Only the unit manager can undo, same day, with the actor logged.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section class="s-grape" id="ket-qua">
+    <div class="shead">
+      <span class="chip-n">07</span>
+      <h2 class="vi">Kết quả và bài học</h2><h2 class="en">Outcome and lessons</h2>
+    </div>
+    <div class="card">
+      <div class="meta">
+        <div><span class="k vi">Bàn giao</span><span class="k en">Delivered</span><span class="v num vi">84 màn chạy thử · 30 màn Figma kèm ghi chú · 3 hành trình · 1 bộ nền thiết kế riêng cho app khách</span><span class="v num en">84 prototype screens · 30 annotated Figma screens · 3 journeys · 1 dedicated design base for the customer app</span></div>
+        <div><span class="k vi">Quyết định</span><span class="k en">Decisions</span><span class="v num vi">43 câu chốt theo đề xuất của tôi · 15 quyết định chờ PO có hạn trả lời · 3 biên bản họp</span><span class="v num en">43 questions closed on my proposal · 15 PO decisions with due dates · 3 meeting records</span></div>
+        <div><span class="k vi">Tình trạng</span><span class="k en">Where it stands</span><span class="v vi">Thiết kế đã duyệt nội bộ, đang chọn đối tác phát triển app. Chưa có số liệu người dùng thật.</span><span class="v en">Design approved internally; app vendor being selected. No real user data yet.</span></div>
+      </div>
+
+      <div class="card-bd">
+        <h4 class="sub vi">Điều tôi làm khác đi lần sau</h4><h4 class="sub en">What I would do differently</h4>
+        <ul class="vi">
+          <li><b>Không vẽ trước khi chốt.</b> Hành trình cả năm và màn PIN đều phải bỏ vì tôi vẽ theo mô hình tham chiếu trước khi hỏi. Nguyên tắc "chỉ vẽ màn đủ thông tin" ra đời từ hai lần đó.</li>
+          <li><b>Vẽ song song thay vì tranh luận.</b> Ba phương án nhận ưu đãi và hai cách trừ điểm đều được chốt trong một buổi, vì người quyết nhìn thấy thay vì nghe mô tả.</li>
+          <li><b>Bản chạy thử cho thấy thứ Figma không cho thấy.</b> Mất mạng, hết suất, số dư âm chỉ thuyết phục được khi người duyệt tự bấm và thấy hệ thống phản ứng.</li>
+          <li><b>Chỉ tin số đã tra nguồn.</b> Hai mức tin cậy trong file tham khảo giúp tôi nói được "cái này chắc, cái này cần kiểm" trước Pháp chế và Kế toán.</li>
+        </ul>
+        <ul class="en">
+          <li><b>Do not draw before deciding.</b> The year-long journey and the PIN screens were both dropped because I drew from the reference model before asking. The rule "draw only what has enough answers" came out of those two cases.</li>
+          <li><b>Draw alternatives instead of arguing.</b> Three ways to receive an offer and two ways to deduct points were each settled in one meeting, because decision-makers saw them rather than heard them described.</li>
+          <li><b>A working prototype shows what Figma cannot.</b> Offline mode, sold-out races and negative balances only convinced people once they tapped through and watched the system react.</li>
+          <li><b>Trust only verified numbers.</b> Two confidence levels in the reference file let me say "this is certain, this needs checking" in front of Legal and Finance.</li>
+        </ul>
+
+        <h4 class="sub vi">Cách tôi dùng AI trong dự án này</h4><h4 class="sub en">How I used AI on this project</h4>
+        <p class="vi">Màn Figma được vẽ qua kết nối MCP từ tài liệu đã chốt, mỗi màn kèm thẻ ghi chú dẫn nguồn. Bản chạy thử HTML được dựng từ brainstorm, URD và biên bản họp, rồi tôi tự kiểm từng màn so với 43 câu đã chốt và ghi mục "Khác với Figma" cho chỗ lệch. AI không quyết định gì về nghiệp vụ; mọi con số và câu chữ đều có người ký.</p>
+        <p class="en">Figma screens were drawn through an MCP connection from the agreed documents, each with a note card citing its source. The HTML prototype was generated from the brainstorm, URD and meeting records, then I checked every screen against the 43 closed questions and logged each deviation under "Differs from Figma". AI decided nothing about the business; every figure and string has a person's name behind it.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <span class="vi">Bản nháp case study · Phạm Thùy Linh · 10/2026 · Màn hình chụp từ bản chạy thử HTML, tên đơn vị và người đã đổi</span>
+      <span class="en">Case study draft · Phạm Thùy Linh · 10/2026 · Screens captured from the HTML prototype; unit and people names changed</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btnVi = document.getElementById('btn-vi');
+  var btnEn = document.getElementById('btn-en');
+  function apply(lang){
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', lang === 'en' ? 'en' : 'vi');
+    btnVi.setAttribute('aria-pressed', String(lang !== 'en'));
+    btnEn.setAttribute('aria-pressed', String(lang === 'en'));
+    try { localStorage.setItem('ptl-portfolio-lang', lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('ptl-portfolio-lang'); } catch (e) {}
+  apply(saved === 'en' ? 'en' : 'vi');
+  btnVi.addEventListener('click', function(){ apply('vi'); });
+  btnEn.addEventListener('click', function(){ apply('en'); });
+})();
+
+(function(){
+  var links = [].slice.call(document.querySelectorAll('.nav-links a'));
+  var map = {}, targets = [];
+  links.forEach(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    if (el) { map[el.id] = a; targets.push(el); }
+  });
+  if (!('IntersectionObserver' in window) || !targets.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      links.forEach(function(a){ a.classList.remove('on'); });
+      map[e.target.id].classList.add('on');
+    });
+  }, { rootMargin: '-72px 0px -68% 0px', threshold: 0 });
+  targets.forEach(function(t){ io.observe(t); });
+})();
+</script>
+</body>
+</html>

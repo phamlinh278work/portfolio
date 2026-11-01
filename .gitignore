@@ -1,0 +1,37 @@
+.DS_Store
+
+# Ghi chú nội bộ và công cụ ẩn tên: có tên thật, không đưa lên repo công khai
+draft/GHI-CHU.md
+draft/tools/
+draft/_body.html
+draft/_designer_body.html
+
+# Ảnh không trang nào dùng
+draft/img/360/M10.jpg
+draft/img/360/M11b.jpg
+draft/img/360/M16.jpg
+draft/img/360/M19.jpg
+draft/img/360/M22.jpg
+draft/img/360/M4.jpg
+draft/img/360/M6b.jpg
+draft/img/360/M8.jpg
+draft/img/360/NVCUA.jpg
+draft/img/360/P1.jpg
+draft/img/360/P3b.jpg
+draft/img/360/P4.jpg
+draft/img/360/Q2.jpg
+draft/img/360/Q6.jpg
+draft/img/360/W0.jpg
+draft/img/360/W2-SĐT.jpg
+draft/img/360/W3c.jpg
+draft/img/360/W5.jpg
+draft/img/linhieu/term-02.jpg
+draft/img/linhieu/term-04.jpg
+draft/img/linhieu/term-05.jpg
+draft/img/linhieu/term-08.jpg
+draft/img/linhieu/term-top.jpg
+draft/img/sali/ban-hang-hero.jpg
+draft/img/sali/ban-hang-tinh-nang.jpg
+draft/img/sali/m-ket-qua.jpg
+draft/img/sali/m-thu-vien.jpg
+draft/img/sali/thu-vien-toi.jpg
