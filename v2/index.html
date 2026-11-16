@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=12">
+<link rel="stylesheet" href="css/site.css?v=17">
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -46,6 +46,7 @@
     <a href="#contact"><span class="en">Contact</span><span class="vi">Liên hệ</span></a>
   </nav>
   <div class="nav__right">
+    <button class="tour-btn" id="tourBtn" type="button" aria-pressed="false" aria-label="Auto-play"><span class="tour-btn__ico"><svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="tour-btn__label"><span class="t-play"><span class="en">Auto-play</span><span class="vi">Tự chạy</span></span><span class="t-stop"><span class="en">Pause</span><span class="vi">Dừng</span></span></span></button>
     <div class="lang" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="vi">VI</button></div>
     <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com"><span class="en">Let's talk</span><span class="vi">Nhắn cho tôi</span><svg><use href="#i-arrow"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="20" height="20"><use href="#i-menu"/></svg></button>
@@ -62,7 +63,7 @@
       <a href="#about" data-close><span class="en">About</span><span class="vi">Về tôi</span></a>
       <a href="#contact" data-close><span class="en">Contact</span><span class="vi">Liên hệ</span></a>
     </nav>
-    <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com?subject=CV" style="justify-content:center"><span class="en">Get my CV</span><span class="vi">Nhận CV</span><svg><use href="#i-arrow"/></svg></a>
+    <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com" style="justify-content:center"><span class="en">Email me</span><span class="vi">Gửi email cho tôi</span><svg><use href="#i-arrow"/></svg></a>
     <p style="margin:0;color:var(--ink-2);font-size:14px;font-weight:600"><span class="en">Open to product designer roles · Hà Nội</span><span class="vi">Đang tìm vị trí product designer · Hà Nội</span></p>
   </aside>
 </div>
@@ -75,22 +76,22 @@
     <span class="pill pill--glass" data-reveal><i class="dot"></i><span class="en">Open to product designer roles · Hà Nội</span><span class="vi">Đang tìm vị trí product designer · Hà Nội</span></span>
     <p class="hero__greet" data-reveal><span class="en">Hi, I'm Phạm Thùy Linh</span><span class="vi">Xin chào, tôi là Phạm Thùy Linh</span></p>
     <h1 data-reveal><span class="en">I draw screens from<br><em>business rules</em>.</span><span class="vi">Tôi vẽ màn hình<br>từ <em>quy tắc nghiệp vụ</em>.</span></h1>
-    <p class="hero__intro" data-reveal><span class="en">Every detail on the interface traces back to a signed decision, and every error branch gets its own screen.</span><span class="vi">Mỗi chi tiết trên giao diện truy được về một quyết định có người ký, và mỗi nhánh lỗi có một màn riêng.</span></p>
+    <p class="hero__intro" data-reveal><span class="en">Every detail on the interface traces back to a rule, and every error branch gets its own screen.</span><span class="vi">Mỗi chi tiết trên giao diện đều truy được về một quy tắc, và mỗi nhánh lỗi có một màn riêng.</span></p>
     <div class="hero__actions" data-reveal>
       <a class="btn btn--primary" href="#work"><span class="en">View my work</span><span class="vi">Xem dự án</span><svg><use href="#i-arrow"/></svg></a>
-      <a class="btn btn--ghost" href="mailto:phamlinh278.work@gmail.com?subject=CV"><span class="en">Get my CV</span><span class="vi">Nhận CV</span><svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost" href="https://linkedin.com/in/pham-thuy-linh-55079331b" target="_blank" rel="noopener">LinkedIn<svg><use href="#i-arrow"/></svg></a>
     </div>
   </div>
   <div class="hero__visual" data-reveal>
     <div class="portrait glass" id="portrait">
       <span class="chip chip--a">Figma · AI · 3D</span>
-      <span class="chip chip--b"><span class="en">Flows before pixels</span><span class="vi">Luồng trước, pixel sau</span></span>
       <div class="portrait__photo"><img src="assets/img/portrait.jpg" alt="Phạm Thùy Linh" width="1000" height="1000"></div>
       <div class="portrait__row">
         <div><div class="portrait__name">Phạm Thùy Linh</div><div class="portrait__role"><span class="en">Product designer · now PO at a corporate group</span><span class="vi">Product designer · hiện là PO tại một tập đoàn</span></div></div>
         <span class="spark"><svg width="20" height="20"><use href="#i-spark"/></svg></span>
       </div>
     </div>
+    <a class="hero__shot" href="linhieu.html" aria-label="LinHiêu case study"><img src="assets/img/lh-term-01.jpg" alt="LinHiêu: term card for the segment being played" width="425" height="900"><span class="hero__shot-cap">LinHiêu · <span class="en">15 states</span><span class="vi">15 trạng thái</span></span></a>
     <div class="rose-anchor" id="roseAnchor"></div>
   </div>
 </section>
@@ -105,63 +106,55 @@
   <div class="wrap sec-head">
     <div><div class="eyebrow" data-reveal><span class="en">Selected design work · 2026</span><span class="vi">Dự án thiết kế chọn lọc · 2026</span></div>
     <h2 class="h-title" data-reveal><span class="en">Projects I'm <em>proud</em> of</span><span class="vi">Những dự án tôi <em>tâm đắc</em></span></h2></div>
+    <button class="btn btn--ghost wall__toggle" id="wallToggle" data-reveal><span class="t-all"><span class="en">View all</span><span class="vi">Xem tất cả</span></span><span class="t-wall"><span class="en">Back to the wall</span><span class="vi">Xem dạng tường</span></span></button>
   </div>
   <div class="wall" id="wall"><div class="wall__ring" id="ring">
-    <article class="case glass">
-      <div class="case__cover t-champagne"><img src="assets/img/sali-thu-vien.jpg" alt="Sali library screen" loading="lazy"></div>
-      <div class="case__body">
-        <div class="case__meta"><span class="en">EdTech web app · Founder &amp; designer · 2026</span><span class="vi">Web app EdTech · Nhà sáng lập &amp; thiết kế · 2026</span></div>
-        <div class="case__title"><span class="en">Sali — lesson plans, assignments &amp; pupil tracking</span><span class="vi">Sali — soạn giáo án, giao bài và theo dõi học sinh</span></div>
-        <p class="case__desc" style="margin:0"><span class="en">Shaped by the ministry's real template: errors blocked at input, a preview that matches the Word export 100%.</span><span class="vi">Giao diện ép theo mẫu giáo án thật của Bộ, chặn sai ngay từ ô nhập, bản xem trước khớp 100% file Word.</span></p>
-        <span class="pill case__out"><span class="en">31 screens · 9 flows · 13 subjects</span><span class="vi">31 màn · 9 luồng · 13 môn</span></span>
-      </div>
-    </article>
-    <article class="case glass">
-      <div class="case__cover case__cover--phone t-champagne" style="background:var(--sand)"><img src="assets/img/moodmix-home.png" alt="Mood Mix home screen" loading="lazy"></div>
-      <div class="case__body">
-        <div class="case__meta"><span class="en">iOS music app · Designer · 2026</span><span class="vi">Ứng dụng nghe nhạc iOS · Thiết kế · 2026</span></div>
-        <div class="case__title"><span class="en">Mood Mix — a music app that follows your energy</span><span class="vi">Mood Mix — app nghe nhạc đổi theo năng lượng của bạn</span></div>
-        <p class="case__desc" style="margin:0"><span class="en">Moodboard, design system and screens from one brief: the interface calms down or lights up with the energy the listener picks.</span><span class="vi">Moodboard, design system và các màn hình từ một brief: giao diện dịu lại hoặc bùng lên theo mức năng lượng người nghe chọn.</span></p>
-        <span class="pill case__out"><span class="en">83 screens · 52 component sets</span><span class="vi">83 màn · 52 bộ component</span></span>
-      </div>
-    </article>
-    <article class="case glass">
+    <article class="case glass" data-to="#shots-term" data-href="linhieu.html" tabindex="0" role="link">
       <div class="case__cover case__cover--phone t-sage"><img src="assets/img/lh-term-01.jpg" alt="LinHiêu term card" loading="lazy"></div>
       <div class="case__body">
-        <div class="case__meta"><span class="en">Mobile feature · Founder &amp; designer · 2026</span><span class="vi">Tính năng mobile · Nhà sáng lập &amp; thiết kế · 2026</span></div>
+        <div class="case__meta"><span class="en">Mobile feature · Solo: product, design, build · 2026</span><span class="vi">Tính năng mobile · Tự làm: sản phẩm, thiết kế, dựng · 2026</span></div>
         <div class="case__title"><span class="en">LinHiêu — a terminology assistant for audiobooks</span><span class="vi">LinHiêu — trợ lý thuật ngữ cho người nghe sách</span></div>
         <p class="case__desc" style="margin:0"><span class="en">A term card that follows the audio being played. The host app is mine and in daily use.</span><span class="vi">Thẻ thuật ngữ đổi theo đoạn audio đang phát. App gốc do tôi tự dựng, đang dùng hằng ngày.</span></p>
-        <span class="pill case__out"><span class="en">15 states · zero extra AI calls</span><span class="vi">15 trạng thái · không tốn thêm lượt gọi AI</span></span>
+        <div class="case__foot"><span class="pill case__out"><span class="en">15 states · zero extra AI calls</span><span class="vi">15 trạng thái · không tốn thêm lượt gọi AI</span></span><span class="case__more is-out"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg><use href="#i-arrow"/></svg></span></div>
       </div>
     </article>
-    <article class="case glass">
+    <article class="case glass" data-to="#playground" tabindex="0" role="link">
       <div class="case__cover case__cover--phone t-mist"><img src="assets/img/phutho-cover.jpg" alt="All of Phú Thọ in 80 seconds" loading="lazy"></div>
       <div class="case__body">
         <div class="case__meta"><span class="en">Personal project · Solo, research to build · 2026</span><span class="vi">Dự án cá nhân · Tự làm từ nghiên cứu đến dựng · 2026</span></div>
         <div class="case__title"><span class="en">Explore Phú Thọ — a travel map and a 3D walk through the Hùng Temples</span><span class="vi">Khám phá Phú Thọ — bản đồ du lịch số và hành trình 3D Đền Hùng</span></div>
-        <p class="case__desc" style="margin:0"><span class="en">29 places on one map with routes and taxi fares, and a 3D relic site with a six-stop journey: a story and a question at each stop.</span><span class="vi">29 điểm trên một bản đồ, có chỉ đường và giá taxi, cùng khu di tích dựng 3D với hành trình 6 điểm: mỗi điểm một câu chuyện và một câu hỏi.</span></p>
-        <span class="pill case__out"><span class="en">Working demo · 80-second video of 28 places</span><span class="vi">Bản demo chạy được · video 80 giây qua 28 điểm</span></span>
+        <p class="case__desc" style="margin:0"><span class="en">A map of 29 places with routes and taxi fares, and a 3D relic site with a six-stop journey: a story and a question at each stop.</span><span class="vi">Bản đồ 29 điểm tham quan, có chỉ đường và giá taxi, cùng khu di tích dựng 3D với hành trình 6 điểm: mỗi điểm một câu chuyện và một câu hỏi.</span></p>
+        <div class="case__foot"><span class="pill case__out"><span class="en">Working demo · an 80-second video through 28 of the places</span><span class="vi">Bản demo chạy được · video 80 giây đi qua 28 điểm</span></span><span class="case__more"><span class="en">See the 3D scenes</span><span class="vi">Xem cảnh 3D</span><svg><use href="#i-arrow"/></svg></span></div>
       </div>
     </article>
-    <article class="case glass">
+    <article class="case glass" data-to="#flow" tabindex="0" role="link">
+      <div class="case__cover t-champagne"><img src="assets/img/sali-thu-vien.jpg" alt="Sali library screen" loading="lazy"></div>
+      <div class="case__body">
+        <div class="case__meta"><span class="en">EdTech web app · Solo: product, design, build · 2026</span><span class="vi">Web app EdTech · Tự làm: sản phẩm, thiết kế, dựng · 2026</span></div>
+        <div class="case__title"><span class="en">Sali — lesson plans, assignments &amp; pupil tracking</span><span class="vi">Sali — soạn giáo án, giao bài và theo dõi học sinh</span></div>
+        <p class="case__desc" style="margin:0"><span class="en">Built around the lesson-plan layout teachers already use: errors blocked at input, and a preview laid out like the Word file they download.</span><span class="vi">Giao diện bám theo mẫu giáo án giáo viên đang dùng: chặn sai ngay từ ô nhập, bản xem trước trình bày giống file Word tải về.</span></p>
+        <div class="case__foot"><span class="pill case__out"><span class="en">31 screens · 9 flows · 13 subjects</span><span class="vi">31 màn · 9 luồng · 13 môn</span></span><span class="case__more"><span class="en">See the flow</span><span class="vi">Xem luồng</span><svg><use href="#i-arrow"/></svg></span></div>
+      </div>
+    </article>
+    <article class="case glass" data-to="#shots-web" data-href="linhieu.html" tabindex="0" role="link">
       <div class="case__cover t-silver"><img src="assets/img/translator-reader.jpg" alt="LinHiêu reader" loading="lazy"></div>
       <div class="case__body">
-        <div class="case__meta"><span class="en">Personal product · Founder &amp; designer · 2026</span><span class="vi">Sản phẩm cá nhân · Nhà sáng lập &amp; thiết kế · 2026</span></div>
+        <div class="case__meta"><span class="en">Personal product · Solo: product, design, build · 2026</span><span class="vi">Sản phẩm cá nhân · Tự làm: sản phẩm, thiết kế, dựng · 2026</span></div>
         <div class="case__title"><span class="en">LinHiêu — book translator and audio reader</span><span class="vi">LinHiêu — dịch sách và đọc thành tiếng</span></div>
-        <p class="case__desc" style="margin:0"><span class="en">Shifts the unit from the page to the chapter: one book, start to finish, in a single unbroken thread.</span><span class="vi">Đổi đơn vị từ trang sang chương: một cuốn sách chạy liền mạch từ đầu đến cuối.</span></p>
-        <span class="pill case__out"><span class="en">In daily use · ~7,500 lines, 36 test files</span><span class="vi">Dùng hằng ngày · ~7.500 dòng mã, 36 file test</span></span>
+        <p class="case__desc" style="margin:0"><span class="en">Works by the chapter instead of the page, so one book reads in a single unbroken thread from start to finish.</span><span class="vi">Làm việc theo chương thay vì theo trang, nên một cuốn sách chạy liền mạch từ đầu đến cuối.</span></p>
+        <div class="case__foot"><span class="pill case__out"><span class="en">In daily use · designed and built by me</span><span class="vi">Dùng hằng ngày · tự thiết kế và tự dựng</span></span><span class="case__more is-out"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg><use href="#i-arrow"/></svg></span></div>
       </div>
     </article>
   </div></div>
-  <div class="wall__dots" id="wallDots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-  <p class="wall__hint"><span class="en">Keep scrolling — the wall turns</span><span class="vi">Cuộn tiếp — bức tường sẽ xoay</span></p>
+  <div class="wall__dots" id="wallDots"><button class="on" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button><button aria-label="4"></button></div>
+  <p class="wall__hint"><span class="en">Scroll to turn the wall · click a card to open it</span><span class="vi">Cuộn để xoay tường · bấm vào thẻ để xem tiếp</span></p>
 </section>
 
 <!-- FLOW -->
 <section class="wrap" id="flow" data-scene="flow">
-  <div class="eyebrow" data-reveal><span class="en">Sali · user flow before any screen</span><span class="vi">Sali · vẽ luồng trước khi vẽ màn</span></div>
+  <div class="eyebrow" data-reveal><span class="en">An example · the lesson-writing flow in Sali</span><span class="vi">Một ví dụ · luồng soạn giáo án trong Sali</span></div>
   <h2 class="h-title" data-reveal><span class="en">From rules to flow to <em>screens</em></span><span class="vi">Từ quy tắc đến luồng đến <em>màn hình</em></span></h2>
-  <p class="lead" data-reveal><span class="en">Before drawing a screen, I map the flow from the approved rules: the happy path first, then every place a teacher can get stuck. This is the lesson-writing flow, trimmed for this page to four errors and two edge cases. An AI error never costs a credit, and leaving never drops unsaved work without asking.</span><span class="vi">Trước khi vẽ màn nào, tôi vẽ luồng từ các quy tắc đã duyệt: luồng chính trước, rồi mọi chỗ giáo viên có thể bị kẹt. Đây là luồng soạn giáo án, rút gọn cho trang này còn bốn lỗi và hai trường hợp biên. AI lỗi thì không trừ lượt, và rời trang thì không bao giờ mất phần chưa lưu mà không hỏi trước.</span></p>
+  <p class="lead" data-reveal><span class="en">Before drawing a screen, I map the flow from the product's rules: the happy path first, then every place a person can get stuck. This one is Sali's lesson-writing flow, trimmed for this page to four errors and two edge cases. An AI error never costs a credit, and leaving never drops unsaved work without asking.</span><span class="vi">Trước khi vẽ màn nào, tôi vẽ luồng từ các quy tắc của sản phẩm: luồng chính trước, rồi mọi chỗ người dùng có thể bị kẹt. Đây là luồng soạn giáo án của Sali, rút gọn cho trang này còn bốn lỗi và hai trường hợp biên. AI lỗi thì không trừ lượt, và rời trang thì không bao giờ mất phần chưa lưu mà không hỏi trước.</span></p>
   <div class="legend" data-reveal>
     <span><i style="background:#E3ECDD;border:1px solid #688156"></i><span class="en">Happy path</span><span class="vi">Luồng chính</span></span>
     <span><i style="background:#F6E0DD;border:1px solid #B4574F"></i><span class="en">Error</span><span class="vi">Lỗi</span></span>
@@ -170,22 +163,21 @@
   </div>
   <div class="flow-card glass" style="margin-top:28px">
     <div class="flow-mask" id="flowMask"></div>
-    <img class="en" src="assets/flow/flow-en.svg" alt="User flow: writing a lesson plan in Sali" loading="lazy" width="1328" height="1540">
-    <img class="vi" src="assets/flow/flow-vi.svg" alt="Luồng soạn một giáo án trong Sali" loading="lazy" width="1299" height="1528">
+    <img class="en" data-zoom="big" src="assets/flow/flow-en.svg" alt="User flow: writing a lesson plan in Sali" loading="lazy" width="1328" height="1540">
+    <img class="vi" data-zoom="big" src="assets/flow/flow-vi.svg" alt="Luồng soạn một giáo án trong Sali" loading="lazy" width="1299" height="1528">
   </div>
-  <p class="flow-note"><span class="en">Screens below that come from this flow: 07 While AI is writing · 08 Free credits used up · 10 The preview is a sheet of paper · 13 Errors blocked at input</span><span class="vi">Các màn bên dưới đến từ luồng này: 07 Lúc AI đang soạn · 08 Hết lượt miễn phí · 10 Xem trước là trang giấy · 13 Chặn sai từ ô nhập</span></p>
+  <p class="flow-note"><span class="en"><span class="only-mob">Swipe sideways to see all of it. </span>Click the diagram to enlarge it. Screens 09 and 10 below come from this flow.</span><span class="vi"><span class="only-mob">Kéo ngang để xem hết sơ đồ. </span>Bấm vào sơ đồ để phóng to. Màn 09 và 10 bên dưới đến từ luồng này.</span></p>
 </section>
 
 <!-- SCREENS -->
-<section id="screens" data-scene="screens">
-  <div class="wrap">
-    <div class="eyebrow" data-reveal><span class="en">From the case studies</span><span class="vi">Từ các case study</span></div>
-    <h2 class="h-title" data-reveal style="margin-bottom:40px"><span class="en">Screens I've <em>drawn</em></span><span class="vi">Những màn tôi <em>đã vẽ</em></span></h2>
-  </div>
-  <div class="reel">
-    <div class="reel__row"><div class="reel__track" id="reel1"></div></div>
-    <div class="reel__row"><div class="reel__track" id="reel2"></div></div>
-  </div>
+<section class="wrap" id="screens" data-scene="screens">
+  <div class="eyebrow" data-reveal><span class="en">Screens and states</span><span class="vi">Màn hình và trạng thái</span></div>
+  <h2 class="h-title" data-reveal><span class="en">Screens I've <em>drawn</em></span><span class="vi">Những màn tôi <em>đã vẽ</em></span></h2>
+  <p class="lead" data-reveal><span class="en">The empty, error and out-of-credit states get a screen of their own. Click any screen to see it large.</span><span class="vi">Trạng thái trống, lỗi và hết lượt đều có màn riêng. Bấm vào màn bất kỳ để xem lớn.</span></p>
+  <h3 class="shots__label" id="shots-term" data-reveal>LinHiêu · <span class="en">terminology assistant</span><span class="vi">trợ lý thuật ngữ</span> <a class="shots__link" href="linhieu.html"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg width="14" height="14"><use href="#i-arrow"/></svg></a></h3>
+  <div class="shots shots--phone" id="shotsPhone"></div>
+  <h3 class="shots__label" id="shots-web" data-reveal><span class="en">LinHiêu book translator · Sali</span><span class="vi">LinHiêu dịch sách · Sali</span></h3>
+  <div class="shots shots--web" id="shotsWeb"></div>
 </section>
 
 <!-- PROCESS -->
@@ -195,43 +187,24 @@
   <div class="steps">
     <div class="step glass" data-reveal><span class="step__n">01</span><h3><span class="en">Ask before drawing</span><span class="vi">Hỏi trước khi vẽ</span></h3><p><span class="en">List what nobody has decided, who decides and by when — each with a ready proposal.</span><span class="vi">Liệt kê những gì chưa ai quyết, ai quyết, hạn nào — mỗi câu kèm một đề xuất sẵn.</span></p></div>
     <div class="step glass" data-reveal><span class="step__n">02</span><h3><span class="en">Map flows and states</span><span class="vi">Vẽ luồng và trạng thái</span></h3><p><span class="en">Happy path first, then every error and edge branch. Each state gets its own screen.</span><span class="vi">Luồng chính trước, rồi mọi nhánh lỗi và nhánh biên. Mỗi trạng thái một màn riêng.</span></p></div>
-    <div class="step glass" data-reveal><span class="step__n">03</span><h3><span class="en">Wireframe from documents</span><span class="vi">Wireframe từ tài liệu</span></h3><p><span class="en">From the URD and minutes, each screen with a note card. AI speeds up drawing; decisions stay mine.</span><span class="vi">Từ URD và biên bản, mỗi màn kèm một thẻ ghi chú. AI giúp vẽ nhanh, quyết định vẫn là của tôi.</span></p></div>
-    <div class="step glass" data-reveal><span class="step__n">04</span><h3><span class="en">Working HTML prototype</span><span class="vi">Bản chạy thử HTML</span></h3><p><span class="en">Reviewers tap through the error, empty and offline states themselves.</span><span class="vi">Người duyệt tự bấm thử các trạng thái lỗi, trống và mất mạng.</span></p></div>
+    <div class="step glass" data-reveal><span class="step__n">03</span><h3><span class="en">Wireframe from documents</span><span class="vi">Wireframe từ tài liệu</span></h3><p><span class="en">Straight from the requirements, each screen with a note card. AI drafts the first wireframe; the flow, the states and the hierarchy are my calls.</span><span class="vi">Đi thẳng từ tài liệu yêu cầu, mỗi màn kèm một thẻ ghi chú. AI dựng bản nháp wireframe; luồng, trạng thái và thứ bậc thông tin do tôi quyết.</span></p></div>
+    <div class="step glass" data-reveal><span class="step__n">04</span><h3><span class="en">Working HTML prototype</span><span class="vi">Bản chạy thử HTML</span></h3><p><span class="en">Anyone can tap through the error, empty and offline states themselves.</span><span class="vi">Ai xem cũng tự bấm thử được các trạng thái lỗi, trống và mất mạng.</span></p></div>
     <div class="step glass" data-reveal><span class="step__n">05</span><h3><span class="en">Check against real data</span><span class="vi">Đối chiếu dữ liệu thật</span></h3><p><span class="en">One real lesson plan, one real book. The first spec is always wrong somewhere.</span><span class="vi">Một giáo án thật, một cuốn sách thật. Bản đặc tả đầu tiên luôn sai ở đâu đó.</span></p></div>
   </div>
 </section>
 
 <!-- PLAYGROUND -->
 <section class="wrap" id="playground" data-scene="playground">
-  <div class="eyebrow" data-reveal>Playground · 2026</div>
-  <h2 class="h-title" data-reveal><span class="en">Moodboards, systems &amp; <em>3D</em></span><span class="vi">Moodboard, hệ thống &amp; <em>3D</em></span></h2>
-  <p class="lead" data-reveal style="margin-bottom:40px"><span class="en">The craft behind the screens: where a visual direction comes from, the rules that keep it consistent, and places I built in 3D.</span><span class="vi">Phần tay nghề phía sau các màn hình: hướng hình ảnh đến từ đâu, những quy tắc giữ cho nó nhất quán, và những địa điểm tôi dựng 3D.</span></p>
-
-  <div class="energy glass" id="energy" data-level="mid" data-reveal>
-    <div>
-      <div class="eyebrow" style="color:inherit;opacity:.7">Mood Mix · adaptive energy</div>
-      <h3><span class="en">One app, three energies</span><span class="vi">Một app, ba mức năng lượng</span></h3>
-      <p><span class="en">Calm and roomy, amber and in step, black and loud. Try it — the 3D scene follows too.</span><span class="vi">Dịu và thoáng, hổ phách và vào nhịp, nền đen và bùng nổ. Bấm thử — cả cảnh 3D cũng đổi theo.</span></p>
-      <div class="energy__btns">
-        <button data-energy="low"><span class="en">Low · Focus</span><span class="vi">Thấp · Tập trung</span></button>
-        <button data-energy="mid" class="on"><span class="en">Mid · In step</span><span class="vi">Vừa · Vào nhịp</span></button>
-        <button data-energy="high"><span class="en">High · Loud</span><span class="vi">Cao · Bùng nổ</span></button>
-      </div>
-    </div>
-    <div class="energy__img"><img src="assets/img/moodmix-energy.png" alt="Mood Mix at low, mid and high energy" loading="lazy"></div>
-  </div>
-
-  <div class="play-grid">
-    <figure class="tile tile--wide" data-reveal style="margin:0"><div class="tile__img"><img src="assets/img/moodmix-system.png" alt="Mood Mix icons, components and rules" loading="lazy"></div>
-      <figcaption><span class="en">Mood Mix · icon set, core components and do / don't rules, with the contrast ratios written down before any screen.</span><span class="vi">Mood Mix · bộ icon, component chủ chốt và quy tắc nên / không nên, ghi rõ tỉ lệ tương phản trước khi vẽ màn nào.</span></figcaption></figure>
-  </div>
+  <div class="eyebrow" data-reveal><span class="en">Built in 3D · 2026</span><span class="vi">Dựng 3D · 2026</span></div>
+  <h2 class="h-title" data-reveal><span class="en">Places I built in <em>3D</em></span><span class="vi">Những nơi tôi <em>dựng 3D</em></span></h2>
+  <p class="lead" data-reveal style="margin-bottom:40px"><span class="en">For when a place has to be seen, not described. From Explore Phú Thọ: an 80-second video through 28 places, and two of the scenes I built.</span><span class="vi">Dành cho lúc một địa điểm cần được nhìn thấy chứ không chỉ được mô tả. Từ Khám phá Phú Thọ: video 80 giây đi qua 28 điểm, và hai trong số các cảnh tôi dựng.</span></p>
 
   <div class="phutho">
     <div class="phone" data-reveal><video id="phuthoVideo" poster="assets/img/phutho-cover.jpg" muted loop playsinline preload="metadata"><source src="assets/video/phutho.webm" type="video/webm"><source src="assets/video/phutho.mp4" type="video/mp4"></video></div>
-    <figure class="tile" data-reveal style="margin:0"><div class="tile__img"><img src="assets/img/truclam.jpg" alt="Trúc Lâm Tây Thiên in 3D" loading="lazy"></div>
+    <figure class="tile" data-reveal style="margin:0"><div class="tile__img"><img data-zoom src="assets/img/truclam.jpg" alt="Trúc Lâm Tây Thiên in 3D" loading="lazy"></div>
       <figcaption><span class="en">Explore Phú Thọ · Trúc Lâm Tây Thiên Zen monastery, built in 3D</span><span class="vi">Khám phá Phú Thọ · Thiền viện Trúc Lâm Tây Thiên, dựng 3D</span></figcaption></figure>
-    <figure class="tile" data-reveal style="margin:0"><div class="tile__img"><img src="assets/img/kimboi.jpg" alt="Kim Bôi hot springs in 3D" loading="lazy"></div>
-      <figcaption><span class="en">Explore Phú Thọ · Kim Bôi hot springs (former Hòa Bình): the outdoor pools, built in 3D</span><span class="vi">Khám phá Phú Thọ · Suối khoáng Kim Bôi (Hòa Bình cũ): cụm bể ngoài trời, dựng 3D</span></figcaption></figure>
+    <figure class="tile" data-reveal style="margin:0"><div class="tile__img"><img data-zoom src="assets/img/kimboi.jpg" alt="Kim Bôi hot springs in 3D" loading="lazy"></div>
+      <figcaption><span class="en">Explore Phú Thọ · Kim Bôi hot springs: the outdoor pools, built in 3D</span><span class="vi">Khám phá Phú Thọ · Suối khoáng Kim Bôi (Hòa Bình cũ): cụm bể ngoài trời, dựng 3D</span></figcaption></figure>
   </div>
 </section>
 
@@ -239,11 +212,11 @@
 <section class="wrap" id="bapo" data-scene="bapo">
   <div class="eyebrow" data-reveal><span class="en">Before design · 2024 — 2026</span><span class="vi">Trước khi làm thiết kế · 2024 — 2026</span></div>
   <h2 class="h-title" data-reveal><span class="en">Also shipped as <em>BA / PO</em></span><span class="vi">Cũng đã làm với vai trò <em>BA / PO</em></span></h2>
-  <p class="lead" data-reveal style="margin-bottom:40px"><span class="en">Discovery, specs and delivery rather than visual design. Listed here so my role on each one is clear.</span><span class="vi">Khám phá yêu cầu, đặc tả và triển khai, không phải thiết kế giao diện. Ghi ở đây để rõ vai trò của tôi ở từng dự án.</span></p>
+  <p class="lead" data-reveal style="margin-bottom:40px"><span class="en">Discovery, specs and delivery rather than visual design. Listed here so my role on each one is clear.</span><span class="vi">Khai thác yêu cầu, đặc tả và triển khai, không phải thiết kế giao diện. Ghi ở đây để rõ vai trò của tôi ở từng dự án.</span></p>
   <div class="grid-3">
     <div class="mini glass" data-reveal><div class="case__meta">VR · Meta Store · 2025</div><h3><span class="en">Metaverse — in-game checkout for a VR world</span><span class="vi">Metaverse — thanh toán vật phẩm trong thế giới VR</span></h3><p><span class="en">Specified the landing page, admin and in-game item payments; wireframes drawn with Figma MCP.</span><span class="vi">Đặc tả landing page, trang admin và thanh toán vật phẩm trong game; wireframe dựng bằng Figma MCP.</span></p><span class="pill case__out"><span class="en">300 downloads in the first month</span><span class="vi">300 lượt tải trong tháng đầu</span></span></div>
     <div class="mini glass" data-reveal><div class="case__meta"><span class="en">EdTech · Africa</span><span class="vi">EdTech · châu Phi</span> · 2024 — 2025</div><h3><span class="en">Doctors' LMS — learning kept alive by friendly competition</span><span class="vi">LMS cho bác sĩ — học đều nhờ cơ chế thi đua</span></h3><p><span class="en">An online learning platform for doctors, owned end to end from requirements to UAT.</span><span class="vi">Nền tảng học trực tuyến cho bác sĩ, tôi phụ trách từ phân tích yêu cầu đến nghiệm thu.</span></p><span class="pill case__out"><span class="en">Signed by 4 organisations in 4 countries</span><span class="vi">Ký với 4 tổ chức ở 4 quốc gia</span></span></div>
-    <div class="mini glass" data-reveal><div class="case__meta">AI agent · 2026</div><h3><span class="en">LumusAI — an AI agent for individuals &amp; small teams</span><span class="vi">LumusAI — AI agent cho cá nhân và đội nhóm nhỏ</span></h3><p><span class="en">JTBD-led discovery, end-to-end specs and a RICE-lite roadmap built with the PO.</span><span class="vi">Khai thác insight theo JTBD, đặc tả đầu-cuối, cùng PO xây roadmap theo RICE-lite.</span></p><span class="pill case__out"><span class="en">Up to 70% faster with 30+ AI workflows</span><span class="vi">Tiết kiệm đến 70% thời gian với 30+ quy trình AI</span></span></div>
+    <div class="mini glass" data-reveal><div class="case__meta">AI agent · 2026</div><h3><span class="en">LumusAI — an AI agent for individuals &amp; small teams</span><span class="vi">LumusAI — AI agent cho cá nhân và đội nhóm nhỏ</span></h3><p><span class="en">JTBD-led discovery, end-to-end specs and a RICE-lite roadmap built with the PO.</span><span class="vi">Khai thác insight theo JTBD, đặc tả end-to-end, cùng PO xây roadmap theo RICE-lite.</span></p><span class="pill case__out"><span class="en">Built 30+ AI-assisted BA workflows · up to 70% less time</span><span class="vi">Tự xây 30+ quy trình BA dùng AI · tiết kiệm đến 70% thời gian</span></span></div>
   </div>
 </section>
 
@@ -257,43 +230,51 @@
       <div class="tags"><span><span class="en">E-commerce</span><span class="vi">Thương mại điện tử</span></span><span>EdTech</span><span><span class="en">Digital health</span><span class="vi">Y tế số</span></span><span>AI agents</span><span>VR</span></div>
     </div>
     <div class="stats glass" data-reveal>
-      <div class="stat"><b data-count="5">5</b><span><span class="en">design case studies, from brief to working prototype</span><span class="vi">case study thiết kế, từ brief đến bản chạy thử</span></span></div>
-      <div class="stat"><b data-count="126">126</b><span><span class="en">screens and states drawn across Sali, Mood Mix and LinHiêu</span><span class="vi">màn và trạng thái đã vẽ cho Sali, Mood Mix và LinHiêu</span></span></div>
-      <div class="stat"><b data-count="28">28</b><span><span class="en">places in Phú Thọ rebuilt in 3D for one 80-second video</span><span class="vi">điểm ở Phú Thọ dựng 3D cho một video 80 giây</span></span></div>
+      <div class="stat"><b data-count="4">4</b><span><span class="en">design projects taken from idea to working prototype</span><span class="vi">dự án thiết kế, đi từ ý tưởng đến bản chạy thử</span></span></div>
+      <div class="stat"><b data-count="46">46</b><span><span class="en">screens and states drawn for Sali (31) and the LinHiêu terminology assistant (15)</span><span class="vi">màn và trạng thái đã vẽ cho Sali (31) và trợ lý thuật ngữ LinHiêu (15)</span></span></div>
+      <div class="stat"><b data-count="28">28</b><span><span class="en">places in Phú Thọ shown in 3D in one 80-second video</span><span class="vi">điểm ở Phú Thọ hiện lên bằng 3D trong một video 80 giây</span></span></div>
     </div>
   </div>
   <div class="cards-4">
     <div class="small glass" data-reveal><div class="eyebrow"><span class="en">My toolkit</span><span class="vi">Công cụ</span></div><h4><span class="en">Tools I reach for every day</span><span class="vi">Công cụ tôi dùng mỗi ngày</span></h4><div class="tags" style="margin-top:8px"><span>Figma</span><span>Claude + MCP</span><span>Three.js</span><span>Blender</span><span>HTML / CSS</span><span>Jira</span></div></div>
-    <div class="small glass" data-reveal><div class="eyebrow"><span class="en">Currently</span><span class="vi">Hiện tại</span></div><h4><span class="en">Designing LinHiêu's terminology assistant</span><span class="vi">Thiết kế trợ lý thuật ngữ cho LinHiêu</span></h4><p><span class="en">Next: wiring AI into Sali · Product Owner at a corporate group</span><span class="vi">Tiếp theo: nối AI cho Sali · Product Owner tại một tập đoàn</span></p></div>
+    <div class="small glass" data-reveal><div class="eyebrow"><span class="en">Currently</span><span class="vi">Hiện tại</span></div><h4><span class="en">Designing LinHiêu's terminology assistant</span><span class="vi">Thiết kế trợ lý thuật ngữ cho LinHiêu</span></h4><p><span class="en">Day job: Product Owner at a corporate group.</span><span class="vi">Công việc chính: Product Owner tại một tập đoàn.</span></p></div>
     <div class="small glass" data-reveal><div class="eyebrow"><span class="en">Based in</span><span class="vi">Đang ở</span></div><h4>Hà Nội · GMT+7</h4><p><span class="en">Products shipped for teams in Vietnam and Africa.</span><span class="vi">Đã làm sản phẩm cho các đội ở Việt Nam và châu Phi.</span></p></div>
-    <div class="small small--fun glass" data-reveal><div class="eyebrow"><span class="en">Fun fact</span><span class="vi">Chuyện vui</span></div><h4><span class="en">I started out as a software tester.</span><span class="vi">Tôi khởi đầu là tester phần mềm.</span></h4><p><span class="en">Banking &amp; e-commerce QA at SMAC, then Tester cum BA at BestPrice — before BA, PO and design.</span><span class="vi">Kiểm thử ngân hàng &amp; thương mại điện tử ở SMAC, rồi Tester kiêm BA ở BestPrice — trước khi làm BA, PO và thiết kế.</span></p></div>
+    <div class="small small--fun glass" data-reveal><div class="eyebrow"><span class="en">Fun fact</span><span class="vi">Chuyện vui</span></div><h4><span class="en">I started out as a software tester.</span><span class="vi">Tôi khởi đầu là tester phần mềm.</span></h4><p><span class="en">Banking &amp; e-commerce QA at SMAC, then QA &amp; BA at BestPrice — before BA, PO and design.</span><span class="vi">Kiểm thử ngân hàng &amp; thương mại điện tử ở SMAC, rồi Tester kiêm BA ở BestPrice — trước khi làm BA, PO và thiết kế.</span></p></div>
   </div>
 
   <div class="timeline">
     <div class="eyebrow" data-reveal><span class="en">Experience · 2022 — now</span><span class="vi">Kinh nghiệm · 2022 — nay</span></div>
     <h2 class="h-title" data-reveal style="margin-bottom:32px"><span class="en">Where I've <em>worked</em></span><span class="vi">Nơi tôi <em>đã làm</em></span></h2>
     <div class="row" data-reveal><div class="row__when">10/2026 — <span class="en">now</span><span class="vi">nay</span></div><div class="row__who"><b><span class="en">A corporate group</span><span class="vi">Một tập đoàn</span></b><span>Product Owner</span></div><div class="row__what"><span class="en">Owning product scope and roadmap; project details are confidential.</span><span class="vi">Phụ trách phạm vi sản phẩm và lộ trình; chi tiết dự án thuộc bảo mật.</span><em><span class="en">Under NDA — happy to talk through how I work</span><span class="vi">Thuộc bảo mật — sẵn lòng chia sẻ cách làm khi trao đổi</span></em></div></div>
-    <div class="row" data-reveal><div class="row__when">09/2025 — 09/2026</div><div class="row__who"><b>Savameta</b><span><span class="en">Business Analyst · acting PO</span><span class="vi">Business Analyst · kiêm PO</span></span></div><div class="row__what">LumusAI (AI agent) · Metaverse (VR, Meta Store)<em><span class="en">300 downloads in month one · up to 70% faster BA workflow</span><span class="vi">300 lượt tải tháng đầu · quy trình BA nhanh hơn đến 70%</span></em></div></div>
+    <div class="row" data-reveal><div class="row__when">09/2025 — 09/2026</div><div class="row__who"><b>Savameta</b><span><span class="en">Business Analyst · acting PO</span><span class="vi">Business Analyst · kiêm PO</span></span></div><div class="row__what">LumusAI (AI agent) · Metaverse (VR, Meta Store)<em><span class="en">Metaverse: 300 downloads in month one · LumusAI: my AI-assisted BA workflow saves up to 70% of the time</span><span class="vi">Metaverse: 300 lượt tải trong tháng đầu · LumusAI: bộ quy trình BA dùng AI tôi tự xây tiết kiệm đến 70% thời gian</span></em></div></div>
     <div class="row" data-reveal><div class="row__when">01/2024 — 09/2025</div><div class="row__who"><b>GaneshAID Consultancy</b><span>Business Analyst</span></div><div class="row__what"><span class="en">C2P · Ganeshaid Suite · Capev · Vacciform · Doctors' LMS · AI chatbot — products for Africa</span><span class="vi">C2P · Ganeshaid Suite · Capev · Vacciform · LMS cho bác sĩ · Chatbot AI — sản phẩm cho châu Phi</span><em><span class="en">3-year C2P contract · LMS signed in 4 countries · 80% of Capev backlog cleared</span><span class="vi">Hợp đồng C2P 3 năm · LMS ký ở 4 quốc gia · xử lý 80% tồn đọng Capev</span></em></div></div>
-    <div class="row" data-reveal><div class="row__when">05/2023 — 12/2023</div><div class="row__who"><b>BestPrice Travel</b><span><span class="en">Tester cum Business Analyst</span><span class="vi">Tester kiêm Business Analyst</span></span></div><div class="row__what"><span class="en">Online pharmacy · Travel booking platform for tours, hotels and tickets</span><span class="vi">Bán thuốc online · Nền tảng đặt tour, khách sạn và vé</span><em><span class="en">SRS, user guides, test cases and Jira bug tracking</span><span class="vi">SRS, hướng dẫn sử dụng, testcase và quản lý bug trên Jira</span></em></div></div>
+    <div class="row" data-reveal><div class="row__when">05/2023 — 12/2023</div><div class="row__who"><b>BestPrice Travel</b><span><span class="en">QA &amp; Business Analyst</span><span class="vi">Tester kiêm Business Analyst</span></span></div><div class="row__what"><span class="en">Online pharmacy · Travel booking platform for tours, hotels and tickets</span><span class="vi">Bán thuốc online · Nền tảng đặt tour, khách sạn và vé</span><em><span class="en">SRS, user guides, test cases and Jira bug tracking</span><span class="vi">SRS, hướng dẫn sử dụng, testcase và quản lý bug trên Jira</span></em></div></div>
     <div class="row" data-reveal><div class="row__when">06/2022 — 05/2023</div><div class="row__who"><b>SMAC Vietnam</b><span>Tester</span></div><div class="row__what"><span class="en">Banking · E-commerce</span><span class="vi">Ngân hàng · Thương mại điện tử</span><em><span class="en">Full test lifecycle: checklist, test cases, execution, report</span><span class="vi">Trọn vòng kiểm thử: checklist, testcase, thực thi, báo cáo</span></em></div></div>
-    <div class="row" data-reveal><div class="row__when">2022 — 2023</div><div class="row__who"><b><span class="en">Education</span><span class="vi">Học vấn</span></b><span><span class="en">Banking Academy of Vietnam — Investment Economics</span><span class="vi">Học viện Ngân hàng — Kinh tế Đầu tư</span></span></div><div class="row__what"><span class="en">Advanced Business Analyst Course · Experienced Tester, Vietnam Tester Training Academy</span><span class="vi">Khoá Advanced Business Analyst · Experienced Tester, Vietnam Tester Training Academy</span><em><span class="en">Graduated 07/2022</span><span class="vi">Tốt nghiệp 07/2022</span></em></div></div>
+    <div class="row" data-reveal><div class="row__when">2022</div><div class="row__who"><b><span class="en">Education</span><span class="vi">Học vấn</span></b><span><span class="en">Banking Academy of Vietnam — Investment Economics</span><span class="vi">Học viện Ngân hàng — Kinh tế Đầu tư</span></span></div><div class="row__what"><span class="en">Advanced Business Analyst Course · Experienced Tester, Vietnam Tester Training Academy</span><span class="vi">Khoá Advanced Business Analyst · Experienced Tester, Vietnam Tester Training Academy</span><em><span class="en">Graduated 07/2022</span><span class="vi">Tốt nghiệp 07/2022</span></em></div></div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact" data-scene="contact">
   <div class="contact__bg" aria-hidden="true"><video class="bloom-loop" muted loop playsinline preload="none"></video></div>
-  <div class="eyebrow"><span class="en">Have an idea?</span><span class="vi">Bạn có ý tưởng?</span></div>
-  <h2><span class="en">Let's make something <em>lovely</em> together.</span><span class="vi">Cùng tạo nên điều gì đó thật <em>dễ thương</em> nhé.</span></h2>
-  <p><span class="en">Need a product designer who starts from the rules and ships the edge cases? Tell me about your product — I'd love to hear it.</span><span class="vi">Cần một product designer bắt đầu từ quy tắc và lo đủ các trường hợp biên? Kể tôi nghe về sản phẩm của bạn nhé.</span></p>
+  <div class="eyebrow"><span class="en">Hiring a product designer?</span><span class="vi">Đang tuyển product designer?</span></div>
+  <h2><span class="en">Let's talk about <em>your product</em>.</span><span class="vi">Kể tôi nghe về <em>sản phẩm của bạn</em>.</span></h2>
+  <p><span class="en">I'm looking for a product designer role in Hà Nội. If you'd like a closer look at any project here, write to me and I'll reply the same day.</span><span class="vi">Tôi đang tìm vị trí product designer tại Hà Nội. Bạn muốn xem kỹ một dự án ở đây thì cứ nhắn tôi, tôi trả lời trong ngày.</span></p>
   <div class="contact__actions">
-    <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com"><span class="en">Say hello</span><span class="vi">Gửi lời chào</span><svg><use href="#i-arrow"/></svg></a>
+    <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com"><span class="en">Email me</span><span class="vi">Gửi email cho tôi</span><svg><use href="#i-arrow"/></svg></a>
     <a class="btn btn--ghost" href="mailto:phamlinh278.work@gmail.com">phamlinh278.work@gmail.com</a>
     <a class="btn btn--ghost" href="https://linkedin.com/in/pham-thuy-linh-55079331b" target="_blank" rel="noopener">LinkedIn<svg><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 </main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb__stage" id="lbStage" data-lenis-prevent><img id="lbImg" alt=""></div>
+  <p class="lb__cap" id="lbCap"></p>
+  <button class="lb__btn lb__x" id="lbClose" aria-label="Close"><svg width="20" height="20"><use href="#i-x"/></svg></button>
+  <button class="lb__btn lb__prev" id="lbPrev" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="lb__btn lb__next" id="lbNext" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
 
 <footer>
   <span class="logo">linh<b>.</b></span>
@@ -301,6 +282,6 @@
   <a href="#top"><span class="en">Back to top ↑</span><span class="vi">Lên đầu trang ↑</span></a>
 </footer>
 
-<script type="module" src="js/main.js?v=13"></script>
+<script type="module" src="js/main.js?v=19"></script>
 </body>
 </html>

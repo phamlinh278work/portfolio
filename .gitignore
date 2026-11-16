@@ -43,3 +43,6 @@ v2/tools/intro-frames/
 # v2: tài sản của bản trước, không trang nào dùng
 v2/assets/rose/
 v2/assets/intro/
+
+# v2: Mood Mix đã bỏ khỏi trang (brief của khách), không đưa ảnh lên repo
+v2/assets/img/moodmix-*.png

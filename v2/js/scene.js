@@ -113,15 +113,21 @@ export function createScene(canvas, opts = {}) {
   const extras = () => petals.filter((p) => p.i >= ambientCount);
 
   // a gust across the whole screen (dir +1: left to right)
-  // quiet: fewer petals and none of the big out-of-focus ones, for sections where the visitor is reading
+  // Petals normally drift BEHIND the page content. Only a gust (the intro opening, a change of section) is allowed
+  // in front of it, and only for as long as it lasts, so nothing sits on top of text someone is reading.
+  let frontUntil = 0;
+  const toFront = (sec) => { canvas.classList.add('is-front'); frontUntil = Math.max(frontUntil, clock + sec); };
+  // quiet: fewer petals, none of the big out-of-focus ones, and they stay behind the content (reading sections, phones)
   function sweep(dir = 1, amount = 1, quiet = false) {
     if (reduced) return;
+    if (mobile) { amount *= 0.6; quiet = true; }
+    if (!quiet) toFront(3.2);
     extras().slice(0, Math.round((N - ambientCount) * amount)).forEach((p) => {
       place(p, quiet ? rnd(0, 0.85) : undefined);
-      const hw = halfW(p.z), hh = halfH(p.z), T = rnd(1.0, 2.1);
+      const hw = halfW(p.z), hh = halfH(p.z), T = rnd(1.0, 1.9);
       p.x = -dir * (hw + p.size * 2 + rnd(0, hw * 1.1)); p.y = rnd(-0.85, 1) * hh;
       p.vx = dir * (2 * hw + Math.abs(p.x) - hw) / T; p.vy = rnd(-0.5, 0.9); p.vz = rnd(-0.3, 0.3);
-      p.active = true; p.fade = 0; p.life = T + rnd(1.0, 1.8);
+      p.active = true; p.fade = 0; p.life = T + rnd(0.5, 1.1);
     });
   }
   // the rose breaks into petals: they leave (x, y) and stream towards (tx, ty)
@@ -259,6 +265,7 @@ export function createScene(canvas, opts = {}) {
     roseMat.opacity = S.alpha; roseMat.color.setRGB(tint.r, tint.g, tint.b);
 
     // petals
+    if (frontUntil && clock > frontUntil) { canvas.classList.remove('is-front'); frontUntil = 0; }
     const ds = dt * S.energy; back.length = 0; front.length = 0;
     for (const p of petals) {
       if (!p.active) continue;
@@ -302,6 +309,7 @@ export function createScene(canvas, opts = {}) {
     // petals fly out from a point on screen (-1..1), e.g. when the intro footage opens up
     burstAt(nx, ny, amount = 1) {
       if (reduced) return;
+      toFront(3.9);
       extras().slice(0, Math.round((N - ambientCount) * amount)).forEach((p) => {
         place(p, rnd(0.25, 1));
         const a = rnd(6.283), sp = rnd(2.2, 7.5), k = (10 - p.z) / 10;
