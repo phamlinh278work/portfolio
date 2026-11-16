@@ -6,14 +6,30 @@
 <meta name="robots" content="noindex">
 <title>Phạm Thùy Linh — Product Designer</title>
 <meta name="description" content="Product designer from a BA/PO background: user flows, edge states, UI systems, working prototypes and 3D.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Phạm Thùy Linh — Product Designer">
+<meta property="og:description" content="Product designer from a BA/PO background: user flows, edge states, UI systems, working prototypes and 3D.">
+<meta property="og:url" content="https://phamlinh278work.github.io/portfolio/v2/">
+<meta property="og:image" content="https://phamlinh278work.github.io/portfolio/v2/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2369482B'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23F6E9C8'%3El.%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=18">
+<link rel="stylesheet" href="css/site.css?v=19">
+<script>
+// If the page script cannot start (a blocked CDN, a very slow line), the content is shown as a plain page instead of staying hidden behind the opening film.
+window.__plain = function () { document.documentElement.classList.add('plain'); };
+window.__plainT = setTimeout(window.__plain, 6000);
+addEventListener('error', function () { if (!window.__booted) window.__plain(); });
+</script>
+<noscript><style>.intro{display:none}[data-reveal]{opacity:1;transform:none}</style></noscript>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" onerror="__plain()"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" onerror="__plain()"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" onerror="__plain()"></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -49,7 +65,7 @@
     <button class="tour-btn" id="tourBtn" type="button" aria-pressed="false" aria-label="Auto-play"><span class="tour-btn__ico"><svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="tour-btn__label"><span class="t-play"><span class="en">Auto-play</span><span class="vi">Tự chạy</span></span><span class="t-stop"><span class="en">Pause</span><span class="vi">Dừng</span></span></span></button>
     <div class="lang" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="vi">VI</button></div>
     <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com"><span class="en">Let's talk</span><span class="vi">Nhắn cho tôi</span><svg><use href="#i-arrow"/></svg></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="20" height="20"><use href="#i-menu"/></svg></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><svg width="20" height="20"><use href="#i-menu"/></svg></button>
   </div>
 </header>
 
@@ -108,13 +124,13 @@
     <button class="btn btn--ghost wall__toggle" id="wallToggle" data-reveal><span class="t-all"><span class="en">View all</span><span class="vi">Xem tất cả</span></span><span class="t-wall"><span class="en">Back to the wall</span><span class="vi">Xem dạng tường</span></span></button>
   </div>
   <div class="wall" id="wall"><div class="wall__ring" id="ring">
-    <article class="case glass" data-to="#shots-term" data-href="linhieu.html" tabindex="0" role="link">
+    <article class="case glass" data-to="#shots-term" data-href="linhieu.html#assistant" tabindex="0" role="link">
       <div class="case__cover case__cover--phone t-sage"><img src="assets/img/lh-term-01.jpg" alt="LinHiêu term card" loading="lazy"></div>
       <div class="case__body">
         <div class="case__meta"><span class="en">Mobile feature · Solo: product, design, build · 2026</span><span class="vi">Tính năng mobile · Tự làm: sản phẩm, thiết kế, dựng · 2026</span></div>
         <div class="case__title"><span class="en">LinHiêu — a terminology assistant for audiobooks</span><span class="vi">LinHiêu — trợ lý thuật ngữ cho người nghe sách</span></div>
         <p class="case__desc" style="margin:0"><span class="en">A term card that follows the audio being played. The host app is mine and in daily use.</span><span class="vi">Thẻ thuật ngữ đổi theo đoạn audio đang phát. App gốc do tôi tự dựng, đang dùng hằng ngày.</span></p>
-        <div class="case__foot"><span class="pill case__out"><span class="en">15 states · zero extra AI calls</span><span class="vi">15 trạng thái · không tốn thêm lượt gọi AI</span></span><span class="case__more is-out"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg><use href="#i-arrow"/></svg></span></div>
+        <div class="case__foot"><span class="pill case__out"><span class="en">15 states · the glossary costs no extra AI call</span><span class="vi">15 trạng thái · bảng thuật ngữ không tốn thêm lượt gọi AI</span></span><a class="case__more is-out" href="linhieu.html#assistant"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg><use href="#i-arrow"/></svg></a></div>
       </div>
     </article>
     <article class="case glass" data-to="#playground" tabindex="0" role="link">
@@ -141,7 +157,7 @@
         <div class="case__meta"><span class="en">Personal product · Solo: product, design, build · 2026</span><span class="vi">Sản phẩm cá nhân · Tự làm: sản phẩm, thiết kế, dựng · 2026</span></div>
         <div class="case__title"><span class="en">LinHiêu — book translator and audio reader</span><span class="vi">LinHiêu — dịch sách và đọc thành tiếng</span></div>
         <p class="case__desc" style="margin:0"><span class="en">Works by the chapter instead of the page, so one book reads in a single unbroken thread from start to finish.</span><span class="vi">Làm việc theo chương thay vì theo trang, nên một cuốn sách chạy liền mạch từ đầu đến cuối.</span></p>
-        <div class="case__foot"><span class="pill case__out"><span class="en">In daily use · designed and built by me</span><span class="vi">Dùng hằng ngày · tự thiết kế và tự dựng</span></span><span class="case__more is-out"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg><use href="#i-arrow"/></svg></span></div>
+        <div class="case__foot"><span class="pill case__out"><span class="en">In daily use · designed and built by me</span><span class="vi">Dùng hằng ngày · tự thiết kế và tự dựng</span></span><a class="case__more is-out" href="linhieu.html"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg><use href="#i-arrow"/></svg></a></div>
       </div>
     </article>
   </div></div>
@@ -173,7 +189,7 @@
   <div class="eyebrow" data-reveal><span class="en">Screens and states</span><span class="vi">Màn hình và trạng thái</span></div>
   <h2 class="h-title" data-reveal><span class="en">Screens I've <em>drawn</em></span><span class="vi">Những màn tôi <em>đã vẽ</em></span></h2>
   <p class="lead" data-reveal><span class="en">The empty, error and out-of-credit states get a screen of their own. Click any screen to see it large.</span><span class="vi">Trạng thái trống, lỗi và hết lượt đều có màn riêng. Bấm vào màn bất kỳ để xem lớn.</span></p>
-  <h3 class="shots__label" id="shots-term" data-reveal>LinHiêu · <span class="en">terminology assistant</span><span class="vi">trợ lý thuật ngữ</span> <a class="shots__link" href="linhieu.html"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg width="14" height="14"><use href="#i-arrow"/></svg></a></h3>
+  <h3 class="shots__label" id="shots-term" data-reveal>LinHiêu · <span class="en">terminology assistant</span><span class="vi">trợ lý thuật ngữ</span> <a class="shots__link" href="linhieu.html#assistant"><span class="en">Read the case study</span><span class="vi">Đọc case study</span><svg width="14" height="14"><use href="#i-arrow"/></svg></a></h3>
   <div class="shots shots--phone" id="shotsPhone"></div>
   <h3 class="shots__label" id="shots-web" data-reveal><span class="en">LinHiêu book translator · Sali</span><span class="vi">LinHiêu dịch sách · Sali</span></h3>
   <div class="shots shots--web" id="shotsWeb"></div>
@@ -281,6 +297,6 @@
   <a href="#top"><span class="en">Back to top ↑</span><span class="vi">Lên đầu trang ↑</span></a>
 </footer>
 
-<script type="module" src="js/main.js?v=19"></script>
+<script type="module" src="js/main.js?v=20" onerror="__plain()"></script>
 </body>
 </html>

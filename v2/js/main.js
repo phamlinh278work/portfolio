@@ -1,20 +1,30 @@
-import { createScene } from './scene.js?v=6';
 
 const qs = new URLSearchParams(location.search);
 const AUTOPLAY = qs.has('autoplay') || qs.has('record');
 const RECORD = qs.has('record');
 const html = document.documentElement;
+html.classList.add('js');            // from here on the script lays the page out; without it the stylesheet shows a plain version
 const reduced = !AUTOPLAY && matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (reduced) html.classList.add('no-motion');
 if (AUTOPLAY) html.classList.add('autoplay');
 if (RECORD) html.classList.add('rec');
 const gsap = window.gsap, ScrollTrigger = window.ScrollTrigger;
+if (!gsap || !ScrollTrigger) { html.classList.remove('js'); window.__plain && window.__plain(); throw new Error('animation library did not load'); }
 gsap.registerPlugin(ScrollTrigger);
 
 /* ---------- language ---------- */
 const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
-html.lang = qs.get('lang') || store.get('lang') || ((navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en');
-document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => { html.lang = b.dataset.lang; store.set('lang', html.lang); requestAnimationFrame(() => ScrollTrigger.refresh()); }));
+const okLang = (v) => { v = (v || '').toLowerCase(); return v === 'en' || v === 'vi' ? v : ''; };
+const qLang = okLang(qs.get('lang'));
+html.lang = qLang || okLang(store.get('lang')) || ((navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en');
+if (qLang) store.set('lang', qLang);            // a link shared with ?lang=vi stays Vietnamese on the case study too
+const setLangButtons = () => document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === html.lang)));
+setLangButtons();
+document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => {
+  html.lang = b.dataset.lang; store.set('lang', html.lang); setLangButtons();
+  if (qs.has('lang')) { qs.delete('lang'); const q = qs.toString(); history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash); }   // or a reload would undo the choice
+  requestAnimationFrame(() => ScrollTrigger.refresh());
+}));
 
 /* ---------- screens: a still grid; every screen opens large ---------- */
 const SHOTS_PHONE = [
@@ -37,22 +47,37 @@ document.getElementById('shotsWeb').innerHTML = SHOTS_WEB.map(shot).join('');
 
 /* ---------- smooth scroll ---------- */
 let lenis = null;
-if (!reduced) {
+if (!reduced && window.Lenis) {
   lenis = new window.Lenis({ lerp: 0.085, smoothWheel: true, wheelMultiplier: 0.9 });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((t) => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
 }
-const scrollToEl = (target) => { const el = typeof target === 'string' ? document.querySelector(target) : target; if (!el) return; lenis ? lenis.scrollTo(el, { offset: -20, duration: 1.4 }) : el.scrollIntoView(); };
-document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', (e) => { const id = a.getAttribute('href'); if (id.length > 1) { e.preventDefault(); scrollToEl(id); } }));
+const scrollToEl = (target) => {
+  const el = typeof target === 'string' ? document.querySelector(target) : target; if (!el) return;
+  if (el.id === 'work' && wallST) { scrollToY(wallST.start, 1.4); return; }      // while pinned the section's own position is wherever the wall happens to be
+  lenis ? lenis.scrollTo(el, { offset: -20, duration: 1.4 }) : el.scrollIntoView();
+};
+document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', (e) => { const id = a.getAttribute('href'); if (id.length > 1) { e.preventDefault(); closeDrawer(false); scrollToEl(id); } }));
 
 /* ---------- drawer (mobile menu) ---------- */
-const drawer = document.getElementById('drawer');
-document.getElementById('menuBtn').addEventListener('click', () => { drawer.classList.add('open'); lenis && lenis.stop(); });
-drawer.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', () => { drawer.classList.remove('open'); lenis && lenis.start(); }));
+const drawer = document.getElementById('drawer'), menuBtn = document.getElementById('menuBtn');
+function openDrawer() { drawer.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); lenis && lenis.stop(); drawer.querySelector('button[data-close]').focus(); }
+// the smooth scroller ignores scroll requests while it is stopped, so it has to be running again before a menu link scrolls
+function closeDrawer(refocus = true) { if (!drawer.classList.contains('open')) return; drawer.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); lenis && lenis.start(); if (refocus) menuBtn.focus({ preventScroll: true }); }
+menuBtn.addEventListener('click', openDrawer);
+drawer.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', () => closeDrawer(!el.matches('a'))));
+// keeps Tab inside an open layer (menu, picture viewer)
+const trapTab = (e, box) => { const f = [...box.querySelectorAll('a[href], button')].filter((el) => !el.hidden && el.offsetParent !== null); if (!f.length) return; const a = f[0], z = f[f.length - 1];
+  if (!box.contains(document.activeElement)) { e.preventDefault(); a.focus(); } else if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } };
+addEventListener('keydown', (e) => { if (!drawer.classList.contains('open')) return; if (e.key === 'Escape') closeDrawer(); else if (e.key === 'Tab') trapTab(e, drawer); });
 
 /* ---------- 3D scene ---------- */
-const scene = createScene(document.getElementById('scene'), { reduced, record: RECORD, mobile: innerWidth <= 900, anchor: document.getElementById('roseAnchor') });
+// the petals are decoration: without WebGL, or if the 3D library does not arrive in time, the page carries on without them
+const scene = { setState() {}, setEnergy() {}, sweep() {}, burstAt() {}, ready: null };      // does nothing until the real one has loaded
+scene.ready = Promise.race([import('./scene.js?v=6'), new Promise((_, no) => setTimeout(() => no(new Error('3D library timed out')), RECORD ? 30000 : 5000))])
+  .then((mod) => { const real = mod.createScene(document.getElementById('scene'), { reduced, record: RECORD, mobile: innerWidth <= 900, anchor: document.getElementById('roseAnchor') }); const { ready, ...api } = real; Object.assign(scene, api); return ready; })
+  .catch(() => { document.getElementById('scene').style.display = 'none'; });
 let introDone = false, activeScene = 'hero';
 const goScene = (name) => { activeScene = name; if (introDone) scene.setState(name); };
 document.querySelectorAll('[data-scene]').forEach((el) => {
@@ -79,6 +104,7 @@ document.querySelectorAll('[data-count]').forEach((el) => {
 /* ---------- curved 3D wall of case studies ---------- */
 const ring = document.getElementById('ring'), cases = [...ring.children], dots = [...document.querySelectorAll('#wallDots button')];
 const STEP = 24, R = 1500, PIN = 520;
+dots.forEach((d, i) => { const t = cases[i] && cases[i].querySelector('.case__title .en'); if (t) d.setAttribute('aria-label', t.textContent); });
 let wallST = null;
 const wallEl = document.getElementById('wall'), workEl = document.getElementById('work');
 const isWall = () => innerWidth > 900 && !workEl.classList.contains('is-grid');
@@ -115,11 +141,18 @@ function setupWall() {
   }
 }
 // when the scrolling stops between two cards, glide to the nearer one so a whole card always faces the viewer
-let snapT;
+// A scroll that starts on a card and stops short (one wheel notch, one arrow key) carries on to the next card in that
+// direction: springing back to the card it left made slow scrolling impossible. Arriving from outside the wall, the nearer card wins.
+let snapT, restY = scrollY;
 function snapWall() {
+  const y0 = scrollY, from = restY; restY = y0;
   if (!wallST || AUTOPLAY || tour || !wallST.isActive) return;
-  const n = cases.length - 1, pos = wallST.progress * n, k = Math.round(pos);
+  const n = cases.length - 1, pos = wallST.progress * n;
+  let k = Math.round(pos);
   if (Math.abs(pos - k) < 0.02) return;
+  const inside = from >= wallST.start - 2 && from <= wallST.end + 2;
+  if (inside && y0 > from) k = Math.ceil(pos - 0.04); else if (inside && y0 < from) k = Math.floor(pos + 0.04);
+  k = Math.max(0, Math.min(n, k));
   const y = Math.round(wallST.start + (wallST.end - wallST.start) * k / n);
   if (lenis) lenis.scrollTo(y, { duration: 0.7, easing: (t) => 1 - Math.pow(1 - t, 3) }); else window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
 }
@@ -131,7 +164,9 @@ dots.forEach((d, k) => d.addEventListener('click', () => turnTo(k)));
 // a card that is off to the side comes to the centre first; the centred card opens the section that shows its work
 cases.forEach((c, k) => {
   const open = () => { if (wallST && k !== wallIndex()) turnTo(k); else if (c.dataset.href) location.href = c.dataset.href; else scrollToEl(c.dataset.to); };
-  c.addEventListener('click', open);
+  // the "Read the case study" link inside a card is a real link (it works without this script, and opens in a new tab with Cmd/Ctrl);
+  // a plain click is handled here like a click anywhere else on the card, so a card off to the side still turns to the centre first
+  c.addEventListener('click', (e) => { if (e.target.closest('a')) { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); } open(); });
   c.addEventListener('keydown', (e) => { if (e.key === 'Enter') open(); });
 });
 document.getElementById('wallToggle').addEventListener('click', () => {
@@ -140,7 +175,7 @@ document.getElementById('wallToggle').addEventListener('click', () => {
   lenis ? lenis.scrollTo(Math.max(0, y), { immediate: true, force: true }) : window.scrollTo(0, Math.max(0, y));
 });
 setupWall();
-let rw; addEventListener('resize', () => { clearTimeout(rw); rw = setTimeout(() => { setupWall(); ScrollTrigger.refresh(); }, 200); });
+let rw; addEventListener('resize', () => { clearTimeout(rw); rw = setTimeout(() => { if (innerWidth <= 900) workEl.classList.remove('is-grid'); setupWall(); ScrollTrigger.refresh(); }, 200); });   // the grid view has no phone layout: a narrow window goes back to the list
 
 /* ---------- flow reveals top to bottom, the way the flow runs ---------- */
 // The diagram comes in through a soft fade that stays at the bottom edge of the window, so whatever is on screen is
@@ -166,8 +201,8 @@ function lbShow(k) {
   lbImg.src = im.currentSrc || im.src; lbImg.alt = im.alt;
   lbCap.innerHTML = cap ? cap.innerHTML : im.alt;
   const big = im.dataset.zoom === 'big';
-  // a diagram is useless shrunk to a phone's width, so there it opens at a readable size straight away
-  lb.classList.toggle('is-1x', big && innerWidth <= 900);
+  // a diagram is useless shrunk to fit the window (its labels drop to a few pixels), so it opens at a readable size straight away
+  lb.classList.toggle('is-1x', big);
   lb.style.setProperty('--lb-w', big ? Math.max(innerWidth * 0.94, Math.min(1300, im.naturalWidth || 1300)) + 'px' : 'auto');
   lbStage.scrollTo(0, 0);
   document.getElementById('lbPrev').hidden = document.getElementById('lbNext').hidden = lbList.length < 2;
@@ -183,17 +218,30 @@ lbStage.addEventListener('click', lbClose);
 document.getElementById('lbClose').addEventListener('click', lbClose);
 document.getElementById('lbPrev').addEventListener('click', () => lbShow(lbAt - 1));
 document.getElementById('lbNext').addEventListener('click', () => lbShow(lbAt + 1));
-addEventListener('keydown', (e) => { if (lb.hidden) return; if (e.key === 'Escape') lbClose(); else if (e.key === 'ArrowLeft') lbShow(lbAt - 1); else if (e.key === 'ArrowRight') lbShow(lbAt + 1); });
+addEventListener('keydown', (e) => {
+  if (lb.hidden) return;
+  if (e.key === 'Escape') lbClose(); else if (e.key === 'ArrowLeft') lbShow(lbAt - 1); else if (e.key === 'ArrowRight') lbShow(lbAt + 1);
+  else if (e.key === 'Tab') trapTab(e, lb);
+  else if (['PageDown', 'PageUp', 'Home', 'End'].includes(e.key)) e.preventDefault();      // or the page behind the viewer scrolls away
+});
+// a picture that is not wrapped in a button still has to open from the keyboard
+document.querySelectorAll('img[data-zoom]').forEach((im) => { if (im.closest('button')) return; im.tabIndex = 0; im.setAttribute('role', 'button'); im.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lbOpen(im); } }); });
 
 /* ---------- Phú Thọ video: plays only while visible ---------- */
 const video = document.getElementById('phuthoVideo');
 // when recording, the headless browser leaves the clip black, so the recording shows its cover image instead
 if (!reduced && !RECORD) new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? video.play().catch(() => {}) : video.pause())), { threshold: 0.3 }).observe(video);
+if (reduced) video.controls = true;
 
 /* ---------- bloom footage: real peonies, graded to the palette ---------- */
 const KIND = innerWidth <= 900 ? 'mob' : 'desk';
 const BLOOM = 'assets/bloom/';
-const setSources = (v, name) => { v.poster = `${BLOOM}${name}.jpg`; v.innerHTML = `<source src="${BLOOM}${name}.webm" type="video/webm"><source src="${BLOOM}${name}.mp4" type="video/mp4">`; };
+// The webm files are VP9 4:4:4, which Safari may not decode, and on phones the mp4 is the smaller file: both get the mp4 first.
+const MP4_FIRST = KIND === 'mob' || /^((?!chrome|chromium|android|edg).)*safari/i.test(navigator.userAgent);
+const setSources = (v, name) => {
+  const webm = `<source src="${BLOOM}${name}.webm" type="video/webm">`, mp4 = `<source src="${BLOOM}${name}.mp4" type="video/mp4">`;
+  v.poster = `${BLOOM}${name}.jpg`; v.innerHTML = MP4_FIRST ? mp4 + webm : webm + mp4;
+};
 // looping blooms behind the hero portrait and the closing block; they only play while on screen
 document.querySelectorAll('.bloom-loop').forEach((v) => {
   if (RECORD || reduced) {           // a still with a slow drift: the recorder's virtual clock cannot drive <video>
@@ -225,7 +273,8 @@ function runIntro() {
   return new Promise((done) => {
     const land = () => { introDone = true; scene.setState(activeScene, 1.6); window.__revealHero && window.__revealHero(); };
     // reduced motion, or already watched in this visit: straight to the page
-    if (reduced || (!AUTOPLAY && seen.get())) { intro.remove(); land(); done(); return; }
+    // …or the page was slow to start and has already been shown as it is: a film over content someone is reading would be a step back
+    if (reduced || (!AUTOPLAY && (seen.get() || html.classList.contains('plain')))) { intro.remove(); land(); done(); return; }
     seen.set();
     const D = AUTOPLAY ? 4.4 : 2.5, media = RECORD ? introCanvas : introVideo;      // a visitor waits 2.5 s; the self-playing film takes its time
     if (RECORD) drawIntroFrame(0); else { introVideo.playbackRate = AUTOPLAY ? 1.2 : 1.5; introVideo.play().catch(() => {}); }
@@ -318,7 +367,7 @@ tourBtn.addEventListener('click', () => (tour ? stopTour() : startTour()));
 
 /* ---------- boot ---------- */
 async function boot() {
-  try { await document.fonts.ready; } catch (e) {}
+  try { await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 2500))]); } catch (e) {}      // a slow font must not hold the page back
   await Promise.race([
     Promise.all([...document.querySelectorAll('#top img')].map((i) => (i.complete ? 0 : new Promise((r) => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); })))),
     new Promise((r) => setTimeout(r, 8000)),
@@ -330,6 +379,7 @@ async function boot() {
   if (AUTOPLAY) { window.scrollTo(0, 0); lenis && lenis.scrollTo(0, { immediate: true }); }
   window.__ready = true;
   if (RECORD) await new Promise((r) => { window.__go = r; });   // the recorder starts the clock
+  clearTimeout(window.__plainT); window.__booted = true;
   await runIntro();
   if (AUTOPLAY) { ScrollTrigger.refresh(); const tl = buildAutoplay(); window.__autoplayDuration = tl.duration(); tl.play(); }
 }

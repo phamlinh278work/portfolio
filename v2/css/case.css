@@ -111,3 +111,9 @@
 @media (prefers-reduced-motion: reduce){ .case-page [data-reveal]{ opacity:1; transform:none; } }
 
 .lb__cap small{ display:block; margin-top:4px; font-weight:400; opacity:.85; }
+
+/* a card on the home page can open the case study at a section: keep its heading clear of the fixed bar */
+.cs-sec{ scroll-margin-top:96px; }
+.cs-swipe{ display:none; margin:0 0 8px; font-size:13px; font-weight:600; color:var(--ink-2); }
+.cs-table:focus-visible{ outline:2px solid var(--primary); outline-offset:3px; }
+@media (max-width:900px){ .cs-swipe{ display:block; } }

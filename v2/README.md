@@ -1,6 +1,6 @@
 # Portfolio v2 — 3D, tự chạy, quay video
 
-Bản thử nghiệm song song với trang đang chạy (`../index.html`). Chưa commit, chưa đẩy lên GitHub Pages.
+Bản thử nghiệm song song với trang đang chạy (`../index.html`). Đã có trên GitHub Pages ở `/v2/`.
 
 ## Xem trên máy
 
@@ -60,6 +60,12 @@ Màn đầu → 4 dự án (LinHiêu trợ lý thuật ngữ, Khám phá Phú Th
 
 Thư viện (bản cố định, tải từ jsDelivr): three 0.160.0, gsap 3.12.5, lenis 1.1.13.
 Người xem bật "giảm chuyển động" (Reduce Motion) thì trang tắt cảnh 3D động, cuộn mượt và màn mở đầu.
+
+## Khi script không chạy được
+
+- Không có WebGL, hoặc thư viện 3D không tải được trong 5 giây: trang vẫn chạy đủ, chỉ thiếu cánh hoa.
+- jsDelivr bị chặn, JavaScript tắt, hoặc mạng chậm quá 6 giây: trang hiện ở dạng tĩnh (lớp `plain` trên `<html>`), không có màn mở đầu, bốn dự án xếp thành lưới, mục lưới màn hình ẩn đi. Luật CSS nằm ngay dưới `[data-reveal]` trong `css/site.css`.
+- Ảnh hiện khi dán link (LinkedIn, Zalo): `assets/og.jpg`, 1200×630. Thẻ `og:` trong hai trang trỏ tới địa chỉ GitHub Pages; đổi tên miền thì sửa ở đó.
 
 ## Trước khi đẩy lên mạng
 

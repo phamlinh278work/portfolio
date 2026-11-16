@@ -6,11 +6,20 @@
 <meta name="robots" content="noindex">
 <title>LinHiêu case study</title>
 <meta name="description" content="LinHiêu: reading a whole English book in Vietnamese without pasting it into a chat page by page. Problem, insight, decisions and the terminology assistant.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LinHiêu case study — Phạm Thùy Linh">
+<meta property="og:description" content="LinHiêu: reading a whole English book in Vietnamese without pasting it into a chat page by page. Problem, insight, decisions and the terminology assistant.">
+<meta property="og:url" content="https://phamlinh278work.github.io/portfolio/v2/linhieu.html">
+<meta property="og:image" content="https://phamlinh278work.github.io/portfolio/v2/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2369482B'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23F6E9C8'%3El.%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=17">
-<link rel="stylesheet" href="css/case.css?v=3">
+<link rel="stylesheet" href="css/site.css?v=19">
+<link rel="stylesheet" href="css/case.css?v=4">
 <noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
 </head>
 <body class="case-page">
@@ -127,11 +136,11 @@
         <div><dt><span class="en">Why</span><span class="vi">Vì sao</span></dt><dd><span class="en">Lumped together, one network hiccup would lock a healthy account for 24 hours. And when every account is paused, the reader is told the earliest time quota returns instead of a dead end.</span><span class="vi">Nếu gộp chung, một sự cố mạng sẽ khoá oan một tài khoản còn tốt suốt 24 giờ. Còn khi mọi tài khoản đều tạm khoá, người đọc được báo giờ sớm nhất có lại hạn mức thay vì gặp ngõ cụt.</span></dd></div>
       </dl>
     </div>
-    <div class="cs-dec__visual"><div class="cs-table"><table><thead><tr><th><span class="en">State</span><span class="vi">Trạng thái</span></th><th><span class="en">Event</span><span class="vi">Sự kiện</span></th><th><span class="en">New state</span><span class="vi">Trạng thái mới</span></th><th><span class="en">What the system does</span><span class="vi">Hệ thống làm gì</span></th></tr></thead><tbody><tr><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Quota error</span><span class="vi">Lỗi hết hạn mức</span></td><td><span class="en">Paused</span><span class="vi">Tạm khoá</span></td><td><span class="en">Reopens after 24 hours; the same request is retried on the next account</span><span class="vi">Mở lại sau 24 giờ; tự gọi lại chính yêu cầu đó bằng tài khoản kế tiếp</span></td></tr><tr class="is-key"><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Any other error (network, blocked content)</span><span class="vi">Lỗi khác (mạng, nội dung bị chặn)</span></td><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Keep the account, report the real error so the reader retries that chapter</span><span class="vi">Giữ nguyên tài khoản, báo đúng lỗi để người dùng thử lại đúng chương đó</span></td></tr><tr><td><span class="en">Paused</span><span class="vi">Tạm khoá</span></td><td><span class="en">Reopen time passes</span><span class="vi">Qua thời điểm mở lại</span></td><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Used again at the next pick, no manual step</span><span class="vi">Tự dùng lại ở lần chọn kế tiếp, không cần thao tác tay</span></td></tr><tr><td><span class="en">Every account paused</span><span class="vi">Mọi tài khoản đều tạm khoá</span></td><td><span class="en">Reader presses Translate</span><span class="vi">Người dùng bấm dịch</span></td><td><span class="en">Unchanged</span><span class="vi">Không đổi</span></td><td><span class="en">Keep the chapter's state and show the earliest time quota returns</span><span class="vi">Giữ nguyên trạng thái chương và báo giờ sớm nhất có lại hạn mức</span></td></tr></tbody></table></div></div>
+    <div class="cs-dec__visual"><p class="cs-swipe"><span class="en">Swipe sideways to see the whole table</span><span class="vi">Vuốt ngang để xem hết bảng</span> →</p><div class="cs-table" tabindex="0"><table><thead><tr><th><span class="en">State</span><span class="vi">Trạng thái</span></th><th><span class="en">Event</span><span class="vi">Sự kiện</span></th><th><span class="en">New state</span><span class="vi">Trạng thái mới</span></th><th><span class="en">What the system does</span><span class="vi">Hệ thống làm gì</span></th></tr></thead><tbody><tr><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Quota error</span><span class="vi">Lỗi hết hạn mức</span></td><td><span class="en">Paused</span><span class="vi">Tạm khoá</span></td><td><span class="en">Reopens after 24 hours; the same request is retried on the next account</span><span class="vi">Mở lại sau 24 giờ; tự gọi lại chính yêu cầu đó bằng tài khoản kế tiếp</span></td></tr><tr class="is-key"><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Any other error (network, blocked content)</span><span class="vi">Lỗi khác (mạng, nội dung bị chặn)</span></td><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Keep the account, report the real error so the reader retries that chapter</span><span class="vi">Giữ nguyên tài khoản, báo đúng lỗi để người dùng thử lại đúng chương đó</span></td></tr><tr><td><span class="en">Paused</span><span class="vi">Tạm khoá</span></td><td><span class="en">Reopen time passes</span><span class="vi">Qua thời điểm mở lại</span></td><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Used again at the next pick, no manual step</span><span class="vi">Tự dùng lại ở lần chọn kế tiếp, không cần thao tác tay</span></td></tr><tr><td><span class="en">Every account paused</span><span class="vi">Mọi tài khoản đều tạm khoá</span></td><td><span class="en">Reader presses Translate</span><span class="vi">Người dùng bấm dịch</span></td><td><span class="en">Unchanged</span><span class="vi">Không đổi</span></td><td><span class="en">Keep the chapter's state and show the earliest time quota returns</span><span class="vi">Giữ nguyên trạng thái chương và báo giờ sớm nhất có lại hạn mức</span></td></tr></tbody></table></div></div>
   </article>
 </section>
 
-<section class="wrap cs-sec cs-sec--wide">
+<section class="wrap cs-sec cs-sec--wide" id="assistant">
   <header class="cs-head" data-reveal><span class="cs-n">05</span><div><div class="eyebrow"><span class="en">The next chapter</span><span class="vi">Chương tiếp theo</span></div><h2 class="h-title"><span class="en">People listen more than they read: a <em>terminology assistant</em></span><span class="vi">Người dùng nghe nhiều hơn đọc: <em>trợ lý thuật ngữ</em></span></h2></div></header>
   <div class="cs-two" data-reveal>
     <div>
@@ -187,6 +196,6 @@
   <span><span class="en">© 2026 Phạm Thùy Linh · Product design from a BA/PO background</span><span class="vi">© 2026 Phạm Thùy Linh · Product design từ nền BA/PO</span></span>
   <a href="#" id="toTop"><span class="en">Back to top ↑</span><span class="vi">Lên đầu trang ↑</span></a>
 </footer>
-<script src="js/case.js?v=3"></script>
+<script src="js/case.js?v=4"></script>
 </body>
 </html>

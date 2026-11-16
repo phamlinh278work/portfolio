@@ -2,8 +2,16 @@
 (() => {
   const html = document.documentElement, qs = new URLSearchParams(location.search);
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
-  html.lang = qs.get('lang') || store.get('lang') || ((navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en');
-  document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => { html.lang = b.dataset.lang; store.set('lang', html.lang); }));
+  const okLang = (v) => { v = (v || '').toLowerCase(); return v === 'en' || v === 'vi' ? v : ''; };
+  const qLang = okLang(qs.get('lang'));
+  html.lang = qLang || okLang(store.get('lang')) || ((navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en');
+  if (qLang) store.set('lang', qLang);
+  const setLangButtons = () => document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === html.lang)));
+  setLangButtons();
+  document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => {
+    html.lang = b.dataset.lang; store.set('lang', html.lang); setLangButtons();
+    if (qs.has('lang')) { qs.delete('lang'); const q = qs.toString(); history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash); }
+  }));
 
   // reveal: anything already on screen appears at once, the rest as it scrolls in
   const items = [...document.querySelectorAll('[data-reveal]')];
@@ -39,7 +47,16 @@
   document.getElementById('lbClose').addEventListener('click', close);
   document.getElementById('lbPrev').addEventListener('click', () => show(at - 1));
   document.getElementById('lbNext').addEventListener('click', () => show(at + 1));
-  addEventListener('keydown', (e) => { if (lb.hidden) return; if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(at - 1); else if (e.key === 'ArrowRight') show(at + 1); });
+  addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(at - 1); else if (e.key === 'ArrowRight') show(at + 1);
+    else if (e.key === 'Tab') {            // Tab stays inside the viewer
+      const f = [...lb.querySelectorAll('button')].filter((el) => !el.hidden), a = f[0], z = f[f.length - 1];
+      if (!lb.contains(document.activeElement)) { e.preventDefault(); a.focus(); } else if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+    }
+  });
+  // a picture that is not wrapped in a button still has to open from the keyboard
+  document.querySelectorAll('img[data-zoom]').forEach((im) => { if (im.closest('button') || lb.contains(im)) return; im.tabIndex = 0; im.setAttribute('role', 'button'); im.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(im); } }); });
 
   // "Auto-play": the page reads itself. It moves from one block to the next at a steady pace and rests at each heading;
   // any touch, scroll or key hands the page back, and pressing the button again carries on from where the page is.
