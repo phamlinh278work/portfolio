@@ -17,7 +17,7 @@ Phải mở qua http (không mở thẳng file), vì trang dùng ES module.
 
 ## Quay video tự động (hiện không dùng)
 
-Ngày 16/11/2026 đã quyết định không cần video; ba file MP4 đã được đưa vào Thùng rác và thư mục `video/` đang trống. Công cụ vẫn để lại phòng khi cần:
+Trang không cần video; công cụ vẫn để lại phòng khi cần:
 
 ```bash
 python3 v2/tools/record.py portrait              # 1080×1920 cho TikTok / Reels (bố cục mobile)
@@ -40,7 +40,7 @@ Video ra ở `v2/video/`. Script tự mở server, dùng đồng hồ ảo (mỗ
 - `assets/petals/` — bộ 8 cánh hoa thật (hàng trên nét, hàng dưới mờ) và mặt nạ của chúng
 - `tools/intro-frames/` — khung hình màn mở đầu, chỉ dùng khi quay video (không cần đưa lên mạng)
 - `tools/record.py` — quay video
-- KHÔNG còn dùng, có thể xoá: `assets/rose/`, `assets/intro/` (bông hồng cắt rời của bản trước); `assets/img/moodmix-*.png` (Mood Mix đã bỏ khỏi trang); `assets/img/lh-autopilot-hero.jpg`, `sali-giao-an.jpg`, `sali-het-luot.jpg`, `sali-ket-qua.jpg`, `sali-soan-moi.jpg`, `sali-xoa.jpg` (không còn màn nào dùng)
+- KHÔNG còn dùng, có thể xoá: `assets/rose/`, `assets/intro/` (bông hồng cắt rời của bản trước); `assets/img/lh-autopilot-hero.jpg`, `sali-giao-an.jpg`, `sali-het-luot.jpg`, `sali-ket-qua.jpg`, `sali-soan-moi.jpg`, `sali-xoa.jpg` (không còn màn nào dùng)
 
 ## Nút "Tự chạy"
 
@@ -52,12 +52,11 @@ Video ra ở `v2/video/`. Script tự mở server, dùng đồng hồ ảo (mỗ
 
 - `linhieu.html` — case study LinHiêu (bài toán, insight, phạm vi, ba quyết định, trợ lý thuật ngữ, hiện trạng). Dùng `css/site.css` + `css/case.css` và `js/case.js` (đổi ngôn ngữ, hiện dần khi cuộn, phóng to ảnh). Trang đọc tĩnh: không có cánh hoa, không ghim mục.
 - Câu chữ lấy từ trang portfolio BA (`../index.html`, mục LinHiêu), phần "không làm" trong đặc tả, và brainstorm trợ lý thuật ngữ trong thư mục dự án `Translator & Audio`.
-- Trên trang chính, hai thẻ LinHiêu và màn hình cạnh ảnh chân dung dẫn sang trang này.
+- Trên trang chính, hai thẻ LinHiêu dẫn sang trang này.
 
 ## Thứ tự nội dung (bản 16/11/2026)
 
 Màn đầu → 4 dự án (LinHiêu trợ lý thuật ngữ, Khám phá Phú Thọ, Sali, LinHiêu dịch sách) → sơ đồ luồng (một ví dụ, lấy từ Sali) → lưới 10 màn → cách làm → dựng 3D → BA/PO → về tôi → kinh nghiệm → liên hệ.
-Mood Mix và mục "quyết định tôi đã đổi" đã bỏ theo yêu cầu.
 
 Thư viện (bản cố định, tải từ jsDelivr): three 0.160.0, gsap 3.12.5, lenis 1.1.13.
 Người xem bật "giảm chuyển động" (Reduce Motion) thì trang tắt cảnh 3D động, cuộn mượt và màn mở đầu.
@@ -65,8 +64,6 @@ Người xem bật "giảm chuyển động" (Reduce Motion) thì trang tắt c�
 ## Trước khi đẩy lên mạng
 
 - `assets/img/portrait.jpg` là ảnh cá nhân: đẩy lên GitHub Pages là công khai.
-- Trang không nhắc tới CV (chưa có CV Product Designer); nút thứ hai ở màn đầu dẫn sang LinkedIn. Khi có CV dạng PDF thì thêm nút tải.
-- Không nhắc tới Bộ / văn bản của Bộ trong câu chữ của trang (theo yêu cầu). Lưu ý: hình sơ đồ luồng và vài ảnh chụp Sali vẫn có chữ "công văn" vì đó là chữ trong sản phẩm.
 
 ## Nguồn hình hoa (Pexels, giấy phép Free — dùng tự do, không bắt buộc ghi nguồn)
 

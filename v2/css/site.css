@@ -119,11 +119,6 @@ html[lang="en"] .lang [data-lang="en"], html[lang="vi"] .lang [data-lang="vi"]{ 
 .chip--b{ bottom:110px; right:-10px; background:var(--sage); transform:rotate(4deg); }
 .hero__visual{ position:relative; display:flex; justify-content:flex-end; }
 .hero__visual .portrait{ width:min(100%, 400px); }
-/* a real product screen sits in front of the portrait, so the first view shows work and not only a face */
-.hero__shot{ position:absolute; left:-20px; bottom:104px; width:clamp(124px, 30%, 156px); transform:rotate(-5deg); transition:transform .5s var(--ease); z-index:3; }
-.hero__shot:hover{ transform:rotate(-3deg) translateY(-6px); }
-.hero__shot img{ width:100%; height:auto; border-radius:22px; box-shadow:var(--shadow-lift); }
-.hero__shot-cap{ position:absolute; left:50%; bottom:-14px; transform:translateX(-50%); white-space:nowrap; font-size:12px; font-weight:700; padding:6px 12px; border-radius:99px; background:var(--champagne); border:1px solid var(--glass-line); box-shadow:0 6px 16px -8px rgba(37,33,29,.25); }
 .rose-anchor{ position:absolute; top:-56px; right:-104px; width:200px; height:200px; pointer-events:none; }
 .rose-anchor-c{ width:150px; height:230px; margin:-40px auto 8px; }
 
@@ -312,10 +307,8 @@ footer{ display:flex; justify-content:space-between; align-items:center; gap:16p
   .nav{ height:56px; padding-left:22px; }
   .hero{ grid-template-columns:1fr; gap:40px; padding-top:110px; min-height:auto; }
   .hero h1 em{ white-space:normal; } .only-mob{ display:inline; }
-  .hero__visual{ justify-content:center; padding-left:56px; }
-  .hero__visual .portrait{ width:min(100%, 300px); }
-  .hero__shot{ left:2px; bottom:112px; width:108px; }
-  .chip--a{ left:auto; right:14px; top:22px; transform:rotate(5deg); }
+  .hero__visual{ justify-content:center; }
+  .hero__visual .portrait{ width:min(100%, 340px); }
   .wall__toggle{ display:none; }
   .hero__bloom{ top:auto; bottom:-8%; right:-25%; width:150%; height:66%; }
   .contact__bg::after{ background:radial-gradient(ellipse 90% 70% at 50% 46%, rgba(252,248,240,.9), rgba(252,248,240,.55) 85%); }
