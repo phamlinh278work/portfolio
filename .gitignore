@@ -35,3 +35,11 @@ draft/img/sali/ban-hang-tinh-nang.jpg
 draft/img/sali/m-ket-qua.jpg
 draft/img/sali/m-thu-vien.jpg
 draft/img/sali/thu-vien-toi.jpg
+
+# v2: video quay ra (tạo lại bằng v2/tools/record.py) và khung hình chỉ dùng khi quay
+v2/video/
+v2/tools/intro-frames/
+
+# v2: tài sản của bản trước, không trang nào dùng
+v2/assets/rose/
+v2/assets/intro/
