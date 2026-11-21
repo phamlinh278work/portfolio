@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>LinHiêu case study</title>
+<meta name="description" content="LinHiêu: reading a whole English book in Vietnamese without pasting it into a chat page by page. Problem, insight, decisions and the terminology assistant.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LinHiêu case study — Phạm Thùy Linh">
+<meta property="og:description" content="LinHiêu: reading a whole English book in Vietnamese without pasting it into a chat page by page. Problem, insight, decisions and the terminology assistant.">
+<meta property="og:url" content="https://phamlinh278work.github.io/portfolio/v2/linhieu.html">
+<meta property="og:image" content="https://phamlinh278work.github.io/portfolio/v2/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2369482B'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23F6E9C8'%3EL.%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=19">
+<link rel="stylesheet" href="css/case.css?v=4">
+<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
+</head>
+<body class="case-page">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="nav glass">
+  <a class="logo" href="index.html">Lillian<b>.</b></a>
+  <nav class="nav__links">
+    <a href="index.html#work"><svg width="16" height="16" style="vertical-align:-3px;margin-right:6px"><use href="#i-back"/></svg><span class="en">All projects</span><span class="vi">Tất cả dự án</span></a>
+  </nav>
+  <div class="nav__right">
+    <button class="tour-btn" id="tourBtn" type="button" aria-pressed="false" aria-label="Auto-play"><span class="tour-btn__ico"><svg class="i-play" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="tour-btn__label"><span class="t-play"><span class="en">Auto-play</span><span class="vi">Tự chạy</span></span><span class="t-stop"><span class="en">Pause</span><span class="vi">Dừng</span></span></span></button>
+    <div class="lang" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="vi">VI</button></div>
+    <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com"><span class="en">Let's talk</span><span class="vi">Nhắn cho tôi</span><svg><use href="#i-arrow"/></svg></a>
+    <a class="menu-btn" href="index.html#work" aria-label="All projects"><svg width="20" height="20"><use href="#i-back"/></svg></a>
+  </div>
+</header>
+
+<main>
+<section class="wrap cs-hero">
+  <div>
+    <div class="eyebrow" data-reveal>Case study · 2026 · LinHiêu</div>
+    <h1 data-reveal><span class="en">Reading a whole English book in Vietnamese, <em>without pasting it page by page</em>.</span><span class="vi">Đọc trọn một cuốn sách tiếng Anh bằng tiếng Việt, <em>không phải dán từng trang</em>.</span></h1>
+    <p class="lead" data-reveal><span class="en">LinHiêu translates a book by the chapter and reads it aloud. I designed and built it for a small circle of people I know, and I use it every day.</span><span class="vi">LinHiêu dịch sách theo chương rồi đọc thành tiếng. Tôi thiết kế và dựng nó cho một nhóm nhỏ người quen dùng chung, và chính tôi dùng hằng ngày.</span></p>
+    <dl class="cs-meta" data-reveal>
+      <div><dt><span class="en">My role</span><span class="vi">Vai trò</span></dt><dd><span class="en">Solo: product, design, build</span><span class="vi">Tự làm: sản phẩm, thiết kế, dựng</span></dd></div>
+      <div><dt><span class="en">Users</span><span class="vi">Người dùng</span></dt><dd><span class="en">A small circle of acquaintances sharing one library</span><span class="vi">Một nhóm nhỏ người quen dùng chung thư viện</span></dd></div>
+      <div><dt><span class="en">Input</span><span class="vi">Đầu vào</span></dt><dd>EPUB · PDF · DOCX</dd></div>
+      <div><dt><span class="en">Status</span><span class="vi">Trạng thái</span></dt><dd><span class="en">Core app in daily use · terminology assistant is a prototype (10/2026)</span><span class="vi">App lõi dùng hằng ngày · trợ lý thuật ngữ là bản chạy thử (10/2026)</span></dd></div>
+    </dl>
+  </div>
+  <div class="cs-hero__visual" data-reveal>
+    <img class="cs-hero__web" data-zoom="1" src="assets/img/translator-reader.jpg" alt="LinHiêu reader: source and translation interleaved" width="1400" height="971">
+    <img class="cs-hero__phone" data-zoom="1" src="assets/img/lh-term-01.jpg" alt="LinHiêu on a phone: the term card" width="425" height="900">
+  </div>
+</section>
+
+<section class="wrap cs-sec ">
+  <header class="cs-head" data-reveal><span class="cs-n">01</span><div><div class="eyebrow"><span class="en">The problem</span><span class="vi">Bài toán</span></div><h2 class="h-title"><span class="en">Translating a book in a chat is <em>manual work</em></span><span class="vi">Dịch sách bằng chat là <em>việc thủ công</em></span></h2></div></header>
+  <p class="lead" data-reveal><span class="en">Someone I know was reading an English book by pasting it into Gemini one page at a time.</span><span class="vi">Một người quen của tôi đọc sách tiếng Anh bằng cách dán từng trang vào Gemini để dịch.</span></p>
+  <ol class="cs-steps" data-reveal><li><b>1</b><span class="en">Paste one page</span><span class="vi">Dán một trang</span></li><li><b>2</b><span class="en">Wait for the translation</span><span class="vi">Chờ dịch</span></li><li><b>3</b><span class="en">Ask for audio</span><span class="vi">Xin audio</span></li><li><b>4</b><span class="en">Again, for every page</span><span class="vi">Lặp lại, từng trang một</span></li></ol>
+  <p class="cs-pain" data-reveal><span class="en">A few dozen pages in, the conversation breaks and the context is lost. The reading thread snaps and has to be rebuilt from scratch.</span><span class="vi">Vài chục trang là cuộc trò chuyện gãy, mất ngữ cảnh. Mạch đọc đứt giữa chừng, phải dựng lại từ đầu.</span></p>
+</section>
+
+<section class="wrap cs-sec ">
+  <header class="cs-head" data-reveal><span class="cs-n">02</span><div><div class="eyebrow"><span class="en">Insight</span><span class="vi">Insight</span></div><h2 class="h-title"><span class="en">What the reader <em>actually needs</em></span><span class="vi">Điều người đọc <em>thật sự cần</em></span></h2></div></header>
+  <blockquote class="cs-quote" data-reveal><span class="en">Readers don't need a better translation. They need the manual work gone.</span><span class="vi">Người đọc không cần bản dịch tốt hơn. Họ cần bỏ hẳn thao tác tay.</span></blockquote>
+  <p class="lead" data-reveal><b>JTBD.</b> <span class="en">When I want to read an English book, I want to hand over the whole book once and read or listen to it in Vietnamese in one unbroken thread, so I don't have to paste pages and rebuild the context.</span><span class="vi">Khi muốn đọc một cuốn sách tiếng Anh, tôi muốn đưa cả cuốn vào một lần rồi đọc hoặc nghe liền mạch bằng tiếng Việt, để không phải ngồi dán từng trang và dựng lại ngữ cảnh.</span></p>
+  <p class="lead" data-reveal><span class="en">So the unit changes from the <b>page</b> to the <b>chapter</b>, and the Listen button sits on the chapter that was just translated.</span><span class="vi">Vì vậy đơn vị đổi từ <b>trang</b> sang <b>chương</b>, và nút Nghe nằm ngay ở chương vừa dịch.</span></p>
+  <div class="cs-unit glass" data-reveal>
+    <div class="cs-unit__col">
+      <div class="cs-unit__label is-no"><span class="en">Before · by the page</span><span class="vi">Trước · theo trang</span></div>
+      <div class="cs-pages" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p><span class="en">One paste per page. The context is lost between pastes.</span><span class="vi">Mỗi trang một lần dán. Ngữ cảnh mất giữa các lần dán.</span></p>
+    </div>
+    <div class="cs-unit__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="cs-unit__col">
+      <div class="cs-unit__label is-yes"><span class="en">After · by the chapter</span><span class="vi">Sau · theo chương</span></div>
+      <div class="cs-chapters" aria-hidden="true"><i style="--w:62%"></i><i style="--w:88%"></i><i style="--w:74%"></i><i style="--w:96%"></i><i style="--w:58%"></i><i style="--w:81%"></i><i style="--w:70%"></i><i style="--w:92%"></i><i style="--w:66%"></i><i style="--w:85%"></i><i style="--w:77%"></i><i style="--w:60%"></i><i style="--w:90%"></i><i style="--w:72%"></i><i style="--w:83%"></i><i style="--w:64%"></i><i style="--w:79%"></i></div>
+      <p><span class="en">One PDF split into 17 chapters automatically. Each chapter is translated once and can be listened to straight away.</span><span class="vi">Một file PDF tự tách thành 17 chương. Mỗi chương dịch một lần và nghe được ngay.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap cs-sec ">
+  <header class="cs-head" data-reveal><span class="cs-n">03</span><div><div class="eyebrow"><span class="en">Keeping it small</span><span class="vi">Giữ sản phẩm nhỏ</span></div><h2 class="h-title"><span class="en">What the first version <em>does not do</em></span><span class="vi">Những điều bản đầu <em>không làm</em></span></h2></div></header>
+  <p class="lead" data-reveal><span class="en">I wrote these down before building, so the first version stayed small enough to finish and still useful.</span><span class="vi">Tôi viết rõ các điều này trước khi dựng, để bản đầu đủ nhỏ để làm xong mà vẫn dùng được.</span></p>
+  <ul class="cs-nots" data-reveal>
+    <li><b><span class="en">No multiple users</span><span class="vi">Không đa người dùng</span></b><span class="en">One reader on one machine. Sharing with a group came later, once people asked to use it.</span><span class="vi">Một người đọc trên một máy. Phần dùng chung theo nhóm chỉ được thêm sau, khi có người xin dùng.</span></li>
+    <li><b><span class="en">No choice of target language</span><span class="vi">Không chọn ngôn ngữ đích</span></b><span class="en">It always translates into Vietnamese.</span><span class="vi">Luôn dịch sang tiếng Việt.</span></li>
+    <li><b><span class="en">No free-text translate box</span><span class="vi">Không có ô dịch văn bản tự do</span></b><span class="en">It serves books only.</span><span class="vi">Chỉ phục vụ sách.</span></li>
+    <li><b><span class="en">No merged audio file</span><span class="vi">Không ghép audio thành một file</span></b><span class="en">A long chapter plays as segments one after another.</span><span class="vi">Chương dài phát nối tiếp từng đoạn.</span></li>
+  </ul>
+</section>
+
+<section class="wrap cs-sec cs-sec--wide">
+  <header class="cs-head" data-reveal><span class="cs-n">04</span><div><div class="eyebrow"><span class="en">Decisions</span><span class="vi">Quyết định</span></div><h2 class="h-title"><span class="en">Three decisions, and what I <em>dropped</em></span><span class="vi">Ba quyết định, và thứ tôi <em>đã bỏ</em></span></h2></div></header>
+  <article class="cs-dec glass" data-reveal>
+    <div class="cs-dec__text">
+      <span class="cs-dec__n">1</span>
+      <h3><span class="en">The chapter is the unit</span><span class="vi">Đơn vị là chương</span></h3>
+      <dl>
+        <div><dt class="is-yes"><span class="en">Chose</span><span class="vi">Chọn</span></dt><dd><span class="en">The book is split into chapters. Each chapter has its own state, costs money only when it is translated, and carries its own Listen button.</span><span class="vi">Sách được tách thành chương. Mỗi chương có trạng thái riêng, dịch tới đâu tính tiền tới đó, và có nút Nghe của riêng nó.</span></dd></div>
+        <div><dt class="is-no"><span class="en">Dropped</span><span class="vi">Bỏ</span></dt><dd><span class="en">Keeping the page as the unit, as in the chat.</span><span class="vi">Giữ đơn vị là trang như khi dán vào chat.</span></dd></div>
+        <div><dt><span class="en">Why</span><span class="vi">Vì sao</span></dt><dd><span class="en">Working by the page is exactly where the context was lost. A library line such as “2/17 chapters translated” and a “Continue reading” shortcut then bring the reader back to the right place.</span><span class="vi">Làm theo trang chính là chỗ ngữ cảnh bị mất. Dòng “2/17 chương đã dịch” và lối tắt “Tiếp tục đọc” trong thư viện đưa người đọc về đúng chỗ đang dở.</span></dd></div>
+      </dl>
+    </div>
+    <div class="cs-dec__visual"><figure class="shot" data-reveal><button type="button" aria-label="Chapter list"><img data-zoom="1" src="assets/img/translator-chapters.jpg" alt="Chapter list" loading="lazy"></button><figcaption><span class="en">17 chapters split from one PDF, each with its page range and its own state.</span><span class="vi">17 chương tách từ một file PDF, kèm khoảng trang và trạng thái từng chương.</span></figcaption></figure></div>
+  </article>
+  <article class="cs-dec glass" data-reveal>
+    <div class="cs-dec__text">
+      <span class="cs-dec__n">2</span>
+      <h3><span class="en">Find the chapters cheaply first</span><span class="vi">Tìm chương bằng cách rẻ trước</span></h3>
+      <dl>
+        <div><dt class="is-yes"><span class="en">Chose</span><span class="vi">Chọn</span></dt><dd><span class="en">A five-tier process: a tier runs only when the cheaper one before it could not answer. Any heading inferred from a table of contents must be found again, almost word for word, in the body of the book.</span><span class="vi">Quy trình 5 tầng: tầng sau chỉ chạy khi tầng trước rẻ hơn không trả lời được. Mọi tiêu đề suy ra từ mục lục phải tìm lại được gần như nguyên văn trong thân sách.</span></dd></div>
+        <div><dt class="is-no"><span class="en">Dropped</span><span class="vi">Bỏ</span></dt><dd><span class="en">Always asking AI to read the whole book. It would always give an answer, but it pays for the parts of the book that already state their own structure.</span><span class="vi">Lúc nào cũng nhờ AI đọc cả cuốn. Cách đó chắc chắn ra kết quả, nhưng tốn tiền cho cả phần sách đã tự nói rõ cấu trúc.</span></dd></div>
+        <div><dt><span class="en">Why</span><span class="vi">Vì sao</span></dt><dd><span class="en">A PDF does not say how many chapters it has, and a wrong split is worse than no split. A source that cannot prove itself returns nothing and the next one is tried; the system never half-guesses.</span><span class="vi">Một file PDF không tự nói nó có bao nhiêu chương, và tách sai chương còn tệ hơn là không tách. Nguồn nào không tự chứng minh được thì trả về rỗng và chuyển nguồn sau; hệ thống không bao giờ đoán một nửa.</span></dd></div>
+      </dl>
+    </div>
+    <div class="cs-dec__visual"><ol class="cs-ladder"><li class="" style="--i:0"><span class="cs-ladder__n">0</span><div><b><span class="en">Triage every page</span><span class="vi">Sàng lọc từng trang</span></b><p><span class="en">Scan the whole book locally and sort each page: clean text, broken font, or blank because it is a photo.</span><span class="vi">Quét cả cuốn tại chỗ, xếp mỗi trang vào một nhóm: đọc sạch, chữ lỗi font, hoặc trang trống vì là ảnh chụp.</span></p></div><em><span class="en">Free · local</span><span class="vi">Miễn phí · tại chỗ</span></em></li><li class="is-ai" style="--i:1"><span class="cs-ladder__n">1</span><div><b><span class="en">Ask AI to re-read images</span><span class="vi">Nhờ AI đọc lại ảnh</span></b><p><span class="en">Only the pages tier 0 marked as broken or blank are sent, never the whole book.</span><span class="vi">Chỉ gửi đúng những trang tầng 0 đã đánh dấu là lỗi hoặc trống, không gửi cả cuốn.</span></p></div><em><span class="en">AI · narrow scope</span><span class="vi">Gọi AI · phạm vi hẹp</span></em></li><li class="" style="--i:2"><span class="cs-ladder__n">2</span><div><b><span class="en">Collect heading candidates</span><span class="vi">Gom ứng viên tiêu đề</span></b><p><span class="en">Take the structure tree if the publisher embedded one, plus lines set unusually large.</span><span class="vi">Lấy cây cấu trúc nếu nhà xuất bản có nhúng sẵn, kèm các dòng có cỡ chữ lớn bất thường.</span></p></div><em><span class="en">Free · local</span><span class="vi">Miễn phí · tại chỗ</span></em></li><li class="" style="--i:3"><span class="cs-ladder__n">3</span><div><b><span class="en">Settle chapter boundaries</span><span class="vi">Chốt ranh giới chương</span></b><p><span class="en">Four signals tried in order, cheapest and most reliable first; AI only when the three free ones fail.</span><span class="vi">Thử lần lượt bốn nguồn tín hiệu, rẻ và đáng tin nhất trước; chỉ gọi AI khi cả ba nguồn miễn phí đều thất bại.</span></p></div><em><span class="en">3 free tiers first</span><span class="vi">3 tầng miễn phí trước</span></em></li><li class="is-ai" style="--i:4"><span class="cs-ladder__n">4</span><div><b><span class="en">Split out tables</span><span class="vi">Tách bảng biểu</span></b><p><span class="en">Find tables by local rules first; AI is called only on the pages still in doubt.</span><span class="vi">Dò bảng bằng luật tại chỗ trước, AI chỉ được gọi trên đúng những trang còn khả nghi.</span></p></div><em><span class="en">Hybrid · narrowed first</span><span class="vi">Lai · thu hẹp trước</span></em></li></ol></div>
+  </article>
+  <article class="cs-dec glass" data-reveal>
+    <div class="cs-dec__text">
+      <span class="cs-dec__n">3</span>
+      <h3><span class="en">Not every error is a quota error</span><span class="vi">Không phải lỗi nào cũng là hết hạn mức</span></h3>
+      <dl>
+        <div><dt class="is-yes"><span class="en">Chose</span><span class="vi">Chọn</span></dt><dd><span class="en">When an AI account runs out of quota it is paused for 24 hours and the same request is retried on the next account. Any other error keeps the account and reports the real cause.</span><span class="vi">Tài khoản AI hết hạn mức thì tạm khoá 24 giờ và yêu cầu được tự gọi lại bằng tài khoản kế tiếp. Lỗi khác thì giữ nguyên tài khoản và báo đúng nguyên nhân.</span></dd></div>
+        <div><dt class="is-no"><span class="en">Dropped</span><span class="vi">Bỏ</span></dt><dd><span class="en">Treating every failure as “out of quota”.</span><span class="vi">Coi mọi lỗi đều là “hết hạn mức”.</span></dd></div>
+        <div><dt><span class="en">Why</span><span class="vi">Vì sao</span></dt><dd><span class="en">Lumped together, one network hiccup would lock a healthy account for 24 hours. And when every account is paused, the reader is told the earliest time quota returns instead of a dead end.</span><span class="vi">Nếu gộp chung, một sự cố mạng sẽ khoá oan một tài khoản còn tốt suốt 24 giờ. Còn khi mọi tài khoản đều tạm khoá, người đọc được báo giờ sớm nhất có lại hạn mức thay vì gặp ngõ cụt.</span></dd></div>
+      </dl>
+    </div>
+    <div class="cs-dec__visual"><p class="cs-swipe"><span class="en">Swipe sideways to see the whole table</span><span class="vi">Vuốt ngang để xem hết bảng</span> →</p><div class="cs-table" tabindex="0"><table><thead><tr><th><span class="en">State</span><span class="vi">Trạng thái</span></th><th><span class="en">Event</span><span class="vi">Sự kiện</span></th><th><span class="en">New state</span><span class="vi">Trạng thái mới</span></th><th><span class="en">What the system does</span><span class="vi">Hệ thống làm gì</span></th></tr></thead><tbody><tr><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Quota error</span><span class="vi">Lỗi hết hạn mức</span></td><td><span class="en">Paused</span><span class="vi">Tạm khoá</span></td><td><span class="en">Reopens after 24 hours; the same request is retried on the next account</span><span class="vi">Mở lại sau 24 giờ; tự gọi lại chính yêu cầu đó bằng tài khoản kế tiếp</span></td></tr><tr class="is-key"><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Any other error (network, blocked content)</span><span class="vi">Lỗi khác (mạng, nội dung bị chặn)</span></td><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Keep the account, report the real error so the reader retries that chapter</span><span class="vi">Giữ nguyên tài khoản, báo đúng lỗi để người dùng thử lại đúng chương đó</span></td></tr><tr><td><span class="en">Paused</span><span class="vi">Tạm khoá</span></td><td><span class="en">Reopen time passes</span><span class="vi">Qua thời điểm mở lại</span></td><td><span class="en">Active</span><span class="vi">Đang hoạt động</span></td><td><span class="en">Used again at the next pick, no manual step</span><span class="vi">Tự dùng lại ở lần chọn kế tiếp, không cần thao tác tay</span></td></tr><tr><td><span class="en">Every account paused</span><span class="vi">Mọi tài khoản đều tạm khoá</span></td><td><span class="en">Reader presses Translate</span><span class="vi">Người dùng bấm dịch</span></td><td><span class="en">Unchanged</span><span class="vi">Không đổi</span></td><td><span class="en">Keep the chapter's state and show the earliest time quota returns</span><span class="vi">Giữ nguyên trạng thái chương và báo giờ sớm nhất có lại hạn mức</span></td></tr></tbody></table></div></div>
+  </article>
+</section>
+
+<section class="wrap cs-sec cs-sec--wide" id="assistant">
+  <header class="cs-head" data-reveal><span class="cs-n">05</span><div><div class="eyebrow"><span class="en">The next chapter</span><span class="vi">Chương tiếp theo</span></div><h2 class="h-title"><span class="en">People listen more than they read: a <em>terminology assistant</em></span><span class="vi">Người dùng nghe nhiều hơn đọc: <em>trợ lý thuật ngữ</em></span></h2></div></header>
+  <div class="cs-two" data-reveal>
+    <div>
+      <h3><span class="en">The problem that use revealed</span><span class="vi">Bài toán lộ ra khi dùng thật</span></h3>
+      <p><span class="en">The translation keeps specialist terms in English on purpose and glosses each one only the first time, so a book reads the same whichever AI translated the chapter. The price falls on the listener:</span><span class="vi">Bản dịch cố tình giữ thuật ngữ chuyên ngành bằng tiếng Anh và chỉ chú thích ở lần đầu, để cùng một cuốn sách đọc ra một kiểu dù chương được dịch bởi AI nào. Cái giá rơi vào người nghe:</span></p>
+      <ul>
+        <li><span class="en">The gloss is a name, not an explanation. Hearing “forcing point (điểm thúc ép)” still does not say what it is.</span><span class="vi">Chú thích chỉ là tên dịch, không phải giải thích. Nghe “forcing point (điểm thúc ép)” vẫn chưa biết nó là gì.</span></li>
+        <li><span class="en">From the second time on there is no gloss at all.</span><span class="vi">Từ lần thứ hai trở đi không còn chú thích.</span></li>
+        <li><span class="en">The listener is not looking at the text, so there is nothing to highlight and look up.</span><span class="vi">Người nghe không nhìn bài, nên không bôi đen để tra được.</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3><span class="en">From a chatbot to a card</span><span class="vi">Từ chatbot thành một tấm thẻ</span></h3>
+      <p><span class="en">The idea started as a chat bot that answers questions about terms. But people using the app mostly listen, with their hands busy. What they need is smaller:</span><span class="vi">Ý tưởng ban đầu là một con bot chat trả lời thuật ngữ. Nhưng người dùng app chủ yếu nghe, tay đang bận. Thứ họ cần nhỏ hơn thế:</span></p>
+      <blockquote class="cs-quote cs-quote--sm"><span class="en">A listener doesn't need a dictionary. They need a card that changes with the segment being played: one glance, and the book keeps going.</span><span class="vi">Người nghe không cần từ điển. Họ cần một tấm thẻ đổi theo đoạn đang phát: liếc là thấy, sách vẫn chạy.</span></blockquote>
+    </div>
+  </div>
+  <ul class="cs-rules" data-reveal>
+    <li><b><span class="en">No extra AI call</span><span class="vi">Không tốn thêm lượt gọi AI</span></b><span class="en">The glossary is produced in the same call that translates the chapter, so everyone with that chapter gets the same terms.</span><span class="vi">Thuật ngữ sinh ngay trong lần dịch chương, nên ai có cùng chương thì có cùng thuật ngữ.</span></li>
+    <li><b><span class="en">Reuse before spending</span><span class="vi">Dùng lại trước khi tốn tiền</span></b><span class="en">A question that matches a glossary term, or one already asked, returns the stored answer and uses no credit.</span><span class="vi">Hỏi trùng một thuật ngữ trong bảng, hoặc trùng câu đã có người hỏi, thì trả câu có sẵn và không trừ lượt.</span></li>
+    <li><b><span class="en">A failure never costs a credit</span><span class="vi">Lỗi thì không trừ lượt</span></b><span class="en">If the AI fails, nothing is saved and nothing is charged.</span><span class="vi">AI lỗi thì không lưu gì và không tính lượt.</span></li>
+    <li><b><span class="en">Voice without building voice</span><span class="vi">Hỏi bằng giọng nói mà không tự làm phần nghe</span></b><span class="en">Questions can be spoken through the phone keyboard's microphone; the app does not do its own speech recognition.</span><span class="vi">Người nghe hỏi bằng micro của bàn phím điện thoại; app không tự làm phần nhận giọng nói.</span></li>
+  </ul>
+  <p class="lead" data-reveal><span class="en">Eight of the fifteen states. Click any screen to see it large.</span><span class="vi">Tám trong mười lăm trạng thái. Bấm vào màn bất kỳ để xem lớn.</span></p>
+<div class="shots shots--phone cs-shots"><figure class="shot" data-reveal><button type="button" aria-label="The term card for what is playing"><img data-zoom="1" src="assets/img/lh-term-01.jpg" alt="The term card for what is playing" loading="lazy"></button><figcaption><b>01</b><span class="en">The term card for what is playing</span><span class="vi">Thẻ thuật ngữ đang nghe</span><small><span class="en">Sits right above the player and changes with the segment. One sentence per term; the term is underlined in the text.</span><span class="vi">Nằm ngay trên thanh phát, đổi theo đoạn đang phát. Mỗi từ một câu, từ được gạch chân trong bài.</span></small></figcaption></figure><figure class="shot" data-reveal><button type="button" aria-label="A segment with no terms"><img data-zoom="1" src="assets/img/lh-term-03.jpg" alt="A segment with no terms" loading="lazy"></button><figcaption><b>02</b><span class="en">A segment with no terms</span><span class="vi">Đoạn không có thuật ngữ</span><small><span class="en">The card folds to one line. It takes no room from the text when it has nothing to say.</span><span class="vi">Thẻ thu còn một dòng. Không chiếm chỗ của bài đọc khi không có gì để nói.</span></small></figcaption></figure><figure class="shot" data-reveal><button type="button" aria-label="Search that ignores accents"><img data-zoom="1" src="assets/img/lh-term-06.jpg" alt="Search that ignores accents" loading="lazy"></button><figcaption><b>03</b><span class="en">Search that ignores accents</span><span class="vi">Tìm không dấu</span><small><span class="en">Typing “diem” finds both “điểm thúc ép” and “điểm kiểm soát”. English and Vietnamese names both match.</span><span class="vi">Gõ “diem” ra cả “điểm thúc ép” lẫn “điểm kiểm soát”. Tìm được bằng cả tiếng Anh lẫn cách gọi tiếng Việt.</span></small></figcaption></figure><figure class="shot" data-reveal><button type="button" aria-label="Listen to the answer"><img data-zoom="1" src="assets/img/lh-term-09.jpg" alt="Listen to the answer" loading="lazy"></button><figcaption><b>04</b><span class="en">Listen to the answer</span><span class="vi">Nghe câu trả lời</span><small><span class="en">The book pauses, the answer is read aloud, then the book resumes where it stopped. No extra tap.</span><span class="vi">Sách tạm dừng, đọc câu trả lời, xong phát tiếp từ chỗ cũ. Người nghe không phải chạm thêm.</span></small></figcaption></figure><figure class="shot" data-reveal><button type="button" aria-label="Answered from the glossary, no credit used"><img data-zoom="1" src="assets/img/lh-term-07.jpg" alt="Answered from the glossary, no credit used" loading="lazy"></button><figcaption><b>05</b><span class="en">Answered from the glossary, no credit used</span><span class="vi">Trả từ bảng, không tính lượt</span><small><span class="en">Ask about a term already in the glossary and the answer is instant, labelled “no credit used”.</span><span class="vi">Hỏi đúng một thuật ngữ có trong bảng thì trả ngay, nhãn “không tính lượt”.</span></small></figcaption></figure><figure class="shot" data-reveal><button type="button" aria-label="Out of credits"><img data-zoom="1" src="assets/img/lh-term-10.jpg" alt="Out of credits" loading="lazy"></button><figcaption><b>06</b><span class="en">Out of credits</span><span class="vi">Hết lượt</span><small><span class="en">Says when credits return and the way out: your own AI key. The glossary still works because it costs nothing.</span><span class="vi">Nói rõ khi nào mở lại và lối ra: nhập key riêng. Thuật ngữ vẫn tra được vì không tốn tiền.</span></small></figcaption></figure><figure class="shot" data-reveal><button type="button" aria-label="An off-topic question"><img data-zoom="1" src="assets/img/lh-term-11.jpg" alt="An off-topic question" loading="lazy"></button><figcaption><b>07</b><span class="en">An off-topic question</span><span class="vi">Câu lạc đề</span><small><span class="en">Declined politely with the scope restated. It still costs a credit because the AI was called.</span><span class="vi">Từ chối lịch sự, nhắc phạm vi, vẫn tính một lượt vì đã gọi AI.</span></small></figcaption></figure><figure class="shot" data-reveal><button type="button" aria-label="No key and no plan yet"><img data-zoom="1" src="assets/img/lh-term-12.jpg" alt="No key and no plan yet" loading="lazy"></button><figcaption><b>08</b><span class="en">No key and no plan yet</span><span class="vi">Chưa có key, chưa có gói</span><small><span class="en">No question box, but the glossary stays open. The reader loses the paid feature, not the free one.</span><span class="vi">Không có ô hỏi, nhưng bảng thuật ngữ vẫn mở. Người dùng mất tính năng tốn tiền, không mất tính năng miễn phí.</span></small></figcaption></figure></div>
+</section>
+
+<section class="wrap cs-sec ">
+  <header class="cs-head" data-reveal><span class="cs-n">06</span><div><div class="eyebrow"><span class="en">Where it stands</span><span class="vi">Hiện trạng</span></div><h2 class="h-title"><span class="en">What is true today, and what I <em>don't know yet</em></span><span class="vi">Điều đã có, và điều tôi <em>chưa biết</em></span></h2></div></header>
+  <div class="cs-facts">
+    <div class="glass" data-reveal><div class="eyebrow"><span class="en">In use</span><span class="vi">Đang dùng</span></div><p><span class="en">The core app is in daily use. It took 56 controlled changes to get there, most of them edge-case fixes I found myself: one broken file wiping the whole library, two processes overwriting each other's chapter state.</span><span class="vi">App lõi dùng hằng ngày. Để tới đó là 56 lần thay đổi có kiểm soát, phần lớn là sửa lỗi biên tôi tự tìm ra: một file hỏng làm mất cả thư viện, hai tiến trình ghi đè trạng thái chương của nhau.</span></p></div>
+    <div class="glass" data-reveal><div class="eyebrow"><span class="en">Not measured yet</span><span class="vi">Chưa đo được</span></div><p><span class="en">The terminology assistant is a 15-state prototype, so there are no usage numbers. The targets are written down: at least 30% of questions answered without calling AI, and question costs under 10% of translation costs in the same month.</span><span class="vi">Trợ lý thuật ngữ mới là bản chạy thử 15 trạng thái, nên chưa có số liệu dùng thật. Tiêu chí đã đặt sẵn: ít nhất 30% câu hỏi được trả lời mà không gọi AI, và chi phí hỏi không quá 10% chi phí dịch trong cùng tháng.</span></p></div>
+    <div class="glass" data-reveal><div class="eyebrow"><span class="en">Still open</span><span class="vi">Còn mở</span></div><p><span class="en">What about someone listening with the screen off? Reading the explanation inside the audio is one answer. I am holding it until the first two weeks of use show whether people look at the card at all.</span><span class="vi">Người nghe lúc tắt màn hình thì sao? Đọc giải thích ngay trong audio là một cách. Tôi để lại, chờ hai tuần đầu dùng thật cho biết người nghe có nhìn tấm thẻ hay không.</span></p></div>
+  </div>
+</section>
+
+<section class="wrap cs-end" data-reveal>
+  <a class="btn btn--ghost" href="index.html#work"><svg style="transform:none"><use href="#i-back"/></svg><span class="en">All projects</span><span class="vi">Tất cả dự án</span></a>
+  <a class="btn btn--primary" href="mailto:phamlinh278.work@gmail.com"><span class="en">Email me</span><span class="vi">Gửi email cho tôi</span><svg><use href="#i-arrow"/></svg></a>
+</section>
+</main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb__stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <p class="lb__cap" id="lbCap"></p>
+  <button class="lb__btn lb__x" id="lbClose" aria-label="Close"><svg width="20" height="20"><use href="#i-x"/></svg></button>
+  <button class="lb__btn lb__prev" id="lbPrev" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="lb__btn lb__next" id="lbNext" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
+
+<footer>
+  <a class="logo" href="index.html">Lillian<b>.</b></a>
+  <span><span class="en">© 2026 Phạm Thùy Linh · Product design from a BA/PO background</span><span class="vi">© 2026 Phạm Thùy Linh · Product design từ nền BA/PO</span></span>
+  <a href="#" id="toTop"><span class="en">Back to top ↑</span><span class="vi">Lên đầu trang ↑</span></a>
+</footer>
+<script src="js/case.js?v=4"></script>
+</body>
+</html>

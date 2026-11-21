@@ -46,3 +46,8 @@ v2/assets/intro/
 
 # v2: ảnh không trang nào dùng
 v2/assets/img/moodmix-*.png
+
+# v3: khung hình chỉ dùng khi quay video, và tài sản intro không trang nào dùng
+v3/tools/intro-frames
+v3/tools/phutho-frames/
+v3/assets/intro/
